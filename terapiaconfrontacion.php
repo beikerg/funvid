@@ -408,7 +408,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <input type="checkbox" name="falla[]" value="IRONICO" class="flat-red">
                   IRONICO
                 </label>
-              </div>          
+              </div>   
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="MIRA A MODO PERSONAL" class="flat-red">
+                  MIRA A MODO PERSONAL
+                </label>
+              </div>
+
             </div>
           </div>
 
@@ -806,8 +814,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="POCO TEMPLO" class="flat-red">
-                  POCO TEMPLO
+                  <input type="checkbox" name="falla[]" value="POCO TEMPLE" class="flat-red">
+                  POCO TEMPLE
                 </label>
               </div>
 
@@ -834,8 +842,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="IMPULSIVO" class="flat-red">
-                  IMPULSIVO
+                  <input type="checkbox" name="falla[]" value="POCO HUMILDE" class="flat-red">
+                  POCO HUMILDE
                 </label>
               </div>
 
