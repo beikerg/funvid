@@ -420,7 +420,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <input type="checkbox" name="falla[]" value="IRONICO" class="flat-red" <?php in_array('IRONICO', $fallas) ? print "checked" : "";  ?>>
                   IRONICO
                 </label>
-              </div>          
+              </div> 
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="MIRA A MODO PERSONAL" class="flat-red" <?php in_array('MIRA A MODO PERSONAL', $fallas) ? print "checked" : "";  ?>>
+                  MIRA A MODO PERSONAL
+                </label>
+              </div>
+
             </div>
           </div>
 
@@ -818,8 +826,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="POCO TEMPLO" class="flat-red" <?php in_array('POCO TEMPLO', $fallas) ? print "checked" : "";  ?>>
-                  POCO TEMPLO
+                  <input type="checkbox" name="falla[]" value="POCO TEMPLE" class="flat-red" <?php in_array('POCO TEMPLO', $fallas) ? print "checked" : "";  ?>>
+                  POCO TEMPLE
                 </label>
               </div>
 
@@ -846,8 +854,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="IMPULSIVO" class="flat-red" <?php in_array('IMPULSIVO', $fallas) ? print "checked" : "";  ?>>
-                  IMPULSIVO
+                  <input type="checkbox" name="falla[]" value="POCO HUMILDE" class="flat-red" <?php in_array('POCO HUMILDE', $fallas) ? print "checked" : "";  ?>>
+                  POCO HUMILDE
                 </label>
               </div>
 
