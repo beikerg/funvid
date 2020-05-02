@@ -12,7 +12,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
 
 
   if(!empty($_GET['id'])){
-      $residente_id = $_GET['id']; 
+      $residente_id = $_GET['id'];  
     }else{
       //header("Location: residente.php");
     }
@@ -27,6 +27,8 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
    <title>FUNVID | Ayudas</title>
   <?php  include("include/head.php"); ?>
   <style type="text/css">
+
+  
     /* The customcheck */
 .customcheck {
     display: block;
@@ -263,30 +265,38 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
             <?php
             $fHoy = date('Y-m-d');
               include('ajax/db_connection.php');
-              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda >= '$fHoy'";
+
+              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, (CASE WHEN a.fecha_fin_ayuda >= '$fHoy' THEN 'Activo' WHEN a.fecha_fin_ayuda = '0000-00-00' THEN 'Indefinido'ELSE 'Finalizado' END) AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda >= '$fHoy' OR a.fecha_fin_ayuda = '0000-00-00'";
+           
+
+              //$sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda >= '$fHoy'";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
               while($row = $query->fetch_assoc()){
                 $ayudas = explode(", ", $row['ayuda']);
-                echo 
+                $ayu = 
                 "<tr>
                   <td>".$row['id_ayuda']."</td>
                   <td>".$row['nombre']."</td>
                   <td>".$row['apellido']."</td>
-                  <td>".date('d-m-Y', strtotime($row['fecha_inicio_ayuda']))."</td>
-                  <td>".date('d-m-Y', strtotime($row['fecha_fin_ayuda']))."</td>
-                  
+                  <td>".date('d-m-Y', strtotime($row['fecha_inicio_ayuda']))."</td>";
+                  if($row['fecha_fin_ayuda'] == '0000-00-00'){
+                    $ayu .= "<td> Indefinido </td>";
+                  }else{
+                    $ayu .="<td>".date('d-m-Y', strtotime($row['fecha_fin_ayuda']))."</td>";
+                  }
+                  $ayu .="
                   <td>";
                   if($row ['ayuda'] != ''){
                    for ($i = 0; $i < count($ayudas); $i++) {
-                        echo " • <strong>".$ayudas[$i]."</strong><br>";
+                        $ayu .= " • <strong>".$ayudas[$i]."</strong><br>";
                     } 
                   }else{
-                    echo "";
+                    $ayu .= "";
                   }
                    
-                  echo "</td>
+                  $ayu .= "</td>
                   <td>".$row['estado']."</td>
                   
                     
@@ -301,7 +311,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
                     
                   </td>
                 </tr>";
-                
+                echo $ayu;
   include("ajax/ayudas/edit_modal.php");   
               }
 
