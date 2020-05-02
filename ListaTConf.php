@@ -151,7 +151,7 @@
             <th>Nombres</th>
             <th>Apellido</th>
             <th>Rut</th>
-            <th>Director</th>
+            <th>Lider</th>
             <th>fecha</th>
             <th><center>Opciones</center></th>
 
@@ -159,7 +159,7 @@
           <tbody>
             <?php
               include('ajax/db_connection.php');
-              $sql = "SELECT t.id_t_conf, r.id_residente,r.nombre, r.apellido, r.rut, t.director_tc , t.fecha_tc FROM residentes r INNER JOIN tera_confronta t ON t.id_residente = r.id_residente ORDER BY t.id_t_conf DESC";
+              $sql = "SELECT t.id_t_conf, r.id_residente,r.nombre, r.apellido, r.rut, t.lider_tc , t.fecha_tc FROM residentes r INNER JOIN tera_confronta t ON t.id_residente = r.id_residente ORDER BY t.id_t_conf DESC";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
@@ -170,7 +170,7 @@
                   <td>".$row['nombre']."</td>
                   <td>".$row['apellido']."</td>
                   <td>".$row['rut']."</td>
-                  <td>".$row['director_tc']."</td>
+                  <td>".$row['lider_tc']."</td>
                   <td>".date('d-m-Y', strtotime($row['fecha_tc']))."</td>
                   
                   

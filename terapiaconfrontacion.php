@@ -384,7 +384,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="" class="flat-red">
+                  <input type="checkbox" name="falla[]" value="MIDE CONTROLES" class="flat-red">
                   MIDE CONTROLES
                 </label>
               </div>

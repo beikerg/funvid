@@ -826,7 +826,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="POCO TEMPLE" class="flat-red" <?php in_array('POCO TEMPLO', $fallas) ? print "checked" : "";  ?>>
+                  <input type="checkbox" name="falla[]" value="POCO TEMPLE" class="flat-red" <?php in_array('POCO TEMPLE', $fallas) ? print "checked" : "";  ?>>
                   POCO TEMPLE
                 </label>
               </div>
