@@ -160,7 +160,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
             <?php
             $fHoy = date('Y-m-d');
               include('ajax/db_connection.php');
-              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente";
+              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda < '$fHoy'";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
@@ -187,10 +187,14 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
                   <td>".$row['estado']."</td>
                   
                     
-                  <td align='center'>
+                  <td align='center'>";
       
+                  if($_SESSION['rol'] == 'Admin'){
+                    echo "<a title='Editar' href='#' class='btn btn-warning' data-toggle='modal' data-target='#ayuda_resi_".$row['id_ayuda']."'><i class='glyphicon glyphicon-pencil'></i></a>";
+                  }
+                  
                     
-                    <a title='Editar' href='#' class='btn btn-success' data-toggle='modal' data-target='#ver_ayuda_".$row['id_ayuda']."'><i class='glyphicon glyphicon-eye-open'></i></a>
+                   echo " <a title='Editar' href='#' class='btn btn-success' data-toggle='modal' data-target='#ver_ayuda_".$row['id_ayuda']."'><i class='glyphicon glyphicon-eye-open'></i></a>
 
                     
 
@@ -199,9 +203,10 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
                   </td>
                 </tr>";
                 
+  include("ajax/ayudas/edit_modal.php");               
   include("ajax/ayudas/ver_modal.php");   
               }
-
+ 
 
             ?>
           </tbody>
