@@ -194,22 +194,28 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
               <div class="form-group col-md-12">
               <label>Seleccione las ayudas:</label>
               </div>
-            <div class="form-check col-md-4">
+            <div class="form-check col-md-3">
               <label>
                 <input type="checkbox" name="ayuda[]" value="Llamada" class="flat-red">
                     Llamada
               </label>
             </div>
-            <div class="form-check col-md-4">
+            <div class="form-check col-md-3">
               <label>
                 <input type="checkbox" name="ayuda[]" value="Visitar" class="flat-red">
                     Visitar
               </label>
             </div>
-            <div class="form-check col-md-4">
+            <div class="form-check col-md-3">
               <label>
                 <input type="checkbox" name="ayuda[]" value="Sin pase" class="flat-red">
                     Sin pase
+              </label>
+            </div>
+            <div class="form-check col-md-3">
+              <label>
+                <input type="checkbox" name="ayuda[]" value="Otros" class="flat-red">
+                    Otros
               </label>
             </div>
            

@@ -52,14 +52,14 @@
               <div class="form-group col-md-12">
               <label>Seleccione las ayudas:</label>
               </div>
-            <div class="form-check col-md-4"> 
+            <div class="form-check col-md-3"> 
               <label class="customcheck">
                 <input type="checkbox" name="ayuda[]" value="Llamada" <?php in_array('Llamada', $ayudas) ? print "checked" : "";  ?>>
                 <span class="checkmark"></span>
                     Llamada
               </label>
             </div>
-            <div class="form-check col-md-4">
+            <div class="form-check col-md-3">
               <label class="customcheck">
                 <input type="checkbox" name="ayuda[]" value="Visitar"  <?php in_array('Visitar', $ayudas) ? print "checked" : "";  ?>>
                  <span class="checkmark"></span>
@@ -71,6 +71,13 @@
                 <input type="checkbox" name="ayuda[]" value="Sin pase"  <?php in_array('Sin pase', $ayudas) ? print "checked" : "";  ?>>
                 <span class="checkmark"></span>
                     Sin pase
+              </label>
+            </div>
+            <div class="form-check col-md-2 ">
+              <label class="customcheck">
+                <input type="checkbox" name="ayuda[]" value="Otros"  <?php in_array('Otros', $ayudas) ? print "checked" : "";  ?>>
+                <span class="checkmark"></span>
+                    Otros
               </label>
             </div>
            
