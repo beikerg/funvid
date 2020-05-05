@@ -403,8 +403,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="NO V.GENERATIVO" class="flat-red" <?php in_array('NO V.GENERATIVO', $fallas) ? print "checked" : "";  ?>>
-                  NO V.GENERATIVO
+                  <input type="checkbox" name="falla[]" value="NO B.GENERATIVIDAD" class="flat-red" <?php in_array('NO B.GENERATIVIDAD', $fallas) ? print "checked" : "";  ?>>
+                  NO B.GENERATIVIDAD
                 </label>
               </div>
 
@@ -426,6 +426,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label>
                   <input type="checkbox" name="falla[]" value="MIRA A MODO PERSONAL" class="flat-red" <?php in_array('MIRA A MODO PERSONAL', $fallas) ? print "checked" : "";  ?>>
                   MIRA A MODO PERSONAL
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="IDEACIÓN DE ABANDONO" class="flat-red" <?php in_array('IDEACIÓN DE ABANDONO', $fallas) ? print "checked" : "";  ?>>
+                  IDEACIÓN DE ABANDONO
                 </label>
               </div>
 
@@ -584,8 +591,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                <div class="form-check">
                 <label>
-                  <input type="checkbox" name="falla[]" value="INECTO EN SU BRIG." class="flat-red" <?php in_array('INECTO EN SU BRIG.', $fallas) ? print "checked" : "";  ?>>
-                  INECTO EN SU BRIG.
+                  <input type="checkbox" name="falla[]" value="INEPTO EN SU BRIG." class="flat-red" <?php in_array('INEPTO EN SU BRIG.', $fallas) ? print "checked" : "";  ?>>
+                  INEPTO EN SU BRIG.
                 </label>
               </div>
 
@@ -595,6 +602,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   FRUSTRADO
                 </label>
               </div>
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="NO COMUNICA" class="flat-red" <?php in_array('NO COMUNICA', $fallas) ? print "checked" : "";  ?>>
+                  NO COMUNICA
+                </label>
+              </div>
+
           </div>
         </div>
                  
@@ -759,6 +774,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <label>
                   <input type="checkbox" name="falla[]" value="V.NORMAS-PAUTAS" class="flat-red" <?php in_array('V.NORMAS-PAUTAS', $fallas) ? print "checked" : "";  ?>>
                   V.NORMAS-PAUTAS
+                </label>
+              </div>
+
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="CLEPTÓMANO" class="flat-red" <?php in_array('CLEPTÓMANO', $fallas) ? print "checked" : "";  ?>>
+                  CLEPTÓMANO
                 </label>
               </div>
 
@@ -929,6 +951,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </label>
               </div>
 
+              <div class="form-check">
+                <label>
+                  <input type="checkbox" name="falla[]" value="AGRESIVO" class="flat-red" <?php in_array('AGRESIVO', $fallas) ? print "checked" : "";  ?>>
+                  AGRESIVO
+                </label>
+              </div>
 
 
               </div>
