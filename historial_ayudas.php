@@ -160,7 +160,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes");
             <?php
             $fHoy = date('Y-m-d');
               include('ajax/db_connection.php');
-              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda < '$fHoy'";
+              $sql = "SELECT r.id_residente, r.nombre, r.apellido, a.*, if(a.fecha_fin_ayuda >= '$fHoy', 'Activo', 'Finalizado') AS estado FROM residentes r INNER JOIN ayuda a ON r.id_residente = a.id_residente WHERE a.fecha_fin_ayuda < '$fHoy' AND a.fecha_fin_ayuda <> '0000-00-00'";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
