@@ -1,6 +1,6 @@
 
 <div class="row">
-	<center><h2>Abandono</h2></center>
+	<center><h2>Ideación de abandono</h2></center>
         <div class="col-md-12">
             <div class="pull-right">
                 <button class="btn btn-success" data-toggle="modal" data-target="#add_new_Aban_modal"><i class="fa fa-plus"></i> Añadir</button>

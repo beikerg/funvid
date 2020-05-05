@@ -66,7 +66,7 @@ $query = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$id_resid
               <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked nab-tabs tabs-left">
                   <li class="active"><a href="#abstinencia" data-toggle="tab"><i class="fa fa-ban"></i> Abstinencias</a></li>
-                  <li><a href="#abandono" data-toggle="tab"><i class="glyphicon glyphicon-exclamation-sign"></i> Abandono</a></li>
+                  <li><a href="#abandono" data-toggle="tab"><i class="glyphicon glyphicon-exclamation-sign"></i>Ideación de Abandono</a></li>
                   <li><a href="#ante-r" data-toggle="tab"><i class="glyphicon glyphicon-folder-open"></i> Antecedentes Relv.</a></li>
                   <li><a href="#inter-clinica" data-toggle="tab"><i class="fa fa-heartbeat"></i> Interv. Clínica </a></li>
                   <li><a href="#dental" data-toggle="tab"><i class="fa fa-user-md"></i> Tratamiento Dental</a></li>
