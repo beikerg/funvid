@@ -109,15 +109,15 @@
              
         
         <div class="form-group col-md-3"> 
-            <lavel for="rut">Rut:</lavel><br>
+            <label for="rut">Rut:</label><br>
             <input type="text" name="rut" id="rut" class="form-control" data-inputmask='"mask": " 99.999.999-*"' data-mask>
         </div>
 
         <div class="form-group col-md-3">
           <label for="sexo">Sexo:<br></label><br>
           <select class="form-control" name="sexo" id="sexo">
-            <option></option>
-            <option value"Masculino">Masculino</option>
+            <option>Seleccionar ...</option>
+            <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
           </select>
         </div>
@@ -126,7 +126,7 @@
         <!-- Abrir el row -->
         <div class="row">
         <div class="form-group col-md-3">
-            <label for="telefono">Telefono:</label><br>
+            <label for="telefono">Teléfono:</label><br>
             <input type="text" name="telefono" id="telefono" class="form-control" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
         </div>
         
@@ -148,7 +148,7 @@
         </div>
   
         <div class="form-group col-md-3">
-          <label for="profesion">Profesion:</label><br>
+          <label for="profesion">Profesión:</label><br>
           <input type="text" class="form-control" name="profesion" id="profesion">
         </div>
 
@@ -171,10 +171,17 @@
         </div>
         
         <div class="form-group col-md-3">
-            <label for="correo">Correo electronico:</label><br>
+            <label for="correo">Correo electrónico:</label><br>
             <input type="email" class="form-control" name="correo" id="correo" placeholder="ejemplo@ejemplo.com" >
         </div>
   </div><!-- cierre del row -->
+      
+      <div class="row">
+        <div class="form-group col-md-12">
+          <label for="Dirección últimos 03 meses">Dirección últimos 3 meses:</label>
+          <input type="text" class="form-control" name="direccion_3_m" id="direccion_3_m" placeholder="Cual fue su residencia en los últimos 3 meses" >
+        </div>
+      </div>
 
         
               
@@ -224,16 +231,30 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="telefono_p">Telefono:</label><br>
-                          <input type="text" class="form-control" name="telefono_p" id="telefono_p" placeholder="Telefono" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
+                          <label for="telefono_p">Teléfono personal:</label><br>
+                          <input type="text" class="form-control" name="telefono_p" id="telefono_p" placeholder="Telefono Personal" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="direccion_p">Direccion:</label><br>
-                          <input type="text" class="form-control" name="direccion_p" id="direccion_p" placeholder="Dirección">
+                          <label for="telefono_p">Teléfono trabajo:</label><br>
+                          <input type="text" class="form-control" name="telefono_p_t" id="telefono_p_t" placeholder="Telefono trabajo" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
-                    <div>
-                    <div class="form-group col-md-9">
+
+                  <div>
+
+                  
+                    <div class="form-group col-md-6">
+                            <label for="direccion_p">Dirección casa:</label><br>
+                            <input type="text" class="form-control" name="direccion_p" id="direccion_p" placeholder="Dirección de casa">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                            <label for="direccion_p">Dirección trabajo:</label><br>
+                            <input type="text" class="form-control" name="direccion_p_t" id="direccion_p_t" placeholder="Dirección trabajo actual">
+                    </div>
+
+                  
+                    <div class="form-group col-md-12">
                           <label for="tipo_relacion_p">Tipo de relación:</label><br>
                           <input type="text" class="form-control" name="tipo_relacion_p" id="tipo_relacion_p" placeholder="Tipo de relacion">
                     </div>
@@ -286,19 +307,35 @@
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="m_telefono">Telefono:</label><br>
-                          <input type="text" class="form-control" name="m_telefono" id="m_telefono" placeholder="Telefono" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
+                          <label for="m_telefono">Teléfono Personal:</label><br>
+                          <input type="text" class="form-control" name="m_telefono" id="m_telefono" placeholder="Teléfono personal" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="m_direccion">Direccion:</label><br>
-                          <input type="text" class="form-control" name="m_direccion" id="m_direccion" placeholder="Dirección">
+                          <label for="m_telefono">Teléfono Trabajo:</label><br>
+                          <input type="text" class="form-control" name="m_telefono_t" id="m_telefono_t" placeholder="Teléfono trabajo" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
-                    <div>
-                    <div class="form-group col-md-9">
-                          <label for="m_tipo_relacion">Tipo de relación:</label><br>
-                          <input type="text" class="form-control" name="m_tipo_relacion" id="m_tipo_relacion" placeholder="Tipo de relacion">
-                    </div>
+
+                    
+                    <div> <!-- Cierre del Row -->
+
+                    
+                      <div class="form-group col-md-6">
+                          <label for="m_direccion">Dirección Personal:</label><br>
+                          <input type="text" class="form-control" name="m_direccion" id="m_direccion" placeholder="Dirección personal">
+                      </div>
+
+                      <div class="form-group col-md-6">
+                          <label for="m_direccion">Dirección Trabajo:</label><br>
+                          <input type="text" class="form-control" name="m_direccion_t" id="m_direccion_t" placeholder="Dirección trabajo actual">
+                      </div>
+                    
+
+                      <div class="form-group col-md-12">
+                            <label for="m_tipo_relacion">Tipo de relación:</label><br>
+                            <input type="text" class="form-control" name="m_tipo_relacion" id="m_tipo_relacion" placeholder="Tipo de relacion">
+                      </div>
+                     
               </div>
             </div>
 
@@ -375,8 +412,8 @@
               
         <div class="row">
           <div class="col-md-12">
-            <div class="box box-solid">
-            <div class="box box-solid">
+            <div class="box">
+            <div class="box box-body pad">
               <div class="row">
               <div class="form-group col-md-3">
                 <label>Nombre:</label>
@@ -459,10 +496,13 @@
                           <input type="text" class="form-control" name="pareja_telf" id="pareja_telf" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
                   </div>
+                  <div class="row">
                     <div class="form-group col-md-12">
-                          <label for="pareja_trela">Tipo de relación:</label><br>
-                          <input type="text" class="form-control" name="pareja_trela" id="pareja_trela" placeholder="Tipo de relación">
-                    </div>
+                            <label for="pareja_trela">Tipo de relación:</label><br>
+                            <input type="text" class="form-control" name="pareja_trela" id="pareja_trela" placeholder="Tipo de relación">
+                      </div>
+                  </div>
+                    
                     </div>
                     
                   </div>
