@@ -118,6 +118,9 @@ include("include/rol.php");
           $localidad = $data['localidad'];
           $provincia = $data['provincia'];
           $correo = $data['correo'];
+          $direccion_3_m = $data['direccion_3_m'];
+          $direccion_consumo_3_m = $data['direccion_consumo_3_m'];
+
 
           #Familiares
             #Padre 
@@ -129,6 +132,9 @@ include("include/rol.php");
           $telefono_p = $data['telefono_p'];
           $direccion_p = $data['direccion_p'];
           $tipo_relacion_p = $data['tipo_relacion_p'];
+          $telefono_p_t = $data['telefono_p_t'];
+          $direccion_p_t = $data['direccion_p_t'];
+
 
             #Madre
 
@@ -140,6 +146,8 @@ include("include/rol.php");
           $m_telefono = $data['m_telefono'];
           $m_direccion = $data['m_direccion'];
           $m_tipo_relacion = $data['m_tipo_relacion'];
+          $m_telefono_t = $data['m_telefono_t'];
+          $m_direccion_t = $data['m_direccion_t'];
 
           #Pareja
 
@@ -152,7 +160,10 @@ include("include/rol.php");
           $pareja_hijos = $data['pareja_hijos'];
           $pareja_correo = $data['pareja_correo'];
           $pareja_telf = $data['pareja_telf'];
-          $pareja_trela = $data['pareja_trela']; 
+          $pareja_trela = $data['pareja_trela'];
+          $pareja_direccion_p = $data['pareja_direccion_p'];
+          $pareja_direccion_t = $data['pareja_direccion_t'];
+          $pareja_telf_t = $data['pareja_telf_t']; 
 
           #Tratamiento
 
@@ -170,6 +181,9 @@ include("include/rol.php");
           $rut_apo = $data['rut_apo'];
           $telefono_apo = $data['telefono_apo'];
           $tipo_r_apo = $data['tipo_r_apo'];
+          $direccion_apo = $data['direccion_apo'];
+          $direccion_apo_t = $data['direccion_apo_t'];
+          $telefono_apo_t = $data['telefono_apo_t'];
 
           # Antecedentes legales
 
@@ -294,7 +308,18 @@ include("include/rol.php");
             <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $correo; ?>" >
         </div>
   </div><!-- cierre del row -->
-
+      <div class="row">
+        <div class="form-group col-md-12">
+              <label for="direccion_3_m">Dirección últimos 3 meses:</label><br>
+              <input type="text" class="form-control" name="direccion_3_m" id="direccion_3_m" value="<?php echo $direccion_3_m; ?>" >
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-md-12">
+              <label for="direccion_consumo_3_m">Dirección de consumo en los últimos 3 meses:</label><br>
+              <input type="text" class="form-control" name="direccion_consumo_3_m" id="direccion_consumo_3_m" value="<?php echo $direccion_consumo_3_m; ?>" >
+        </div>
+      </div>
         
               
 
@@ -343,16 +368,27 @@ include("include/rol.php");
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="telefono_p">Telefono:</label><br>
+                          <label for="telefono_p">Teléfono personal:</label><br>
                           <input type="text" class="form-control" name="telefono_p" id="telefono_p" placeholder="<?php echo $telefono_p ?>" value="<?php echo $telefono_p; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask >
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="direccion_p">Direccion:</label><br>
+                          <label for="telefono_p_t">Teléfono trabajo:</label><br>
+                          <input type="text" class="form-control" name="telefono_p_t" id="telefono_p_t" placeholder="<?php echo $telefono_p_t ?>" value="<?php echo $telefono_p_t; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask >
+                    </div>
+
+                    
+                    <div>
+
+                    <div class="form-group col-md-6">
+                          <label for="direccion_p">Dirección personal:</label><br>
                           <input type="text" class="form-control" name="direccion_p" id="direccion_p" value="<?php echo $direccion_p; ?>">
                     </div>
-                    <div>
-                    <div class="form-group col-md-9">
+                    <div class="form-group col-md-6">
+                          <label for="direccion_p_t">Dirección trabajo:</label><br>
+                          <input type="text" class="form-control" name="direccion_p_t" id="direccion_p_t" value="<?php echo $direccion_p_t; ?>">
+                    </div>
+                    <div class="form-group col-md-12">
                           <label for="tipo_relacion_p">Tipo de relación:</label><br>
                           <input type="text" class="form-control" name="tipo_relacion_p" id="tipo_relacion_p" value="<?php echo $tipo_relacion_p; ?>">
                     </div>
@@ -405,16 +441,25 @@ include("include/rol.php");
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="m_telefono">Telefono:</label><br>
+                          <label for="m_telefono">Teléfono personal:</label><br>
                           <input type="text" class="form-control" name="m_telefono" id="m_telefono" placeholder="<?php echo $m_telefono; ?>" value="<?php echo $m_telefono; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                     </div>
 
                     <div class="form-group col-md-4">
-                          <label for="m_direccion">Direccion:</label><br>
+                          <label for="m_telefono_t">Teléfono trabajo:</label><br>
+                          <input type="text" class="form-control" name="m_telefono_t" id="m_telefono_t" placeholder="<?php echo $m_telefono_t; ?>" value="<?php echo $m_telefono_t; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
+                    </div>
+
+                    <div>
+                    <div class="form-group col-md-6">
+                          <label for="m_direccion">Dirección personal:</label><br>
                           <input type="text" class="form-control" name="m_direccion" id="m_direccion" value="<?php echo $m_direccion; ?>">
                     </div>
-                    <div>
-                    <div class="form-group col-md-9">
+                    <div class="form-group col-md-6">
+                          <label for="m_direccion_t">Dirección trabajo:</label><br>
+                          <input type="text" class="form-control" name="m_direccion_t" id="m_direccion_t" value="<?php echo $m_direccion_t; ?>">
+                    </div>
+                    <div class="form-group col-md-12">
                           <label for="m_tipo_relacion">Tipo de relación:</label><br>
                           <input type="text" class="form-control" name="m_tipo_relacion" id="m_tipo_relacion" value="<?php echo $m_tipo_relacion; ?>">
                     </div>
@@ -474,10 +519,27 @@ include("include/rol.php");
                           <input type="text" class="form-control" name="pareja_telf" id="pareja_telf" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask placeholder="<?php echo $pareja_telf; ?>" value="<?php echo $pareja_telf; ?>">
                     </div>
                   </div>
-                    <div class="form-group col-md-12">
-                          <label for="pareja_trela">Tipo de relación:</label><br>
-                          <input type="text" class="form-control" name="pareja_trela" id="pareja_trela" value="<?php echo $pareja_trela; ?>">
+                  <div class="row">
+                    <div class="form-group col-md-4">
+                            <label for="pareja_direccion_p">Dirección personal:</label><br>
+                            <input type="text" class="form-control" name="pareja_direccion_p" id="pareja_direccion_p" value="<?php echo $pareja_direccion_p; ?>">
                     </div>
+                    <div class="form-group col-md-4">
+                            <label for="pareja_direccion_t">Dirección trabajo:</label><br>
+                            <input type="text" class="form-control" name="pareja_direccion_t" id="pareja_direccion_t" value="<?php echo $pareja_direccion_t; ?>">
+                    </div>
+                    <div class="form-group col-md-4">
+                          <label for="pareja_telf_t">Teléfono trabajo:</label><br>
+                          <input type="text" class="form-control" name="pareja_telf_t" id="pareja_telf_t" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask placeholder="<?php echo $pareja_telf_t; ?>" value="<?php echo $pareja_telf_t; ?>">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-12">
+                            <label for="pareja_trela">Tipo de relación:</label><br>
+                            <input type="text" class="form-control" name="pareja_trela" id="pareja_trela" value="<?php echo $pareja_trela; ?>">
+                      </div>
+                  </div>
+                    
                     </div>
                     
                   </div>
@@ -504,8 +566,20 @@ include("include/rol.php");
                           <input type="text" name="rut_apo" id="rut_apo" class="form-control" data-inputmask='"mask": " 99.999.999-*"' data-mask value="<?php echo $rut_apo; ?>">
                         </div>
                         <div class="form-group col-md-3">
-                          <label for="telefono_apo">Telefono:</label><br>
+                          <label for="telefono_apo">Teléfono:</label><br>
                           <input type="text" class="form-control" name="telefono_apo" id="telefono_apo" placeholder="<?php echo $telefono_apo; ?>" value="<?php echo $telefono_apo; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label>Dirección personal:</label>
+                          <input type="text" class="form-control" name="direccion_apo" value="<?php echo $direccion_apo; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label>Dirección trabajo:</label>
+                          <input type="text" class="form-control" name="direccion_apo_t" value="<?php echo $direccion_apo_t; ?>">
+                        </div>
+                        <div class="form-group col-md-4">
+                          <label for="telefono_apo_t">Teléfono trabajo:</label><br>
+                          <input type="text" class="form-control" name="telefono_apo_t" id="telefono_apo_t" placeholder="<?php echo $telefono_apo_t; ?>" value="<?php echo $telefono_apo_t; ?>" data-inputmask='"mask": "+56 (9) 999-99-999"' data-mask>
                         </div>
                         <div class="form-group col-md-12">
                           <label>Tipo de relación:</label>
