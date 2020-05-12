@@ -19,6 +19,9 @@ require_once("../db_connection.php");
 			$localidad = $_POST['localidad'];
 			$provincia = $_POST['provincia'];
 			$correo = $_POST['correo'];
+			$direccion_3_m = $_POST['direccion_3_m'];
+			$direccion_consumo_3_m = $_POST['direccion_consumo_3_m'];
+
 
 			//Nucleo familiar
 				//Padre
@@ -31,6 +34,9 @@ require_once("../db_connection.php");
 				$telefono_p = $_POST['telefono_p'];
 				$direccion_p = $_POST['direccion_p'];
 				$tipo_relacion_p = $_POST['tipo_relacion_p'];
+				$telefono_p_t = $_POST['telefono_p_t'];
+				$direccion_p_t = $_POST['direccion_p_t'];
+
 
 				//Madre
 				$m_nombre = $_POST['m_nombre'];
@@ -41,6 +47,9 @@ require_once("../db_connection.php");
 				$m_telefono = $_POST['m_telefono'];
 				$m_direccion = $_POST['m_direccion'];
 				$m_tipo_relacion = $_POST['m_tipo_relacion']; 
+				$m_telefono_t = $_POST['m_telefono_t'];
+				$m_direccion_t = $_POST['m_direccion_t'];
+
 
 			// Pareja
 
@@ -53,6 +62,9 @@ require_once("../db_connection.php");
 				$pareja_correo = $_POST['pareja_correo'];
 				$pareja_telf = $_POST['pareja_telf'];
 				$pareja_trela = $_POST['pareja_trela']; 
+				$pareja_direccion_p = $_POST['pareja_direccion_p'];
+				$pareja_direccion_t = $_POST['pareja_direccion_t'];
+				$pareja_telf_t = $_POST['pareja_telf_t'];
 
 			// Tramatientos Anteriores
 
@@ -70,6 +82,9 @@ require_once("../db_connection.php");
 				$rut_apo = $_POST['rut_apo'];
 				$telefono_apo = $_POST['telefono_apo'];
 				$tipo_r_apo = $_POST['tipo_r_apo'];
+				$direccion_apo = $_POST['direccion_apo'];
+				$direccion_apo_t = $_POST['direccion_apo_t'];
+				$telefono_apo_t = $_POST['telefono_apo_t'];
 
 			// Antecedentes legales
 
@@ -78,7 +93,7 @@ require_once("../db_connection.php");
 				$tramite_p = $_POST['tramite_p'];
 
 
-			$query ="UPDATE residentes SET nombre = '$nombre', apellido = '$apellido', rut = '$rut', sexo = '$sexo', telefono = '$telefono', fecha = '$fecha', nivel = '$nivel', profesion = '$profesion', direccion = '$direccion', localidad = '$localidad', provincia = '$provincia', correo = '$correo' WHERE id_residente = '$id_residente' ";
+			$query ="UPDATE residentes SET nombre = '$nombre', apellido = '$apellido', rut = '$rut', sexo = '$sexo', telefono = '$telefono', fecha = '$fecha', nivel = '$nivel', profesion = '$profesion', direccion = '$direccion', localidad = '$localidad', provincia = '$provincia', correo = '$correo', direccion_3_m = '$direccion_3_m', direccion_consumo_3_m = '$direccion_consumo_3_m' WHERE id_residente = '$id_residente' ";
 
 
 
@@ -102,6 +117,8 @@ require_once("../db_connection.php");
 				telefono_p = '$telefono_p', 
 				direccion_p = '$direccion_p', 
 				tipo_relacion_p = '$tipo_relacion_p',
+				telefono_p_t = '$telefono_p_t',
+				direccion_p_t = '$direccion_p_t',
 				/* MADRE */
 				m_nombre = '$m_nombre', 
 				m_apellido = '$m_apellido', 
@@ -110,7 +127,9 @@ require_once("../db_connection.php");
 				m_ocupacion = '$m_ocupacion', 
 				m_telefono = '$m_telefono', 
 				m_direccion = '$m_direccion', 
-				m_tipo_relacion = '$m_tipo_relacion'
+				m_tipo_relacion = '$m_tipo_relacion',
+				m_direccion_t = '$m_direccion_t',
+				m_telefono_t = '$m_telefono_t'
 
 			WHERE 
 				id_residente = '$id_residente' ";
@@ -126,7 +145,10 @@ require_once("../db_connection.php");
 				   		pareja_hijos = '$pareja_hijos', 
 				  		pareja_correo = '$pareja_correo', 
 				  		pareja_telf = '$pareja_telf', 
-				   		pareja_trela = '$pareja_trela' 
+				   		pareja_trela = '$pareja_trela',
+						pareja_direccion_p = '$pareja_direccion_p',
+						pareja_direccion_t = '$pareja_direccion_t',
+						pareja_telf_t = '$pareja_telf_t'
 				   	WHERE 
 				   		id_residente = '$id_residente' ";
 
@@ -148,7 +170,10 @@ require_once("../db_connection.php");
 								apellido_apo = '$apellido_apo',
 								rut_apo = '$rut_apo',
 								telefono_apo = '$telefono_apo',
-								tipo_r_apo = '$tipo_r_apo'
+								tipo_r_apo = '$tipo_r_apo',
+								direccion_apo = '$direccion_apo',
+								direccion_apo_t = '$direccion_apo_t',
+								telefono_apo_t = '$telefono_apo_t'
 							WHERE
 								id_residente = '$id_residente' ";
 
