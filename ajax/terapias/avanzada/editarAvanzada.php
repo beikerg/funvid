@@ -6,41 +6,42 @@
 		
 		require_once("../../db_connection.php");
 
-		$id_t_conf = $_POST['id_t_conf'];
+		$id_avanzada = $_POST['id_avanzada'];
 		$id_residente = $_POST['id_residente'];
-		$colider_tc = $_POST['colider_tc'];
-		$lider_tc = $_POST['lider_tc'];
-		$director_tc = $_POST['director_tc'];
-		$fecha_tc = $_POST['fecha_tc'];
-		$h_inicio_tc = $_POST['h_inicio_tc'];
-		$h_fin_tc = $_POST['h_fin_tc'];
-		$o_lider_tc = $_POST['o_lider_tc'];
-		$o_colider_tc = $_POST['o_colider_tc'];
-		$o_director_tc = $_POST['o_director_tc'];
-		$actitud_tc = $_POST['actitud_tc'];
+		$colider_ta = $_POST['colider_ta'];
+		$lider_ta = $_POST['lider_ta'];
+		$edu_ta = $_POST['edu_ta'];
+		$fecha_ta = $_POST['fecha_ta'];
+		$h_inicio_ta = $_POST['h_inicio_ta'];
+		$h_fin_ta = $_POST['h_fin_ta'];
+		$o_lider_ta = $_POST['o_lider_ta'];
+		$o_colider_ta = $_POST['o_colider_ta'];
+		$o_edu_ta = $_POST['o_edu_ta'];
+		$actitud_ta = $_POST['actitud_ta'];
 		//Array falla.
 		$fallas  = implode(', ', $_POST['falla']) ;
 
 
-		$query = "UPDATE tera_confronta SET 
+		$query = "UPDATE avanzada SET 
 				  id_residente = '$id_residente',
-				  lider_tc = '$lider_tc',
-				  colider_tc = '$director_tc',
-				  fecha_tc = '$fecha_tc',
-				  h_inicio_tc = '$h_inicio_tc',
-				  h_fin_tc = '$h_fin_tc',
-				  o_lider_tc = '$o_lider_tc',
-				  o_colider_tc = '$o_colider_tc',
-				  o_director_tc = '$o_director_tc',
-				  fallas = '$fallas', 
-				  actitud_tc = '$actitud_tc' 
-		WHERE id_t_conf = '$id_t_conf'  ";
+				  lider_ta = '$lider_ta',
+				  colider_ta = '$colider_ta',
+				  edu_ta = '$edu_ta',
+				  fecha_ta = '$fecha_ta',
+				  h_inicio_ta = '$h_inicio_ta',
+				  h_fin_ta = '$h_fin_ta',
+				  o_lider_ta = '$o_lider_ta',
+				  o_colider_ta = '$o_colider_ta',
+				  o_edu_ta = '$o_edu_ta',
+				  fallas_ta = '$fallas', 
+				  actitud_ta = '$actitud_ta' 
+		WHERE id_avanzada = '$id_avanzada'  ";
 
 
 		if(!$result = $mysql->query($query)){
-			echo  "Error al agregar Terapia de confrontacion",$mysql->error;
+			echo  "Error al agregar Terapia de avanzada",$mysql->error;
 		}else{
-			header("location: ../../../ListaTConf.php");
+			header("location: ../../../ListaTAvanzada.php");
 			
 		}
 	

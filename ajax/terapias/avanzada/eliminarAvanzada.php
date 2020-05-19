@@ -6,14 +6,14 @@ if(isset($_GET['id']) && isset($_GET['id']) != "")
     require_once("../../db_connection.php");
 
     // get user id
-    $id_t_conf = $_GET['id'];
+    $id_avanzada = $_GET['id'];
 
     // delete User
-    $query = "DELETE FROM tera_confronta WHERE id_t_conf = '$id_t_conf' ";
+    $query = "DELETE FROM avanzada WHERE id_avanzada = '$id_avanzada' ";
     if (!$result = $mysql->query($query)) {
         echo (mysqli_errno());
     }else{
-    	header("Location: ../../../ListaTConf.php");
+    	header("Location: ../../../ListaTAvanzada.php");
     }
 }
 

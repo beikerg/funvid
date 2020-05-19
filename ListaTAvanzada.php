@@ -158,7 +158,7 @@
                   
                   <td align='center'>
 
-                    <a class='btn btn-warning' title='Editar' href='EditarTerapiaConfrontacion.php?id=".$row['id_residente']."&tera=".$row['id_avanzada']."'><i class='glyphicon glyphicon-pencil'></i></a>
+                    <a class='btn btn-warning' title='Editar' href='EditarTerapiaAvanzada.php?id=".$row['id_residente']."&tera=".$row['id_avanzada']."'><i class='glyphicon glyphicon-pencil'></i></a>
                   
                   <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_avanzada'].")'><i class='glyphicon glyphicon-trash'></i></a>
 
@@ -211,7 +211,7 @@
 <script type="text/javascript">
   function preguntar (id){
     if(confirm('¿Esta seguro que desa eliminar esta terapia?')){
-       window.location.href = "ajax/terapias/confrontacion/eliminarConfrontacion.php?id=" + id;
+       window.location.href = "ajax/terapias/avanzada/eliminarAvanzada.php?id=" + id;
                         
     }
    }

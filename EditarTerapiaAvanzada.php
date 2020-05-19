@@ -10,16 +10,16 @@
 
 
     $id_residente = $_GET['id'];
-    $id_t_conf = $_GET['tera'];
+    $id_avanzada = $_GET['tera'];
 
-    $q = "SELECT r.nombre, r.apellido, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN tera_confronta t ON t.id_residente = r.id_residente WHERE t.id_residente = '$id_residente' AND t.id_t_conf = '$id_t_conf' ";
+    $q = "SELECT r.nombre, r.apellido, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN avanzada t ON t.id_residente = r.id_residente WHERE t.id_residente = '$id_residente' AND t.id_avanzada = '$id_avanzada' ";
     $sql = $mysql->query($q);
     mysqli_close($mysql);
     $result = mysqli_num_rows($sql);
 
       if($result == 0 )
       {
-        header('Location: ListaTConf.php');
+        header('Location: ListaTAvanzada.php');
       }else{
 
         while ($data = mysqli_fetch_array($sql)){
@@ -28,19 +28,19 @@
           $apellido = $data['apellido'];
           $sexo = $data['sexo'];
           $fecha = $data['fecha'];
-          $id_t_conf = $data['id_t_conf'];
-          $lider_tc = $data['lider_tc'];
-          $colider_tc = $data['colider_tc'];
-          $director_tc = $data['director_tc'];
-          $fecha_tc = $data['fecha_tc'];
-          $h_inicio_tc = $data['h_inicio_tc'];
-          $h_fin_tc = $data['h_fin_tc'];        
-          $o_lider_tc = $data['o_lider_tc'];
-          $o_colider_tc = $data['o_colider_tc'];
-          $o_director_tc = $data['o_director_tc'];
-          $actitud_tc = $data['actitud_tc'];
+          $id_avanzada = $data['id_avanzada'];
+          $lider_ta = $data['lider_ta'];
+          $colider_ta = $data['colider_ta'];
+          $edu_ta = $data['edu_ta'];
+          $fecha_ta = $data['fecha_ta'];
+          $h_inicio_ta = $data['h_inicio_ta'];
+          $h_fin_ta = $data['h_fin_ta'];        
+          $o_lider_ta = $data['o_lider_ta'];
+          $o_colider_ta = $data['o_colider_ta'];
+          $o_edu_ta = $data['o_edu_ta'];
+          $actitud_ta = $data['actitud_ta'];
           
-          $fallas = explode(', ', $data['fallas']); 
+          $fallas = explode(', ', $data['fallas_ta']); 
         }
       }
 
@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="es">
 <head>
   
-  <title>FUNVID | Terapia de confrontación</title>
+  <title>FUNVID | Terapia de Avanzada</title>
   <?php include("include/head.php"); ?>
 </head>
 
@@ -85,13 +85,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapia de confrontación
+        Terapia de Avanzada
         <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Terapeuta</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Terapia de confrontación</li>
+        <li class="active">Terapia de Avanzada</li>
       </ol>
     </section>
 
@@ -104,7 +104,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
   
 
-       <form action="ajax/terapias/confrontacion/editarConfrontacion.php?id=<?php echo $id_residente; ?>&tera=<?php echo $id_t_conf; ?>" method="POST">
+       <form action="ajax/terapias/avanzada/editarAvanzada.php?id=<?php echo $id_residente; ?>&tera=<?php echo $id_avanzada; ?>" method="POST">
       
             
           
@@ -128,7 +128,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- // INICIO DEL BODY DEL BOX //-->
               <div class="containe">
                  
-                 <input type="hidden" name="id_t_conf" value="<?php echo $id_t_conf; ?>"> 
+                 <input type="hidden" name="id_avanzada" value="<?php echo $id_avanzada; ?>"> 
                 
                  <input type="hidden" name="id_residente" value="<?php echo $id_residente; ?>" >
                     <div class="row">
@@ -189,17 +189,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                      <div class="row">
                       <div class="form-group col-md-4">
                          <label>Nombre Lider:</label>
-                          <input class="form-control" type="text" name="lider_tc" id="lider_tc" value="<?php echo $lider_tc; ?>">
+                          <input class="form-control" type="text" name="lider_ta" id="lider_ta" value="<?php echo $lider_ta; ?>">
                       </div> 
 
                       <div class="form-group col-md-4">                          
                               <label>Nombre Colider:</label>
-                              <input class="form-control" type="text" name="colider_tc" id="colider_tc" value="<?php echo $colider_tc; ?>">                          
+                              <input class="form-control" type="text" name="colider_ta" id="colider_ta" value="<?php echo $colider_ta; ?>">                          
                       </div>
                       
                       <div class="form-group col-md-4">                          
-                              <label>Director:</label>
-                              <input class="form-control" type="text" name="director_tc" id="director_tc" value="<?php echo $director_tc; ?>">                          
+                              <label>Educadores:</label>
+                              <input class="form-control" type="text" name="edu_ta" id="edu_ta" value="<?php echo $edu_ta; ?>">                          
                       </div>
                      </div> 
                       
@@ -214,7 +214,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="date" name="fecha_tc" class="form-control pull-right" value="<?php echo $fecha_tc; ?>">
+                  <input type="date" name="fecha_ta" class="form-control pull-right" value="<?php echo $fecha_ta; ?>">
                 </div>
                 <!-- /.input group -->
               </div>
@@ -222,12 +222,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       
                       <div class="form-group col-md-4">
                           <label>Hora inicio:</label>
-                          <input class="form-control" name="h_inicio_tc" type="time" value="<?php echo $h_inicio_tc; ?>">
+                          <input class="form-control" name="h_inicio_ta" type="time" value="<?php echo $h_inicio_ta; ?>">
                       </div>
                       
                       <div class="form-group col-md-4">
                           <label>Hora termino:</label>
-                          <input class="form-control" name="h_fin_tc" type="time" value="<?php echo $h_fin_tc; ?>" >
+                          <input class="form-control" name="h_fin_ta" type="time" value="<?php echo $h_fin_ta; ?>" >
                       </div>
                       </div> <!--// FIN DEL FORN-INLINE//-->
                  
@@ -991,17 +991,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                    
                       <div class="form-group">
                   <label>Observaciones Lider</label>
-                  <textarea class="form-control" rows="3" name="o_lider_tc" placeholder="Observaciones ..."><?php echo $o_lider_tc; ?></textarea>
+                  <textarea class="form-control" rows="3" name="o_lider_ta" placeholder="Observaciones ..."><?php echo $o_lider_ta; ?></textarea>
                 </div>
                     
                     <div class="form-group">
                   <label>Observaciones Colider</label>
-                  <textarea class="form-control" rows="3" name="o_colider_tc" placeholder="Observaciones ..."><?php echo $o_colider_tc; ?></textarea>
+                  <textarea class="form-control" rows="3" name="o_colider_ta" placeholder="Observaciones ..."><?php echo $o_colider_ta; ?></textarea>
                 </div>
                      
                     <div class="form-group">
-                  <label>Observaciones Director</label>
-                  <textarea class="form-control" rows="3" name="o_director_tc" placeholder="Observaciones ..."><?php echo $o_director_tc; ?></textarea>
+                  <label>Observaciones Generales Educadores</label>
+                  <textarea class="form-control" rows="3" name="o_edu_ta" placeholder="Observaciones generales de educadores ..."><?php echo $o_edu_ta; ?></textarea>
                 </div>
                       
                
@@ -1042,7 +1042,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 
                   <div class="form-group">
                     <!-- <label>Actitud asumida por el residente</label> -->
-                    <textarea class="form-control" rows="3" name="actitud_tc" placeholder="Actitud asumida ..."><?php echo $actitud_tc; ?></textarea>
+                    <textarea class="form-control" rows="3" name="actitud_ta" placeholder="Actitud asumida ..."><?php echo $actitud_ta; ?></textarea>
                   </div>
                     
                   
