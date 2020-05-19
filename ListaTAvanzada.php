@@ -162,7 +162,7 @@
                   
                   <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_avanzada'].")'><i class='glyphicon glyphicon-trash'></i></a>
 
-                  <a href='genera_pdf/TConfronta.php?id=".$row['id_residente']."&tera=".$row['id_avanzada']."' target='_blank' class='btn btn-info'><i class='fa fa-file-pdf-o'></i> <strong>PDF <strong></a>
+                  <a href='genera_pdf/TAvanzada.php?id=".$row['id_residente']."&tera=".$row['id_avanzada']."' target='_blank' class='btn btn-info'><i class='fa fa-file-pdf-o'></i> <strong>PDF <strong></a>
                     
                   </td>
                 </tr>";
