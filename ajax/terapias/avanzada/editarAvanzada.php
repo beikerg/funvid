@@ -18,6 +18,7 @@
 		$o_colider_ta = $_POST['o_colider_ta'];
 		$o_edu_ta = $_POST['o_edu_ta'];
 		$actitud_ta = $_POST['actitud_ta'];
+		$etapa_ta = $_POST['etapa_ta'];
 		//Array falla.
 		$fallas  = implode(', ', $_POST['falla']) ;
 
@@ -34,7 +35,8 @@
 				  o_colider_ta = '$o_colider_ta',
 				  o_edu_ta = '$o_edu_ta',
 				  fallas_ta = '$fallas', 
-				  actitud_ta = '$actitud_ta' 
+				  actitud_ta = '$actitud_ta',
+				  etapa_ta = '$etapa_ta'
 		WHERE id_avanzada = '$id_avanzada'  ";
 
 

@@ -39,6 +39,7 @@
           $o_colider_ta = $data['o_colider_ta'];
           $o_edu_ta = $data['o_edu_ta'];
           $actitud_ta = $data['actitud_ta'];
+          $etapa_ta = $data['etapa_ta'];
           
           $fallas = explode(', ', $data['fallas_ta']); 
         }
@@ -142,12 +143,31 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <input class="form-control" type="text" value="<?php echo $apellido; ?>" disabled>
                       </div>
                       
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                           <label>Edad:</label>
                           <input class="form-control" type="text" value="<?php echo $edad; ?>" disabled>
                       </div>
+
+                      <div class="form-group col-md-2">
+                        <label>Etapa actual:</label> 
+                        <select class="form-control" name="etapa_ta" id="etapa_ta">
+                          <option placeholder="Seleccionar etapa.." value="<?php echo $etapa_ta; ?>"><?php echo $etapa_ta; ?></option>
+                          <option value="INTEGRACIÓN">INTEGRACIÓN</option>
+                          <option value="CONFIANZA">CONFIANZA</option>
+                          <option value="INICIATIVA">INICIATIVA</option>
+                          <option value="IDENTIDAD">IDENTIDAD</option>
+                          <option value="TRASCENDENCIA">TRASCENDENCIA</option>
+                          <option value="EDUCADOR-1">EDUCADOR 1</option>
+                          <option value="EDUCADOR-2">EDUCADOR 2</option>
+                          <option value="EDUCADOR-3">EDUCADOR 3</option>
+                          <option value="EDUCADOR-4">EDUDADOR 4</option>
+                          <option value="REDUCADO">REDUCADO</option>
+                          <option value="ABANDONO">ABANDONO</option>
+                         </select>
+                        
+                      </div>
                       
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                           <label>Sexo:</label>
                           <input class="form-control" type="text" value="<?php echo $sexo; ?>" disabled>
                       </div>

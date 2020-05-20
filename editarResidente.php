@@ -250,7 +250,7 @@ include("include/rol.php");
           <label for="sexo">Sexo:<br></label><br>
           <select class="form-control" name="sexo" id="sexo">
             <option value="<?php echo $sexo; ?>"><?php echo $sexo; ?></option>
-            <option value"Masculino">Masculino</option>
+            <option value="Masculino">Masculino</option>
             <option value="Femenino">Femenino</option>
           </select>
         </div>

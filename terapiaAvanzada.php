@@ -132,8 +132,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       </div>
 
                       <div class="form-group col-md-2">
-                        <label>Etapa actual:</label>
-                        <input class="form-control" type="text" value="<?php echo $etapa_resi; ?>" disabled>
+                        <label>Etapa actual:</label> 
+                        <select class="form-control" name="etapa_ta" id="etapa_ta">
+                          <option placeholder="Seleccionar etapa.." value="<?php echo $etapa_resi; ?>"><?php echo $etapa_resi; ?></option>
+                          <option value="INTEGRACIÓN">INTEGRACIÓN</option>
+                          <option value="CONFIANZA">CONFIANZA</option>
+                          <option value="INICIATIVA">INICIATIVA</option>
+                          <option value="IDENTIDAD">IDENTIDAD</option>
+                          <option value="TRASCENDENCIA">TRASCENDENCIA</option>
+                          <option value="EDUCADOR-1">EDUCADOR 1</option>
+                          <option value="EDUCADOR-2">EDUCADOR 2</option>
+                          <option value="EDUCADOR-3">EDUCADOR 3</option>
+                          <option value="EDUCADOR-4">EDUDADOR 4</option>
+                          <option value="REDUCADO">REDUCADO</option>
+                          <option value="ABANDONO">ABANDONO</option>
+                         </select>
+                        <!-- <input class="form-control" type="text" value="<?php// echo $etapa_resi; ?>" disabled> -->
                       </div>
                       
                       <div class="form-group col-md-2">
