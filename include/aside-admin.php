@@ -41,6 +41,7 @@
                 <li><a href="ListaTerapiaRelatoPase.php"><i class="fa fa-circle-o"></i>Relato de pase</a></li>
                 <li><a href="ListaTGrupal.php"><i class="fa fa-circle-o"></i>Grupal</a></li>
                 <li><a href="ListaTInf.php"><i class="fa fa-circle-o"></i>Informativa</a></li>
+                <li><a href="ListaTAvanzada.php"><i class="fa fa-circle-o"></i>Avanzada</a></li>
               </ul>
             </li>';
 

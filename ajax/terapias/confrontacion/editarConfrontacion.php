@@ -25,7 +25,8 @@
 		$query = "UPDATE tera_confronta SET 
 				  id_residente = '$id_residente',
 				  lider_tc = '$lider_tc',
-				  colider_tc = '$director_tc',
+				  colider_tc = '$colider_tc',
+				  director_tc = '$director_tc',
 				  fecha_tc = '$fecha_tc',
 				  h_inicio_tc = '$h_inicio_tc',
 				  h_fin_tc = '$h_fin_tc',
