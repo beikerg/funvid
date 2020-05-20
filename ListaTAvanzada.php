@@ -24,13 +24,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista Terapia de Avanzadas
+        Lista Terapia de Avanzada
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Lista de Terapia de Avanzadas</li>
+        <li class="active">Lista de Terapia de Avanzada</li>
       </ol>
     </section>
 
@@ -59,20 +59,26 @@
         <h4 class="modal-title">Seleccione el Residente</h4>
       </div>
       <div class="modal-body">
-       
+        
+        
+          
+
+
+     
 
       
    <!-- Archivo JS-->
   <div classs="container">    
      <div class="box box-solid"> 
-      <div class="box-body table-responsive no-padding">
+      <div class="box-body">
       <div class="row">
         <div class="col-xs-12">
-        <table id="myTable" class="table table-bordered table-striped dt-responsive nowrap">
+        <table id="myTable" class=" table table-bordered table-striped">
           <thead>
             <th>ID</th>
             <th>Nombres</th>
             <th>Apellido</th>
+            <th>Rut</th>
             <th>Etapa</th>
             <th><center>Opciones</center></th>
 
@@ -90,6 +96,7 @@
                   <td>".$row['id_residente']."</td>
                   <td>".$row['nombre']."</td>
                   <td>".$row['apellido']."</td>
+                  <td>".$row['rut']."</td>
                   <td>".$row['etapa_resi']."</td>
                   
                   
@@ -111,23 +118,34 @@
     </div>
     </div>
     </div>
+
+  
+
+
           </div>
             
         </div>
         </div>
       </div>
+     
+ 
+    
+       
+            
 
+      
+           
+          
       <!-- Lista de Terapias de confrontación -->
-    <div classs="container">
-    <div class="col-md-12">    
+    <div classs="container">    
      <div class="box box-solid">
      <div class="box-header with-border">
         <h3 class="box-title">Listar Terapias</h3>
-      </div>
-      <div class="container">
-      <div class="box-body table-responsive no-padding">
-       <div class="col-xs-12">
-        <table id="" class="display table table-bordered table-striped dt-responsive nowrap">
+      </div> 
+      <div class="box-body">
+      <div class="row">
+        <div class="col-xs-12">
+        <table id="" class="display table table-bordered table-striped">
           <thead>
             <th>ID</th>
             <th>Nombres</th>
@@ -145,7 +163,6 @@
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
-              
               while($row = $query->fetch_assoc()){
                 echo 
                 "<tr>
@@ -170,18 +187,12 @@
                 
               }
 
-             if(mysqli_num_rows($query) == 0){
-               echo '<tr><td colspan="6"><center><h4>¡Aún no hay ningún registro!<h4></center></td></tr>';
-             }
-
               $mysql->close();
             ?>
           </tbody>
         </table>
       </div>
       </div>
-    </div>
-    </div>
     </div>
     </div>
     </div>
