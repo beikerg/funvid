@@ -145,6 +145,7 @@
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
+              
               while($row = $query->fetch_assoc()){
                 echo 
                 "<tr>
@@ -168,6 +169,10 @@
                 </tr>";
                 
               }
+
+             if(mysqli_num_rows($query) == 0){
+               echo '<tr><td colspan="6"><center><h4>¡Aún no hay ningún registro!<h4></center></td></tr>';
+             }
 
               $mysql->close();
             ?>
