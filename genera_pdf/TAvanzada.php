@@ -28,6 +28,7 @@
           $o_colider_ta = $data['o_colider_ta'];
           $o_edu_ta = $data['o_edu_ta'];
           $actitud_ta = $data['actitud_ta'];
+          $etapa_ta = $data['etapa_ta'];
           $f = $data['fallas_ta'];
           $fallas = explode(', ', $data['fallas_ta']); 
         }
@@ -69,7 +70,7 @@
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(22, 7, 'Etapa:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  $pdf->Cell(70, 7, utf8_decode($etapa_resi), 0, 0, '', 0);
+  $pdf->Cell(70, 7, utf8_decode($etapa_ta), 0, 0, '', 0);
 
   // NOMBRE COLIDER
   $pdf->SetFont('Arial', 'B', 12);

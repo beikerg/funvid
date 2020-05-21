@@ -15,11 +15,12 @@
 		$o_colider_ta = $_POST['o_colider_ta'];
 		$o_edu_ta = $_POST['o_edu_ta'];
 		$actitud_ta = $_POST['actitud_ta'];
+		$etapa_ta = $_POST['etapa_ta'];
 		//Array falla.
 		$fallas  = implode(', ', $_POST['falla']) ;
 
 
-		$query ="INSERT INTO avanzada (id_residente, lider_ta, colider_ta, edu_ta, fecha_ta, h_inicio_ta, h_fin_ta, o_lider_ta, o_colider_ta, o_edu_ta, fallas_ta, actitud_ta) VALUES ('$id_residente', '$lider_ta', '$colider_ta', '$edu_ta', '$fecha_ta', '$h_inicio_ta', '$h_fin_ta', '$o_lider_ta', '$o_colider_ta', '$o_edu_ta', '$fallas', '$actitud_ta')";
+		$query ="INSERT INTO avanzada (id_residente, lider_ta, colider_ta, edu_ta, fecha_ta, h_inicio_ta, h_fin_ta, o_lider_ta, o_colider_ta, o_edu_ta, fallas_ta, actitud_ta, etapa_ta) VALUES ('$id_residente', '$lider_ta', '$colider_ta', '$edu_ta', '$fecha_ta', '$h_inicio_ta', '$h_fin_ta', '$o_lider_ta', '$o_colider_ta', '$o_edu_ta', '$fallas', '$actitud_ta', '$etapa_ta')";
 
 		if(!$result = $mysql->query($query)){
 			echo  "Error al agregar Terapia de Avanzada",$mysql->error;
