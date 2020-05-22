@@ -6,7 +6,7 @@
     include("ajax/db_connection.php");
 
     if(empty($_GET['id'])){
-      header("location: ListaTConf.php");
+      header("location: ListaTAvanzada.php");
     }
 
 

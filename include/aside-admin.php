@@ -42,6 +42,7 @@
                 <li><a href="ListaTGrupal.php"><i class="fa fa-circle-o"></i>Grupal</a></li>
                 <li><a href="ListaTInf.php"><i class="fa fa-circle-o"></i>Informativa</a></li>
                 <li><a href="ListaTAvanzada.php"><i class="fa fa-circle-o"></i>Avanzada</a></li>
+                <li><a href="ListaTEspecial.php"><i class="fa fa-circle-o"></i>Especial</a></li>
               </ul>
             </li>';
 
