@@ -292,3 +292,13 @@ $(document).ready(function(){
     });
   </script>
 
+
+   <!-- // SECCIÓN DE SELECCIONAR TODAS LAS CASILLAS DE CHECKED FALLAS // -->
+
+<!-- <script type="text/javascript">
+ $('#checkall').change(function(){
+   $('.flat-red').prop("checked", $(this).prop("checked"))
+ })
+ 
+ 
+</script> -->
