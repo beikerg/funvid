@@ -43,6 +43,7 @@
                 <li><a href="ListaTInf.php"><i class="fa fa-circle-o"></i>Informativa</a></li>
                 <li><a href="ListaTAvanzada.php"><i class="fa fa-circle-o"></i>Avanzada</a></li>
                 <li><a href="ListaTEspecial.php"><i class="fa fa-circle-o"></i>Especial</a></li>
+                <li><a href="ListaTEducador.php"><i class="fa fa-circle-o"></i>Reunión Educadores</a></li>
               </ul>
             </li>';
 
