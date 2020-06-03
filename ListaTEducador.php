@@ -227,7 +227,7 @@
 <script type="text/javascript">
   function preguntar (id){
     if(confirm('¿Esta seguro que desa eliminar esta terapia?')){
-       window.location.href = "ajax/terapias/avanzada/eliminarEducador.php?id=" + id;
+       window.location.href = "ajax/terapias/reunion-educadores/eliminarEducador.php?id=" + id;
                         
     }
    }

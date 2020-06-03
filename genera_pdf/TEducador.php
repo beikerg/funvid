@@ -5,9 +5,9 @@
   require_once("../ajax/db_connection.php");
 
   $id_residente = $_GET['id'];
-  $id_avanzada = $_GET['tera'];
+  $id_redu = $_GET['tera'];
 
-  $query = $mysql->query("SELECT r.nombre, r.apellido, r.etapa_resi, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN avanzada t ON t.id_residente = r.id_residente WHERE t.id_residente = '$id_residente' AND t.id_avanzada = '$id_avanzada'");
+  $query = $mysql->query("SELECT r.nombre, r.apellido, r.etapa_resi, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN reunion_educadores t ON t.id_residente = r.id_residente WHERE t.id_residente = '$id_residente' AND t.id_redu = '$id_redu'");
 
 
  while ($data = mysqli_fetch_array($query)){
@@ -17,20 +17,20 @@
           $sexo = $data['sexo'];
           $fecha = $data['fecha'];
           $etapa_resi = $data['etapa_resi'];
-          $id_avanzada = $data['id_avanzada'];
-          $lider_ta = $data['lider_ta'];
-          $colider_ta = $data['colider_ta'];
-          $edu_ta = $data['edu_ta'];
-          $fecha_ta = $data['fecha_ta'];
-          $h_inicio_ta = $data['h_inicio_ta'];
-          $h_fin_ta = $data['h_fin_ta'];        
-          $o_lider_ta = $data['o_lider_ta'];
-          $o_colider_ta = $data['o_colider_ta'];
-          $o_edu_ta = $data['o_edu_ta'];
-          $actitud_ta = $data['actitud_ta'];
-          $etapa_ta = $data['etapa_ta'];
-          $f = $data['fallas_ta'];
-          $fallas = explode(', ', $data['fallas_ta']); 
+          $id_redu = $data['id_redu'];
+          $lider_redu = $data['lider_redu'];
+          $colider_redu = $data['colider_redu'];
+          $edu_redu = $data['edu_redu'];
+          $fecha_redu = $data['fecha_redu'];
+          $h_inicio_redu = $data['h_inicio_redu'];
+          $h_fin_redu = $data['h_fin_redu'];        
+          $o_lider_redu = $data['o_lider_redu'];
+          $o_colider_redu = $data['o_colider_redu'];
+          $o_edu_redu = $data['o_edu_redu'];
+          $actitud_redu = $data['actitud_redu'];
+          $etapa_redu = $data['etapa_redu'];
+          $f = $data['fallas_redu'];
+          $fallas = explode(', ', $data['fallas_redu']); 
         }
 
 
@@ -40,7 +40,7 @@
   // titulo de la pagina.
   $pdf->SetFont('Arial', 'B', 14);
   $pdf->SetMargins(15,15,15,15);
-  $pdf->Cell(190, 7, utf8_decode('Terapia de avanzada'), 0, 0, 'C');
+  $pdf->Cell(190, 7, utf8_decode('Terapia Reunión de Educadores'), 0, 0, 'C');
   $pdf->Ln();
   $pdf->Ln();
   
@@ -58,8 +58,8 @@
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(30, 7, 'Lider:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  if(isset($lider_ta) && $lider_ta != ""){
-    $pdf->Cell(60, 7, utf8_decode($lider_ta), 0, 0, '', 0);
+  if(isset($lider_redu) && $lider_redu != ""){
+    $pdf->Cell(60, 7, utf8_decode($lider_redu), 0, 0, '', 0);
   }else{
     $pdf->Cell(60, 7, utf8_decode(' - '), 0, 0, '', 0);
   }
@@ -70,14 +70,14 @@
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(22, 7, 'Etapa:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  $pdf->Cell(70, 7, utf8_decode($etapa_ta), 0, 0, '', 0);
+  $pdf->Cell(70, 7, utf8_decode($etapa_redu), 0, 0, '', 0);
 
   // NOMBRE COLIDER
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(30, 7, 'C/Lider:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  if(isset($colider_ta) && $colider_ta != ""){
-    $pdf->Cell(60, 7, utf8_decode($colider_ta), 0, 0, '', 0);
+  if(isset($colider_redu) && $colider_redu != ""){
+    $pdf->Cell(60, 7, utf8_decode($colider_redu), 0, 0, '', 0);
   }else{
     $pdf->Cell(60, 7, utf8_decode(' - '), 0, 0, '', 0);
   }
@@ -88,13 +88,13 @@
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(22, 7, 'Fecha:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  $pdf->Cell(70, 7, date('d-m-Y', strtotime($fecha_ta)), 0, 0, '', 0);
+  $pdf->Cell(70, 7, date('d-m-Y', strtotime($fecha_redu)), 0, 0, '', 0);
 
   // NOMBRE DIRECTOR TERAPIA
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(30, 7, 'Educadores:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  if(isset($director_ta) && $director_ta != ""){
+  if(isset($director_redu) && $director_redu != ""){
     $pdf->Cell(60, 7, utf8_decode($director_ta), 0, 0, '', 0); // MODIFICAR ESTO PARA QUE APARESCA EL EDUCADORES PARTICIPANTES
   }else{
     $pdf->Cell(60, 7, utf8_decode(' - '), 0, 0, '', 0);
@@ -106,13 +106,13 @@
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(22, 7, 'Hr. Inicio:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  $pdf->Cell(70, 7, utf8_decode($h_inicio_ta), 0, 0, '', 0);
+  $pdf->Cell(70, 7, utf8_decode($h_inicio_redu), 0, 0, '', 0);
 
   // HORA FIN TERAPIA
   $pdf->SetFont('Arial', 'B', 12);
   $pdf->Cell(30, 7, 'Hr. Termino:', 0, 0, '', 0);
   $pdf->SetFont('Arial', '', 12);
-  $pdf->Cell(60, 7, utf8_decode($h_fin_ta), 0, 0, '', 0);
+  $pdf->Cell(60, 7, utf8_decode($h_fin_redu), 0, 0, '', 0);
   $pdf->Ln(15);
 
         
@@ -152,40 +152,40 @@ if(isset($f) && $f != ""){
    $pdf->Ln(15);
 
   // ACTITUD ASUMIDA POR EL RESIDNETE
-  if(isset($actitud_ta) && $actitud_ta != ""){
+  if(isset($actitud_redu) && $actitud_redu != ""){
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(180, 7, utf8_decode('   Actitud Asumida por el residente: '), 0, 1, '', 0);
     $pdf->SetFont('Arial', '', 12);
-    $pdf->Write(5, utf8_decode($actitud_ta));
+    $pdf->Write(5, utf8_decode($actitud_redu));
     $pdf->Ln(10);
   } 
 
    //OBSERVACIONES DIRECTOR DE TERAPIA
-   if(isset($o_edu_ta) && $o_edu_ta != ""){
+   if(isset($o_edu_redu) && $o_edu_redu != ""){
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(180, 7, '    Observaciones Director:', 0, 1, '', 0);
     $pdf->SetFont('Arial', '', 12);
-    $pdf->Write(5, utf8_decode($o_edu_ta));
+    $pdf->Write(5, utf8_decode($o_edu_redu));
     $pdf->Ln(10);
    }
   
 
   // OBSERVACIONES LIDER
-  if(isset($o_lider_ta) && $o_lider_ta != ""){
+  if(isset($o_lider_redu) && $o_lider_redu != ""){
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(180, 7, '    Observaciones Lider:', 0, 1, '', 0);
     $pdf->SetFont('Arial', '', 12);
-    $pdf->Write(5, utf8_decode($o_lider_ta));
+    $pdf->Write(5, utf8_decode($o_lider_redu));
     $pdf->Ln(10);
   }
   
   
   // OBSERVACIONES COLIDER
-  if(isset($o_colider_ta) && $o_colider_ta != ""){
+  if(isset($o_colider_redu) && $o_colider_redu != ""){
     $pdf->SetFont('Arial', 'B', 12);
     $pdf->Cell(180, 7, '    Observaciones C/Lider:', 0, 1, '', 0);
     $pdf->SetFont('Arial', '', 12);
-    $pdf->Write(5, utf8_decode($o_colider_ta));
+    $pdf->Write(5, utf8_decode($o_colider_redu));
     $pdf->Ln();
   }
 
@@ -193,7 +193,7 @@ if(isset($f) && $f != ""){
   
 
   $pdf->Close();
-  $pdf->Output('I', 'Terapia-Avanzada-'.$fecha_ta.'.pdf');
+  $pdf->Output('I', 'Terapia-Reunión-Educadores-'.$fecha_redu.'.pdf');
 
 
 ?>
