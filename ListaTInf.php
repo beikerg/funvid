@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Informativa</title>
+   <title>FUNVID | Terapia espiritual o reflexiva</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -24,13 +24,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista Terapia Informativa
+        Lista Terapia espiritual o reflexiva
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Lista de Terapia Informativa</li>
+        <li class="active">Lista de Terapia espiritual o reflexiva</li>
       </ol>
     </section>
 

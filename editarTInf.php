@@ -11,7 +11,7 @@ include("ajax/db_connection.php");
       header("Location: ListaTInf.php");
      
     }
-    $id_ti = $_GET['id'];
+    $id_ti = $_GET['id']; 
     
  
     $q = "SELECT * FROM tera_inf WHERE id_ti = '$id_ti'";
@@ -28,6 +28,7 @@ include("ajax/db_connection.php");
          
           $id_ti = $data['id_ti'];
           $director_ti = $data['director_ti'];
+          $colider_ti = $data['colider_ti'];
           $fecha_ti = $data['fecha_ti'];
           $h_inicio_ti = $data['h_inicio_ti'];
           $h_fin_ti = $data['h_fin_ti'];
@@ -49,7 +50,7 @@ include("ajax/db_connection.php");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Informativa</title>
+   <title>FUNVID | Terapia espiritual o reflexiva</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -66,13 +67,13 @@ include("ajax/db_connection.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Editar Terapia Informativa
+        Editar Terapia espiritual o reflexiva
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Editar Terapia Informativa</li>
+        <li class="active">Editar Terapia espiritual o reflexiva</li>
       </ol>
     </section>
 
@@ -110,11 +111,15 @@ include("ajax/db_connection.php");
             <div class="box-body">              
               <!-- // INICIO DEL BODY DEL BOX //-->                            
                      <div class="row">
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                          <label>Director:</label><br>
                           <input class="form-control" type="text" name="director_ti"  placeholder="Nombre Completo" value="<?php echo $director_ti; ?>">
-                      </div>                      
-                      <div class="form-group col-md-8">                          
+                      </div>    
+                      <div class="form-group col-md-3">
+                         <label>Cólider:</label><br>
+                          <input class="form-control" type="text" name="colider_ti"  placeholder="Nombre Completo" value="<?php echo $colider_ti; ?>">
+                      </div>                    
+                      <div class="form-group col-md-6">                          
                               <label>Temática:</label><br>
                               <input class="form-control" type="text"  name="tematica_ti" placeholder="Nombre de la temática" value="<?php echo $tematica_ti; ?>">
                       </div>                                        
@@ -160,7 +165,7 @@ include("ajax/db_connection.php");
         <div class="col-md-12">
           <div class="box box-default  box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Objetivos trabajados</h3>
+              <h3 class="box-title">Observaciones de terapia</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -202,7 +207,7 @@ include("ajax/db_connection.php");
         <div class="col-md-12">
           <div class="box box-default  box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Observaciones generales</h3>
+              <h3 class="box-title">Actitud asumida del grupo</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>

@@ -13,7 +13,7 @@ date_default_timezone_set("America/Santiago");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Informativa</title>
+   <title>FUNVID | Terapia Espiritual o Flexiva</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -30,13 +30,13 @@ date_default_timezone_set("America/Santiago");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapia Informativa
+        Terapia espiritual o relexiva
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Terapia Informativa</li>
+        <li class="active">Terapia espiritual o reflexiva</li>
       </ol>
     </section>
 
@@ -69,11 +69,15 @@ date_default_timezone_set("America/Santiago");
             <div class="box-body">              
               <!-- // INICIO DEL BODY DEL BOX //-->                            
                      <div class="row">
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                          <label>Nombre director:</label><br>
                           <input class="form-control" type="text" name="director_ti"  placeholder="Nombre Completo">
+                      </div> 
+                      <div class="form-group col-md-3">
+                         <label>Nombre cólider:</label><br>
+                          <input class="form-control" type="text" name="colider_ti"  placeholder="Nombre Completo">
                       </div>                      
-                      <div class="form-group col-md-8">                          
+                      <div class="form-group col-md-6">                          
                               <label>Temática:</label><br>
                               <input class="form-control" type="text"  name="tematica_ti" placeholder="Nombre de la tematica">
                       </div>                                        
@@ -119,7 +123,7 @@ date_default_timezone_set("America/Santiago");
         <div class="col-md-12">
           <div class="box box-default  box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Objetivos trabajados</h3>
+              <h3 class="box-title">Observaciones de terapia</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
@@ -161,7 +165,7 @@ date_default_timezone_set("America/Santiago");
         <div class="col-md-12">
           <div class="box box-default  box-solid">
             <div class="box-header with-border">
-              <h3 class="box-title">Observaciones generales</h3>
+              <h3 class="box-title">Actitud asumida del grupo</h3>
 
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>

@@ -8,6 +8,7 @@
 
 		$id_ti = $_POST['id_ti'];
 		$director_ti = $_POST['director_ti'];
+		$colider_ti = $_POST['colider_ti'];
 		$fecha_ti = $_POST['fecha_ti'];
 		$h_inicio_ti = $_POST['h_inicio_ti'];
 		$h_fin_ti = $_POST['h_fin_ti'];
@@ -18,6 +19,7 @@
 		$query = "UPDATE tera_inf
 					SET 
 						director_ti = '$director_ti',
+						colider_ti = '$colider_ti',
 						fecha_ti = '$fecha_ti',
 						h_inicio_ti = '$h_inicio_ti',
 						h_fin_ti = '$h_fin_ti',
