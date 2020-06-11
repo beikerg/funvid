@@ -70,6 +70,7 @@ $query = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$id_resid
                   <li><a href="#ante-r" data-toggle="tab"><i class="glyphicon glyphicon-folder-open"></i> Antecedentes Relv.</a></li>
                   <li><a href="#inter-clinica" data-toggle="tab"><i class="fa fa-heartbeat"></i> Interv. Clínica </a></li>
                   <li><a href="#dental" data-toggle="tab"><i class="fa fa-user-md"></i> Tratamiento Dental</a></li>
+                  <li><a href="#doping" data-toggle="tab"><i class="fa fa-stethoscope"></i> Toma de Doping</a></li>
                 </ul>
               </div>
               <div class="col-md-9">
@@ -97,6 +98,11 @@ $query = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$id_resid
                   <div class="tab-pane" id="dental">
                   	<!-- Abstinencia --> 
                     <?php include("ajax/API/tabs/dental/dental.php"); ?>
+                    <!-- ./ fin Abstinencia-->
+                  </div>
+                  <div class="tab-pane" id="doping">
+                  	<!-- Abstinencia --> 
+                    <?php include("ajax/API/tabs/doping/doping.php"); ?>
                     <!-- ./ fin Abstinencia-->
                   </div>
                   
@@ -138,5 +144,6 @@ $query = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$id_resid
 <script type="text/javascript" src="js/antecedente.js"></script>
 <script type="text/javascript" src="js/clinica.js"></script>
 <script type="text/javascript" src="js/dental.js"></script>
+<script type="text/javascript" src="js/doping.js"></script>
 </body>
 </html>
