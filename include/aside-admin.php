@@ -60,7 +60,8 @@
 
     $calendario = '<li class=""><a href="calendario.php"><i class="fa fa-circle-o"></i><span>Calendario</span></a></li>';
 
-    $caja = '<li class=""><a href="#" data-toggle="modal" data-target="#selec_resi_a"><i class="fa fa-circle-o"></i><span>Caja</span></a></li>';
+    //$caja = '<li class=""><a href="#" data-toggle="modal" data-target="#selec_resi_a"><i class="fa fa-circle-o"></i><span>Caja</span></a></li>';
+    $caja = ' <li class=""><a href="ListaCaja.php"><i class="fa fa-circle-o"></i><span>Caja</span></a></li>';
 
     $ayudas = '<li class=""><a href="ayudas.php"><i class="fa fa-circle-o"></i><span>Ayudas</span></a></li>';
 

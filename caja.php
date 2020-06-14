@@ -16,7 +16,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
   }
 
 
-  
+  $mysql->close();
     ?>
 
 
@@ -44,9 +44,9 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
         <small><strong>Residente:</strong> <?php echo ucwords(strtolower($nombre)); ?> <?php echo ucwords(strtolower($apellido)); ?> </small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
-        <li>Tipos de terapias</li>
-        <li class="active">Lista de Terapia Informativa</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Caja</a></li>
+        <li>Residentes</li>
+     
       </ol>
     </section>
 
@@ -56,12 +56,37 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
+<?php 
+    $total_s = 0;
+    $stotal = $mysql->query ("SELECT * FROM caja where id_residente = '$residente_id' ORDER BY id_caja DESC LIMIT 1");
+    while($st = $stotal->fetch_assoc()){
+      $total_s = $st['saldo_caja'];
+    }
 
-  <div class="">
-    <center><a href="#" data-toggle="modal" data-target="#abono" class="btn btn-success" ><i class="fa fa-plus"> </i> &nbsp;Abono</a>
-    <a href="#" data-toggle="modal" data-target="#gasto" class="btn btn-warning" ><i class="fa  fa-minus"> </i> &nbsp;Cargo</a>
-    </center>
+    $mysql->close();
+?>
+  <div class="container">
+    <div class="col-md-9 col-ms-6">
+      <center><a href="#" data-toggle="modal" data-target="#abono" class="btn btn-success" ><i class="fa fa-plus"> </i> &nbsp;Abono</a>
+      <a href="#" data-toggle="modal" data-target="#gasto" class="btn btn-warning" ><i class="fa  fa-minus"> </i> &nbsp;Cargo</a>
+      </center>
+    </div>
+    <div class="pull-right col-md-3 col-ms-6">
+      <div class="pull-right">
 
+       
+    <?php
+      if($total_s < 0){
+        echo "<h3>Saldo Actual: <span style='color: red;'>".number_format($total_s, 0, ",", ".")."</span></h3>";
+      }else{
+        echo "<h3>Saldo Actual: ".number_format($total_s, 0, ",", ".")."</h3>";
+      }
+      
+    ?>
+      </div>
+    </div>
+
+    
   </div>
 
 <div class="modal fade" id="abono" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -212,19 +237,27 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
               $query = $mysql->query($sql);
               $cargo = 0;
               $abono = 0;
+              $total = 0;
               while($row = $query->fetch_assoc()){
                   $abono += $row['abono_caja'];
                   $cargo += $row['cargo_caja'];
+                  
                 $ta .= 
                 "<tr>
                   <td align='center'>".date('d-m-Y', strtotime($row['fecha_caja']))."</td>
                   <td>".$row['descrip_caja']."</td>
                   <td align='right'>".number_format($row['cargo_caja'], 0, ",", ".")."</td>
                   <td align='right'>".number_format($row['abono_caja'], 0, ",", ".")."</td>
-                  <td align='right'>".number_format($row['saldo_caja'], 0, ",", ".")."</td>
+                  ";
+                  if($row['saldo_caja'] < 0){
+                    $ta.= "<td align='right' style='color: red;'>".number_format($row['saldo_caja'], 0, ",", ".")."</td>";
+                  }else{
+                    $ta.="<td align='right'>".number_format($row['saldo_caja'], 0, ",", ".")."</td>";
+                  }
+                 
                   
                   
-                  <td align='center'>";
+                 $ta.=" <td align='center'>";
 
                   if($_SESSION['rol'] == 'Admin' || $_SESSION['rol'] == 'Administracion'){
                     $ta .= "<a href='#' onclick='preguntar(".$row['id_caja'].','.$row['id_residente'].")' title='Eliminar' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> </a>";
@@ -247,7 +280,11 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
             </tr>
           </tfoot>";
               echo $ta; 
+              
+              
+              $mysql->close();
             ?>
+
 
           </tbody>
         </table>
