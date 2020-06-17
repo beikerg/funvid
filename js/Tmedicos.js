@@ -8,6 +8,8 @@ function addTmedicos() {
     var diagnostico_tm = $("#diagnostico_tm").val();
     var medicamentos_tm = $('#medicamentos_tm').val();
     var observ_tm = $("#observ_tm").val();
+    var hora_tm = $("#hora_tm").val();
+    var centro_tm = $("#centro_tm").val();
     
     // Add record
     $.post("ajax/API/t-medicos/addTmedicos.php", {
@@ -17,7 +19,9 @@ function addTmedicos() {
         motivo_tm: motivo_tm,
         diagnostico_tm: diagnostico_tm,
         medicamentos_tm: medicamentos_tm,
-        observ_tm: observ_tm
+        observ_tm: observ_tm,
+        hora_tm: hora_tm,
+        centro_tm: centro_tm
         }, function (data, status) {
         // close the popup
         /*$("#add_new_record_modal").modal("hide");*/
@@ -35,6 +39,8 @@ function addTmedicos() {
         $("#diagnostico_tm").val("");
         $("#medicamentos_tm").val("");
         $("#observ_tm").val("");
+        $("#hora_tm").val("");
+        $("#centro_tm").val("");
         
     });
 
@@ -79,6 +85,8 @@ function GetTmedicosDetails(id) {
             $("#update_diagnostico_tm").val(Tmedicos.diagnostico_tm);
             $("#update_medicamentos_tm").val(Tmedicos.medicamentos_tm);
             $("#update_observ_tm").val(Tmedicos.observ_tm);
+            $("#update_hora_tm").val(Tmedicos.hora_tm);
+            $("#update_centro_tm").val(Tmedicos.centro_tm);
             
         }
     );
@@ -94,6 +102,8 @@ function UpdateTmedicosDetails() {
     var diagnostico_tm = $("#update_diagnostico_tm").val();
     var medicamentos_tm = $("#update_medicamentos_tm").val();
     var observ_tm = $("#update_observ_tm").val();
+    var hora_tm = $("#update_hora_tm").val();
+    var centro_tm = $("#update_centro_tm").val();
     
     
 
@@ -108,7 +118,9 @@ function UpdateTmedicosDetails() {
             motivo_tm: motivo_tm,
             diagnostico_tm: diagnostico_tm,
             medicamentos_tm: medicamentos_tm,
-            observ_tm: observ_tm
+            observ_tm: observ_tm,
+            hora_tm: hora_tm,
+            centro_tm: centro_tm
             
             
         },

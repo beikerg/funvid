@@ -21,10 +21,12 @@ if(empty($_POST['motivo_tm'])  || empty($_POST['fecha_tm']) || empty($_POST['dia
     $diagnostico_tm = $_POST['diagnostico_tm'];
     $medicamentos_tm = $_POST['medicamentos_tm'];
     $observ_tm = $_POST['observ_tm'];
+    $hora_tm = $_POST['hora_tm'];
+    $centro_tm = $_POST['centro_tm'];
     
     
 
-        $query = "UPDATE tratamientos_medicos_api SET etapa_tm = '$etapa_tm', motivo_tm = '$motivo_tm', diagnostico_tm = '$diagnostico_tm', fecha_tm = '$fecha_tm', observ_tm = '$observ_tm', medicamentos_tm = '$medicamentos_tm' WHERE id_tm = '$id'";
+        $query = "UPDATE tratamientos_medicos_api SET etapa_tm = '$etapa_tm', motivo_tm = '$motivo_tm', diagnostico_tm = '$diagnostico_tm', fecha_tm = '$fecha_tm', observ_tm = '$observ_tm', medicamentos_tm = '$medicamentos_tm', hora_tm = '$hora_tm', centro_tm = '$centro_tm' WHERE id_tm = '$id'";
             if (!$result = $mysql->query($query)) {
         exit($mysql->error);
 

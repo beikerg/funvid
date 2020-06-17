@@ -16,7 +16,7 @@ include("../../db_connection.php");
             <tr>
               <th style="width: 20%">Tipo de asistencia</th>
 							<th style="width: 20%" >Fecha</th>
-							<th style="width: 20%">Psiquiatra</th>
+							<th style="width: 20%">¿Quién lo atendío?</th>
                             <th style="width: 20%">Etapa</th>
 							<th style="width: 25%">Opciones</th>
 							

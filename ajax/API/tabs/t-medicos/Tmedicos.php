@@ -1,4 +1,4 @@
-
+<?php date_default_timezone_set("America/Santiago"); ?>
 <div class="row">
 	<center><h2>Tratamientos medicos</h2></center>
         <div class="col-md-12">
@@ -31,13 +31,25 @@
                     
                 <div id="resultados_Tmedicos"></div>
                 
+                <div class="row">
+                    <div class="form-group col-xs-6">
+                        <label for="fecha_tm">Fecha:</label>
+                        <input type="date" class="form-control" name="fecha_tm" id="fecha_tm" value="<?php echo date('Y-m-d'); ?>">
+                    </div>
+                    <div class="form-group col-xs-6">
+                    <label for="hora_tm">Hora:</label>
+                    <input type="time" class="form-control" name="hora_tm" id="hora_tm" value="<?php echo date("H:i"); ?>">
+                    </div>
+                </div>
+
+                
                 <div class="form-group">
-                   <label for="fecha_tm">Fecha:</label>
-                   <input type="date" class="form-control" name="fecha_tm" id="fecha_tm" value="<?php echo date('Y-m-d'); ?>">
+                    <label for="centro_tm">Centro Asistencial:</label>
+                    <input type="text" name="centro_tm" id="centro_tm" class="form-control" placeholder="Nombre del centro asistencial">
                 </div>
 
                 <div class="form-group">
-                    <label for="motivo_tm">Motivo de la consulta</label>
+                    <label for="motivo_tm">Motivo de la consulta:</label>
                     <input type="text" name="motivo_tm" id="motivo_tm" class="form-control" placeholder="Motivo de la consulta medica">
                 </div>
 
@@ -89,10 +101,22 @@
             <div class="modal-body">
         
               <div id="update_Tmedicos"></div>
+                
+              <div class="row">
+                    <div class="form-group col-xs-6">
+                    <label for="update_fecha_tm">Fecha:</label>
+                    <input type="date" class="form-control" name="update_fecha_tm" id="update_fecha_tm">
+                    </div>
 
-                 <div class="form-group">
-                   <label for="update_fecha_tm">Fecha:</label>
-                   <input type="date" class="form-control" name="update_fecha_tm" id="update_fecha_tm">
+                    <div class="form-group col-xs-6">
+                    <label for="update_hora_tm">Hora:</label>
+                    <input type="time" class="form-control" name="update_hora_tm" id="update_hora_tm">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="update_centro_tm">Centro Asistencial:</label>
+                    <input type="text" name="update_centro_tm" id="update_centro_tm" class="form-control" placeholder="Nombre del centro asistencial">
                 </div>
 
 				<div class="form-group">

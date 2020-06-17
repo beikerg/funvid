@@ -20,10 +20,12 @@
 		$diagnostico_tm = $_POST['diagnostico_tm'];
 		$medicamentos_tm = $_POST['medicamentos_tm'];
 		$observ_tm = $_POST['observ_tm'];
+		$hora_tm = $_POST['hora_tm'];
+		$centro_tm = $_POST['centro_tm'];
 		
 		
 
-			$query = "INSERT INTO tratamientos_medicos_api (id_residente, etapa_tm, fecha_tm, motivo_tm, diagnostico_tm, medicamentos_tm, observ_tm) VALUES ('$id_residente', '$etapa_tm', '$fecha_tm', '$motivo_tm', '$diagnostico_tm', '$medicamentos_tm', '$observ_tm')";
+			$query = "INSERT INTO tratamientos_medicos_api (id_residente, etapa_tm, fecha_tm, motivo_tm, diagnostico_tm, medicamentos_tm, observ_tm, hora_tm, centro_tm) VALUES ('$id_residente', '$etapa_tm', '$fecha_tm', '$motivo_tm', '$diagnostico_tm', '$medicamentos_tm', '$observ_tm', '$hora_tm', '$centro_tm')";
 
 			if(!$rquery = $mysql->query($query))
 			{
