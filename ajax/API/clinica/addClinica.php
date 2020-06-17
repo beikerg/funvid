@@ -19,9 +19,10 @@
 		$fecha_clinica = $_POST['fecha_clinica'];
 		$evaluacion_clinica = $_POST['evaluacion_clinica'];
 		$medicamentos_clinica = $_POST['medicamentos_clinica'];
+		$tipo_clinica = $_POST['tipo_clinica'];
 		
 
-			$query = "INSERT INTO interv_clinica (id_residente, etapa_clinica, fecha_clinica, evaluacion_clinica, medicamentos_clinica, psiquiatra_clinica) VALUES ('$id_residente', '$etapa_clinica', '$fecha_clinica', '$evaluacion_clinica', '$medicamentos_clinica', '$psiquiatra_clinica')";
+			$query = "INSERT INTO interv_clinica (id_residente, etapa_clinica, fecha_clinica, evaluacion_clinica, medicamentos_clinica, psiquiatra_clinica, tipo_clinica) VALUES ('$id_residente', '$etapa_clinica', '$fecha_clinica', '$evaluacion_clinica', '$medicamentos_clinica', '$psiquiatra_clinica', '$tipo_clinica')";
 
 			if(!$rquery = $mysql->query($query))
 			{

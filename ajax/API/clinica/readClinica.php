@@ -13,7 +13,8 @@ include("../../db_connection.php");
                       background-color: #EBF7FA;
                     }
               </style>  
-						<tr>
+            <tr>
+              <th style="width: 20%">Tipo de asistencia</th>
 							<th style="width: 20%" >Fecha</th>
 							<th style="width: 20%">Psiquiatra</th>
                             <th style="width: 20%">Etapa</th>
@@ -33,7 +34,8 @@ include("../../db_connection.php");
     	$number = 1;
     	while($row = mysqli_fetch_assoc($result))
     	{
-    		$data .= '<tr>
+        $data .= '<tr>
+            <td>'.$row['tipo_clinica'].'</td>
 				    <td>'.date('d-m-Y', strtotime($row['fecha_clinica'])).'</td>
             <td>'.$row['psiquiatra_clinica'].'</td>
             <td>'.$row['etapa_clinica'].'</td>

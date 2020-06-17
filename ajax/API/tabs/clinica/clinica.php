@@ -31,11 +31,22 @@
                     
                 <div id="resultados_Clinica"></div>
                 
-                
                 <div class="form-group">
-                    <label for="psiquiatra_clinica">Nombre Completo Psiquiatra:</label>
-                    <input type="text" name="psiquiatra_clinica" id="psiquiatra_clinica" class="form-control" >
+                    <label for="tipo_clinica">Tipo de atención:</label>
+                    <select class="form-control" name="tipo_clinica" id="tipo_clinica" >
+                        <option>Seleccionar atención</option>
+                        <option value="PSICOLOGO">Psicólogo</option>
+                        <option value="PSIQUIATRA">Psiquiatra</option>
+                        <option value="ASISTENTE-SOCIAL">Asistente Social</option>
+                    </select>
                 </div>
+
+                <div class="form-group">
+                    <label for="psiquiatra_clinica">¿Quién lo atiendío?</label>
+                    <input type="text" name="psiquiatra_clinica" id="psiquiatra_clinica" class="form-control" placeholder="Nombre del doctor o asistente social que lo atendio">
+                </div>
+
+
 
                 <div class="form-group">
                    <label for="fecha_clinica">Fecha:</label>
@@ -43,13 +54,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="evaluacion_clinica">Evaluación :</label>
-                    <textarea name="evaluacion_clinica" id="evaluacion_clinica" class="form-control" ></textarea>
+                    <label for="evaluacion_clinica">Evaluación:</label>
+                    <textarea name="evaluacion_clinica" id="evaluacion_clinica" class="form-control" placeholder="Indique la evaluación del doctor"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="medicamentos_clinica">Medicamentos y Dosis:</label>
-                    <textarea name="medicamentos_clinica" id="medicamentos_clinica" class="form-control" ></textarea>
+                    <textarea name="medicamentos_clinica" id="medicamentos_clinica" class="form-control" placeholder="Medicamentos recetados por el doctor"></textarea>
                 </div>
 
                 
@@ -85,10 +96,20 @@
         
               <div id="update_Clinica"></div>
 
+
+              <div class="form-group">
+                    <label for="update_tipo_clinica">Tipo de atención:</label>
+                    <select class="form-control" name="update_tipo_clinica" id="update_tipo_clinica" >
+                        <option>Seleccionar atención</option>
+                        <option value="PSICOLOGO">Psicólogo</option>
+                        <option value="PSIQUIATRA">Psiquiatra</option>
+                        <option value="ASISTENTE-SOCIAL">Asistente Social</option>
+                    </select>
+                </div>
 				
 				<div class="form-group">
-                    <label for="update_psiquiatra_clinica">Nombre Completo Psiquiatra:</label>
-                    <input type="text" name="update_psiquiatra_clinica" id="update_psiquiatra_clinica" class="form-control" >
+                    <label for="update_psiquiatra_clinica">¿Quién lo atendío?:</label>
+                    <input type="text" name="update_psiquiatra_clinica" id="update_psiquiatra_clinica" class="form-control" placeholder="Nombre del doctor o asistente social que lo atendio">
                 </div>
 
                 <div class="form-group">
@@ -98,12 +119,12 @@
 
                 <div class="form-group">
                     <label for="update_evaluacion_clinica">Evaluación :</label>
-                    <textarea name="update_evaluacion_clinica" id="update_evaluacion_clinica" class="form-control" ></textarea>
+                    <textarea name="update_evaluacion_clinica" id="update_evaluacion_clinica" class="form-control" placeholder="Indique la evaluación del doctor"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="update_medicamentos_clinica">Medicamentos y Dosis:</label>
-                    <textarea name="update_medicamentos_clinica" id="update_medicamentos_clinica" class="form-control" ></textarea>
+                    <textarea name="update_medicamentos_clinica" id="update_medicamentos_clinica" class="form-control" placeholder="Medicamentos recetados por el doctor"></textarea>
                 </div>
             	
             	<div class="form-group">

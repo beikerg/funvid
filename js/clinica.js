@@ -7,6 +7,7 @@ function addClinica() {
     var fecha_clinica = $("#fecha_clinica").val();
     var evaluacion_clinica = $("#evaluacion_clinica").val();
     var medicamentos_clinica = $("#medicamentos_clinica").val();
+    var tipo_clinica = $("#tipo_clinica").val();
     // Add record
     $.post("ajax/API/clinica/addClinica.php", {
         id_residente: id_residente,
@@ -14,7 +15,8 @@ function addClinica() {
         psiquiatra_clinica: psiquiatra_clinica,
         fecha_clinica: fecha_clinica,
         evaluacion_clinica: evaluacion_clinica,
-        medicamentos_clinica: medicamentos_clinica
+        medicamentos_clinica: medicamentos_clinica,
+        tipo_clinica: tipo_clinica
     }, function (data, status) {
         // close the popup
         /*$("#add_new_record_modal").modal("hide");*/
@@ -31,7 +33,7 @@ function addClinica() {
         $("#fecha_clinica").val("");
         $("#evaluacion_clinica").val("");
         $("#medicamentos_clinica").val("");
-        
+        $("#tipo_clinica").val("");
     });
 
 
@@ -74,6 +76,7 @@ function GetClinicaDetails(id) {
             $("#update_psiquiatra_clinica").val(clinica.psiquiatra_clinica);
             $("#update_evaluacion_clinica").val(clinica.evaluacion_clinica);
             $("#update_medicamentos_clinica").val(clinica.medicamentos_clinica);
+            $("#update_tipo_clinica").val(clinica.tipo_clinica);
             
         }
     );
@@ -88,7 +91,7 @@ function UpdateClinicaDetails() {
     var psiquiatra_clinica = $("#update_psiquiatra_clinica").val();
     var evaluacion_clinica = $("#update_evaluacion_clinica").val();
     var medicamentos_clinica = $("#update_medicamentos_clinica").val();
-    
+    var tipo_clinica = $("#update_tipo_clinica").val();
 
     // get hidden field value
     var id = $("#hidden_Clinica_id").val();
@@ -100,7 +103,8 @@ function UpdateClinicaDetails() {
             psiquiatra_clinica: psiquiatra_clinica,
             fecha_clinica: fecha_clinica,
             evaluacion_clinica: evaluacion_clinica,
-            medicamentos_clinica: medicamentos_clinica
+            medicamentos_clinica: medicamentos_clinica,
+            tipo_clinica: tipo_clinica
             
         },
         function (data, status) {

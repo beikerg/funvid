@@ -20,9 +20,10 @@ if(empty($_POST['psiquiatra_clinica'])  || empty($_POST['fecha_clinica']) || emp
     $fecha_clinica = $_POST['fecha_clinica'];
     $evaluacion_clinica = $_POST['evaluacion_clinica'];
     $medicamentos_clinica = $_POST['medicamentos_clinica'];
+    $tipo_clinica = $_POST['tipo_clinica'];
     
 
-        $query = "UPDATE interv_clinica SET etapa_clinica = '$etapa_clinica', psiquiatra_clinica = '$psiquiatra_clinica', fecha_clinica = '$fecha_clinica', evaluacion_clinica = '$evaluacion_clinica', medicamentos_clinica = '$medicamentos_clinica' WHERE id_clinica = '$id'";
+        $query = "UPDATE interv_clinica SET etapa_clinica = '$etapa_clinica', psiquiatra_clinica = '$psiquiatra_clinica', fecha_clinica = '$fecha_clinica', evaluacion_clinica = '$evaluacion_clinica', medicamentos_clinica = '$medicamentos_clinica', tipo_clinica = '$tipo_clinica' WHERE id_clinica = '$id'";
             if (!$result = $mysql->query($query)) {
         exit($mysql->error);
 
