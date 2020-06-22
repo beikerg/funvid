@@ -200,7 +200,7 @@ if($_SESSION['rol'] == 'Admin'){
 
             if($_SESSION['rol'] == 'Admin') {
               echo '<option value="Admin">Root</option>
-                    <option value="Super Administrador">Super administrador</option>
+                    <option value="Super_Administrador">Super administrador</option>
                     ';
             }
 
