@@ -45,7 +45,7 @@
                 <li><a href="ListaTEspecial.php"><i class="fa fa-circle-o"></i>Especial</a></li>
                 <li><a href="ListaTEducador.php"><i class="fa fa-circle-o"></i>Reunión Educadores</a></li>
                 <li><a href="ListaTGa.php"><i class="fa fa-circle-o"></i>Grupo Atrás</a></li>
-                
+                <li><a href="ListaTs.php"><i class="fa fa-circle-o"></i>Sensei (Deportiva)</a></li>
 
               </ul>
             </li>';
