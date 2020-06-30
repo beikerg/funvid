@@ -1,5 +1,7 @@
 <?php
+
   include('ajax/db_connection.php');
+  $id_ts = $row['id_ts'];
   $asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_ts = '$id_ts'");
   $c_sql = mysqli_num_rows($asis_sql);
 
@@ -11,7 +13,7 @@
   
 ?>
 
-<div class="modal fade" id="asistencia-modal">
+<div class="modal fade" id="asis_modal_<?php echo $row['id_ts']; ?>">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -26,7 +28,7 @@
                     <div class="box-body">
                       <div class="row">
                         <div class="col-xs-12">
-                        <table id="asis" class=" table table-bordered table-striped">
+                        <table id="asis_<?php echo $row['id_ts']; ?>" class="display table table-bordered table-striped">
                           <thead>
                             <th><label><input type="checkbox" id="checkall-asis"> Select.</label></th>
                             <th>Nombres</th>
@@ -36,11 +38,7 @@
                           </thead>
                             <tbody>
                               <?php
-                                
-
-                                
-
-
+                              
                                 include('ajax/db_connection.php');
                                 
                                 if($c_sql == 0){

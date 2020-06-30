@@ -292,7 +292,23 @@ $(document).ready(function(){
     });
   </script>
 
+<script>
+$(document).ready(function(){
+  //inialize datatable
+    $('#asis').DataTable({
+      "lengthMenu": [[-1], ["Todos"]],
+      "language": 
+            {
+              "emptyTable": "<h4>¡Aún no hay ningun registro!.</h4>",  
+              "searchPlaceholder":  "Buscar",   
+              "zeroRecords": "<h4>¡No se han encontrado coincidencias!.</h4>", 
+            }
 
+    });
+     
+    
+});
+</script>
    <!-- // SECCIÓN DE SELECCIONAR TODAS LAS CASILLAS DE CHECKED FALLAS // -->
 
 <!-- <script type="text/javascript">
@@ -302,3 +318,10 @@ $(document).ready(function(){
  
  
 </script> -->
+
+<script type="text/javascript">
+ $('#checkall-asis').change(function(){
+   $('.all-asis').prop("checked", $(this).prop("checked"))
+ })
+</script>
+
