@@ -284,7 +284,7 @@ include("ajax/db_connection.php");
         <div class="row">
         <!-- /.col -->  
           <div class="form-group">
-            <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambos" ></center>
+            <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
           </div>
         </div>     
 

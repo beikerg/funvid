@@ -20,11 +20,20 @@
                 <h4 class="modal-title">Lista de residentes</h4>
               </div>
               <div class="modal-body">
-                
-                <div classs="container">    
-                  <div class="box box-solid"> 
-                    <div class="box-body">
-                      <div class="row">
+                <!-- START CUSTOM TABS -->
+      
+
+<div class="row">
+  <div class="col-md-12">
+    <!-- Custom Tabs -->
+    <div class="nav-tabs-custom">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab_1" data-toggle="tab">Asistencia</a></li>
+        <li><a href="#tab_2" data-toggle="tab">Inasistencia</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab_1">
+          <div class="row">
                         <div class="col-xs-12">
                         <table id="asis" class=" table table-bordered table-striped">
                           <thead>
@@ -36,10 +45,6 @@
                           </thead>
                             <tbody>
                               <?php
-                                
-
-                                
-
 
                                 include('ajax/db_connection.php');
                                 
@@ -49,7 +54,6 @@
                                   $sql = "SELECT r.nombre, r.apellido, r.rut, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_ts = '$id_ts'";
                                 }
                                 
-
                                 //use for MySQLi-OOP
                                 $query = $mysql->query($sql);
                                 while($row = $query->fetch_assoc()){?>
@@ -74,9 +78,87 @@
                            </table>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+         
+        </div>
+        <!-- /.tab-pane -->
+        <div class="tab-pane" id="tab_2">
+        <?php 
+          include('ajax/db_connection.php');
+            $q = $mysql->query("SELECT r.nombre, r.apellido, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_ts = '$id_ts' AND a.status_asis = '0'");
+
+            while($a = $q->fetch_assoc()){?>
+
+        <div class="row">
+          <div class="col-md-12">
+            <label> Nombre residente: </label> <h4><?php echo $a['nombre']." ".$a['apellido']; ?></h4>
+          </div>
+          
+            <div class="form-check col-md-3">
+              <label>
+                <input type="checkbox" class="flat-red" name="item[]" value="TRATAMIENTO">
+                Tratamiento
+              </label>
+            </div>
+
+            <div class="form-check col-md-3">
+              <label>
+                <input type="checkbox" class="flat-red" name="item[]" value="EN ESTADO">
+                En estado
+              </label>
+            </div>
+
+            <div class="form-check col-md-4">
+              <label>
+                <input type="checkbox" class="flat-red" name="item[]" value="PROBLEMAS DE SALUD">
+                Problemas de salud
+              </label>
+            </div>
+
+            <div class="form-check col-md-2">
+              <label>
+                <input type="checkbox" class="flat-red" name="item[]" value="OTROS">
+                Otros
+              </label>
+            </div>           
+            
+            <div class="form-group">
+              <div class="col-md-12">
+              <label> Observaciones de falta:</label>
+                <textarea class="form-control" name="observ_asis" placeholder="Otros motivos de faltas y observaciones"></textarea>
+              </div>
+            </div>
+
+            <input type="hidden" name="id_asis" value="<?php $a['id_asis']; ?>" >
+              <br><br>          
+        </div>
+              <br><br>
+         <?php  }
+         $mysql->close();
+        ?>
+       
+        
+        
+        
+        
+        
+
+
+
+        </div>
+        <!-- /.tab-pane -->
+
+      </div>
+      <!-- /.tab-content -->
+    </div>
+    <!-- nav-tabs-custom -->
+  </div>
+  <!-- /.col -->
+
+</div>
+<!-- /.row -->
+<!-- END CUSTOM TABS -->
+                
+                
                 </div>
                   <div class="modal-footer">
                     <input type="hidden" name="id_ts" value="<?php echo $id_ts;?>">
