@@ -121,7 +121,7 @@
           <tbody>
             <?php
               include('ajax/db_connection.php');
-              $sql = "SELECT * FROM residentes where etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO' ";
+              $sql = "SELECT * FROM residentes";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
