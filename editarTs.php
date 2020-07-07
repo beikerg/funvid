@@ -136,7 +136,7 @@ include("ajax/db_connection.php");
                             <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <?php if($fecha_ts = '00-00-0000'){
+                        <?php if($fecha_ts == '0000-00-00'){
                           echo '<input type="date" value="'.date("Y-m-d").'" name="fecha_ts" class="form-control pull-right">';
                         }else{
                           echo '<input type="date" value="'.$fecha_ts.'" name="fecha_ts" class="form-control pull-right">';
@@ -149,7 +149,7 @@ include("ajax/db_connection.php");
                       <div class="form-group col-md-4">
                           <label>Hora inicio:</label><br>
                           <?php 
-                          if($h_inicio_ts = '00:00:00'){
+                          if($h_inicio_ts == '00:00:00'){
                             echo '<input class="form-control" type="time" name="h_inicio_ts" value="'.date("H:i").'">';
                           }else{
                             echo '<input class="form-control" type="time" name="h_inicio_ts" value="'.$h_inicio_ts.'">';

@@ -38,7 +38,7 @@
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-
+<br>
   <div class="pull-right">
     <a href="ajax/terapias/sensei/newTs.php" class="btn btn-success"><i class="fa fa-plus"> </i> Nueva Terapia</a>
   </div>
