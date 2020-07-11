@@ -190,8 +190,10 @@
          
         <table id="reducadosTable" class=" table table-bordered table-striped dt-responsive nowrap">
           <thead>
-            <th style="width: 5%">No.</th>
-            <th style="width: 400px;">Motivo</th>
+            <th>No.</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Motivo</th>
             <th>Fecha</th>
             <th>Etapa</th>
             <th ><center>Opciones</center></th>
@@ -202,7 +204,7 @@
 
             $data = "";
               include_once('ajax/db_connection.php');
-              $sql = "SELECT c.*,r.id_residente, r.etapa_resi FROM consultap c INNER JOIN residentes r  ON c.id_residente = r.id_residente ORDER BY id_consulta DESC";
+              $sql = "SELECT c.*,r.id_residente, r.nombre, r.apellido , r.etapa_resi FROM consultap c INNER JOIN residentes r  ON c.id_residente = r.id_residente ORDER BY id_consulta DESC";
 
 
     
@@ -225,6 +227,8 @@
             <tr>
                 
                 <th>'.$row['id_consulta'].'</th>
+                <th>'.$row['nombre'].'</th>
+                <th>'.$row['apellido'].'</th>
                 <th>'.$row['motivo'].'</th>
                 <th>'.date('d-m-Y', strtotime($row['fecha_c'])).'</th>
                 <th>'.$row['etapa'].'</th>

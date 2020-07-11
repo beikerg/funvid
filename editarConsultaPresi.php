@@ -181,17 +181,17 @@
     <div class="col-md-12">
 <!-- Nav tabs --><div class="nav-tabs-custom">
             <ul class="nav nav-tabs" role="tablist">
-             <li role="presentation" class="active"><a href="#Datos_residente" aria-controls="home" role="tab" data-toggle="tab">Historial</a></li>
+             <li role="presentation"><a href="#Datos_residente" aria-controls="home" role="tab" data-toggle="tab">Historial</a></li>
              <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Área</a></li>
              <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Objetivos</a></li>
              <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Análisis funcional</a></li>
-             <li role="presentation"><a href="#seguimiento" aria-controls="settings" role="tab" data-toggle="tab">Seguimiento</a></li>
+             <li role="presentation" class="active"><a href="#seguimiento" aria-controls="settings" role="tab" data-toggle="tab">Seguimiento</a></li>
 
             </ul>
 
 <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="Datos_residente">
+      <div role="tabpanel" class="tab-pane" id="Datos_residente">
       
         <div class="row">
         <div class="col-md-12">
@@ -992,7 +992,7 @@
 
         
       </div>
-      <div role="tabpanel" class="tab-pane" id="seguimiento">
+      <div role="tabpanel" class="tab-pane active" id="seguimiento">
         
                 <div class="row">
           <div class="col-md-12">
@@ -1009,7 +1009,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#segAnte">
-                        <div style="color: black;">Antecedentes relevantes del pasiente</div>
+                        <div style="color: black;">Antecedentes relevantes de la sesión</div>
                       </a>
                     </h4>
                   </div>
@@ -1078,7 +1078,7 @@
                   <div class="box-header with-border">
                     <h4 class="box-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#segCo">
-                        <div style="color: black;">Comentarios de sección</div>
+                        <div style="color: black;">Sesión</div>
                       </a>
                     </h4>
                   </div>
