@@ -44,7 +44,7 @@
 		}else{
 
 			header("Location: ../../editarTs.php?id=".$id_ts);
-		}
+		} 
 
          
         

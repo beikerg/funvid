@@ -3,11 +3,11 @@
   $asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_ts = '$id_ts'");
   $c_sql = mysqli_num_rows($asis_sql);
 
-  if($c_sql == 0){
-    echo '<form action="ajax/asistencia/addAsis.php" method="POST">';
-  }else{
-    echo '<form action="ajax/asistencia/editAsis.php" method="POST">';
-  }
+  // if($c_sql == 0){
+  //   echo '<form action="ajax/asistencia/addAsis.php" method="POST">';
+  // }else{
+  //   echo '<form action="ajax/asistencia/editAsis.php" method="POST">';
+  // }
   
 ?>
 
@@ -22,7 +22,6 @@
               <div class="modal-body">
                 <!-- START CUSTOM TABS -->
       
-
 <div class="row">
   <div class="col-md-12">
     <!-- Custom Tabs -->
@@ -34,8 +33,8 @@
       <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
           <div class="row">
-                        <div class="col-xs-12">
-                        <table id="asis" class=" table table-bordered table-striped">
+                        <div class="col-xs-12 table-responsive">
+                        <table id="asis" class=" table table-bordered table-striped dt-responsive nowrap">
                           <thead>
                             <th><label><input type="checkbox" id="checkall-asis"> Select.</label></th>
                             <th>Nombres</th>
@@ -86,7 +85,12 @@
           include('ajax/db_connection.php');
             $q = $mysql->query("SELECT r.nombre, r.apellido, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_ts = '$id_ts' AND a.status_asis = '0'");
 
-            while($a = $q->fetch_assoc()){?>
+            while($a = $q->fetch_assoc()){
+
+              $item_asis = explode(',', $a['item_asis']);
+              ?>
+
+                   
 
         <div class="row">
           <div class="col-md-12">
@@ -95,28 +99,28 @@
           
             <div class="form-check col-md-3">
               <label>
-                <input type="checkbox" class="flat-red" name="item[]" value="TRATAMIENTO">
+                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="TRATAMIENTO" <?php in_array('TRATAMIENTO', $item_asis) ? print "checked" : "";  ?>>
                 Tratamiento
               </label>
             </div>
 
             <div class="form-check col-md-3">
               <label>
-                <input type="checkbox" class="flat-red" name="item[]" value="EN ESTADO">
+                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="EN ESTADO" <?php in_array('EN ESTADO', $item_asis) ? print "checked" : "";  ?>>
                 En estado
               </label>
             </div>
 
             <div class="form-check col-md-4">
               <label>
-                <input type="checkbox" class="flat-red" name="item[]" value="PROBLEMAS DE SALUD">
+                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="PROBLEMAS DE SALUD" <?php in_array('PROBLEMAS DE SALUD', $item_asis) ? print "checked" : "";  ?>>
                 Problemas de salud
               </label>
             </div>
 
             <div class="form-check col-md-2">
               <label>
-                <input type="checkbox" class="flat-red" name="item[]" value="OTROS">
+                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="OTROS" <?php in_array('OTROS', $item_asis) ? print "checked" : "";  ?>>
                 Otros
               </label>
             </div>           
@@ -124,12 +128,14 @@
             <div class="form-group">
               <div class="col-md-12">
               <label> Observaciones de falta:</label>
-                <textarea class="form-control" name="observ_asis" placeholder="Otros motivos de faltas y observaciones"></textarea>
+                <textarea class="form-control" name="observ_asis[<?php echo $a['id_asis'];?>]" placeholder="Otros motivos de faltas y observaciones"><?php echo $a['observ_asis']; ?></textarea>
               </div>
             </div>
 
-            <input type="hidden" name="id_asis" value="<?php $a['id_asis']; ?>" >
-              <br><br>          
+            <input type="hidden" name="id[<?php echo $a['id_asis'];?>]" value="<?php echo $a['id_asis']; ?>" > 
+            <input type="hidden" name="id_residente[<?php echo $a['id_asis']; ?>]" value="<?php echo $a['id_residente']; ?>">
+            
+            <br><br>          
         </div>
               <br><br>
          <?php  }
@@ -163,7 +169,7 @@
                   <div class="modal-footer">
                     <input type="hidden" name="id_ts" value="<?php echo $id_ts;?>">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    <button type="submit" name="asistencia" class="btn btn-primary">Guardar</button>
                   </div>
               
             </div>
@@ -173,6 +179,6 @@
           <!-- /.modal-dialog -->
         </div>
         <!-- /.modal -->
-</form>
+
 
    

@@ -44,30 +44,26 @@
 
 		}else{
 
-            // echo "<pre>";
-            // print_r($_POST);
-            // echo "</pre>";
 
+            foreach ($_POST['id'] as $ids) {
 
-            // // echo "<pre>";
-            // // print_r($_POST['item']);
-            // // echo "</pre>";
-
-            // // echo "<pre>";
-            // // $observ_asis = ($_POST['observ_asis']);
-            // // print_r($observ_asis);
-            // // echo "</pre>";
-
-
-
-            // foreach ($_POST['id_asis'] as $key => $value) {
-            //     echo "Indice: ".$_POST['observ_asis'][$value]."<br>";
-            //     foreach ($value as $v){
-            //         echo "item ".$v." <br>";
+                $ina = $_POST['item'][$ids];
+                $item = implode(',',$ina);
+                $id_residente = $_POST['id_residente'][$ids];
+                $observ_asis = $_POST['observ_asis'][$ids];
+              
                 
+                include('../db_connection.php');
+                $update_asis = "UPDATE asistencia SET observ_asis = '$observ_asis', item_asis = '$item' WHERE id_residente = '$id_residente' AND id_asis = '$ids' ";
+                $resu_asis = $mysql->query($update_asis);
+                if(!$resu_asis){
+                    echo "Error al agregar detalles de inasistencia ".$mysql->error;
+                }
             }
+             $mysql->close();
+            
 			header("Location: ../../editarTs.php?id=".$id_ts);
-		
+        }
 
 
     }

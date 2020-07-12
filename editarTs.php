@@ -53,7 +53,7 @@ include("ajax/db_connection.php");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Sensei (Deportiva)</title>
+   <title>FUNVID | Terapia Sensei </title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -70,17 +70,19 @@ include("ajax/db_connection.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapia Sensei (Deportiva)
+        Terapia Sensei 
         <small></small>
       </h1>
-      <div class="form-group pull-right">
-          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
-      </div>
-      
       
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Terapia Sensei</a></li>        
       </ol>
+
+      
+      <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+      </div>
+      <br>
     </section>
 
     <!-- Main content -->
@@ -90,9 +92,10 @@ include("ajax/db_connection.php");
         | Your Page Content Here |
         -------------------------->
   <br>                   
-  <?php include("ajax/terapias/sensei/tableTResidente.php"); ?>
+
 
          <form action="ajax/terapias/sensei/editarTs.php" method="POST">   
+         <?php include("ajax/terapias/sensei/tableTResidente.php"); ?>
           <!-- // INICIO BOX // -->
             <!-- Este input almacena el id del residente seleccionado -->
             <input type="hidden" name="id_ts" value="<?php echo $id_ts; ?>" >
@@ -284,7 +287,7 @@ include("ajax/db_connection.php");
         <div class="row">
         <!-- /.col -->  
           <div class="form-group">
-            <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
+            <center><input type="submit" name="guardar" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
           </div>
         </div>     
 
