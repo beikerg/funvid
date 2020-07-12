@@ -9,7 +9,13 @@
    <title>FUNVID | Lista de consultas</title>
   <?php include("include/head.php"); ?>
   
-
+<style>
+.celda{
+  height: auto;
+  width: 30%;
+  flex-wrap: wrap-reverse;
+}
+</style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -227,9 +233,9 @@
             <tr>
                 
                 <th>'.$row['id_consulta'].'</th>
-                <th>'.$row['nombre'].'</th>
-                <th>'.$row['apellido'].'</th>
-                <th>'.$row['motivo'].'</th>
+                <th>'.ucwords(strtolower($row['nombre'])).'</th>
+                <th>'.ucwords(strtolower($row['apellido'])).'</th>
+                <th class="celda">'.$row['motivo'].'</th>
                 <th>'.date('d-m-Y', strtotime($row['fecha_c'])).'</th>
                 <th>'.$row['etapa'].'</th>
                 ';
