@@ -10,10 +10,16 @@
 
 			if(!$result = $mysql->query($query))
 			{
-				die("Error". $msyql->error);
+				die("Error".$msyql->error);
 
 			}else{
-				header("Location: ../../../ListaTs.php");
+				$query_asis = "DELETE FROM asistencia WHERE id_ts = '$id_ts' ";
+				if(!$asis_query = $mysql->query($query_asis)){
+					echo ("Error al liminiar asistencia".$msyql->error);
+				}else{
+					header("Location: ../../../ListaTs.php");
+				}
+				
 
 			}
 

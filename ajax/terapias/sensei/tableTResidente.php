@@ -61,7 +61,7 @@
                                     if($c_sql == 0){
                                       echo "<td align='center'><input type='checkbox' class='all-asis' name='resi[]' value=".$row['id_residente']."/></td>";
                                     }else{?>
-                                      <td align='center'><input type='checkbox' class='all-asis' name='resi[]' value="<?php echo $row['id_residente']; ?>"  <?php if ($row['status_asis'] == 1){ echo "checked";  } ?>/></td>
+                                      <td align='center'><input type='checkbox' class='all-asis' name='resi[]' value="<?php echo $row['id_residente']; ?>"  <?php if ($row['status_asis'] == 1){ echo "checked";  }else{ echo "";} ?>/></td>
                                    <?php }
                                     
                                     ?>
@@ -99,8 +99,8 @@
           
             <div class="form-check col-md-3">
               <label>
-                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="TRATAMIENTO" <?php in_array('TRATAMIENTO', $item_asis) ? print "checked" : "";  ?>>
-                Tratamiento
+                <input type="checkbox" class="flat-red" name="item[<?php echo $a['id_asis'];?>][]" value="TRAMITE" <?php in_array('TRAMITE', $item_asis) ? print "checked" : "";  ?>>
+                Tramite
               </label>
             </div>
 

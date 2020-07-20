@@ -15,6 +15,21 @@
               </ul>
             </li>'; 
 
+  $introvisacion = '<li class=""><a href="ListaIntro.php"><i class="fa fa-circle-o"></i><span>Introvisación</span></a></li>';
+
+  // $introvisacion = '<li class="treeview">
+  //           <a href="#">
+  //             <i class="fa fa-circle-o"></i>
+  //             <span>Introvisaciones</span>
+  //             <i class="fa fa-angle-left pull-right"></i>
+  //           </a>
+  //           <ul class="treeview-menu">
+  //             <li><a href="ListaIntro.php"><i class="fa fa-circle-o"></i> Activos</a></li>
+  //             <li><a href="LReducado.php"><i class="fa fa-circle-o"></i> Pendientes</a></li>
+  //             <li><a href="abandono.php"><i class="fa fa-circle-o"></i> Transferidos</a></li>
+  //           </ul>
+  //         </li>'; 
+
   // $profesionales = '<li class="treeview">
   //         <a href="#">
   //           <i class="fa fa-share"></i> <span>Profesionales</span>
@@ -95,13 +110,14 @@
         //Menú residentes
          echo $residentes;
        
-      
-
         // //MENÚ DE PROFESIONALES
         // echo $profesionales;
 
        //Lista de terapias 
         echo $listaTerapias; 
+      
+        // Lista de introvisaciones
+        echo $introvisacion;
 
         //Llamada Reducados 
         echo $llamadaReducado; 
@@ -142,6 +158,9 @@
 
        //Lista de terapias 
         echo $listaTerapias; 
+
+        //Introvisaciones
+        echo $introvisacion;
 
         //Llamada Reducados 
         echo $llamadaReducado; 
@@ -229,6 +248,9 @@
 
        //Lista de terapias 
         echo $listaTerapias; 
+
+        // Introvisaciones
+        echo $introvisacion;
 
         //Calendarios 
         echo $calendario;
