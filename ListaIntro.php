@@ -61,6 +61,8 @@
             <th>ID</th>
             <th>Nombre</th>
             <th>Fecha</th>
+            <th>Estado</th>
+            <th>Evaluación</th>
             <th><center>Opciones</center></th>
 
           </thead>
@@ -76,8 +78,22 @@
                 "<tr>
                   <td>".$row['id_intro']."</td>
                   <td>".$row['nombre']." ".$row['apellido']."</td>
-                  <td>".date('d-m-Y', strtotime($row['fecha_intro']))."</td>
-                  
+                  <td>".date('d-m-Y', strtotime($row['fecha_intro']))."</td>";
+                if($row['estado_intro'] == '1'){
+                  echo "<td><span class='label label-default'>Abrierto</span></td>";
+                }else{
+                  echo "<td><span class='label label-default'>Cerrado</span></td>";
+                }
+
+                if($row['evaluacion_intro'] == '1'){
+                  echo "<td><span class='label label-success'>Buen estado</span></td>";
+                }elseif($row['evaluacion_intro'] == '2'){
+                  echo "<td><span class='label label-warning'>Ayuda preventiva</span></td>";
+                }elseif($row['evaluacion_intro'] == '3'){
+                  echo "<td><span class='label label-danger'>Estado Crítico</span></td>";
+                }
+                
+                echo "  
                   
                   <td align='center'>
       

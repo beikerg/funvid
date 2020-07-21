@@ -52,7 +52,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="
-                      terapiaconfrontacion.php"><i class="fa fa-circle-o"></i> Confrontación</a></li>
+                      terapiaconfrontacion.php"><i class="fa fa-circle-o"></i> Activación Conductual</a></li>
                 <li><a href="ListaTerapiaRelatoPase.php"><i class="fa fa-circle-o"></i>Relato de pase</a></li>
                 <li><a href="ListaTGrupal.php"><i class="fa fa-circle-o"></i>Grupal</a></li>
                 <li><a href="ListaTInf.php"><i class="fa fa-circle-o"></i>Espiritual o Reflexiva</a></li>
