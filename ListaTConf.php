@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapias Anteriores</title>
+   <title>FUNVID | Terapias de activación conductual</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -24,13 +24,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista Terapia de confrontación
+        Lista terapia de activación conductual
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Lista de Terapia de confrontación</li>
+        <li class="active">Lista de terapia de activación conductual</li>
       </ol>
     </section>
 

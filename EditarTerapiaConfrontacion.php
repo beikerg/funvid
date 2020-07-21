@@ -63,7 +63,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html lang="es">
 <head>
   
-  <title>FUNVID | Terapia de confrontación</title>
+  <title>FUNVID | Terapia de activación conductual</title>
   <?php include("include/head.php"); ?>
 </head>
 
@@ -85,13 +85,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapia de confrontación
+        Terapia de activación conductual
         <small></small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Psicologos</a></li>
         <li>Tipos de terapias</li>
-        <li class="active">Terapia de confrontación</li>
+        <li class="active">Terapia de activación conductual</li>
       </ol>
     </section>
 
