@@ -15,20 +15,20 @@
               </ul>
             </li>'; 
 
-  $introvisacion = '<li class=""><a href="ListaIntro.php"><i class="fa fa-circle-o"></i><span>Introvisación</span></a></li>';
+  // $introvisacion = '<li class=""><a href="ListaIntro.php"><i class="fa fa-circle-o"></i><span>Introvisación</span></a></li>';
 
-  // $introvisacion = '<li class="treeview">
-  //           <a href="#">
-  //             <i class="fa fa-circle-o"></i>
-  //             <span>Introvisaciones</span>
-  //             <i class="fa fa-angle-left pull-right"></i>
-  //           </a>
-  //           <ul class="treeview-menu">
-  //             <li><a href="ListaIntro.php"><i class="fa fa-circle-o"></i> Activos</a></li>
-  //             <li><a href="LReducado.php"><i class="fa fa-circle-o"></i> Pendientes</a></li>
-  //             <li><a href="abandono.php"><i class="fa fa-circle-o"></i> Transferidos</a></li>
-  //           </ul>
-  //         </li>'; 
+  $introvisacion = '<li class="treeview">
+            <a href="#">
+              <i class="fa fa-circle-o"></i>
+              <span>Introvisaciones</span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">';
+        $intro_historico =' <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Histórico</a></li>';
+        $intro_activo = '<li><a href="ListaIntro.php"><i class="fa fa-circle-o"></i> Activos</a></li>';
+        $intro_psico ='<li><a href="ListaIntroAct.php"><i class="fa fa-circle-o"></i> Psicologo</a></li>';
+  $introvisacionf = '</ul>
+          </li>'; 
 
   // $profesionales = '<li class="treeview">
   //         <a href="#">
@@ -117,6 +117,10 @@
       
         // Lista de introvisaciones
         echo $introvisacion;
+          echo $intro_activo;
+          echo $intro_historico;
+          echo $intro_psico;
+        echo $introvisacionf;
 
         //Llamada Reducados 
         echo $llamadaReducado; 
@@ -160,6 +164,10 @@
 
         //Introvisaciones
         echo $introvisacion;
+          echo $intro_activo;
+          echo $intro_historico;
+          echo $intro_psico;
+        echo $introvisacionf;
 
         //Llamada Reducados 
         echo $llamadaReducado; 
@@ -220,6 +228,11 @@
        //Lista de terapias 
         echo $listaTerapias; 
 
+        echo $introvisacion;
+          echo $intro_historico;
+          echo $intro_psico;
+        echo $introvisacionf;
+
         //Consulta Psicologia
         echo $consultaPsicologia;
 
@@ -236,6 +249,12 @@
         //Calendarios 
         echo $calendario;
 
+        // Introvisaciones
+        echo $introvisacion;
+          echo $intro_activo;
+          echo $intro_historico;
+        echo $introvisacionf;
+
         //Ayudas -->
         echo $ayudas;
 
@@ -250,6 +269,9 @@
 
         // Introvisaciones
         echo $introvisacion;
+          echo $intro_activo;
+          echo $intro_historico;
+        echo $introvisacionf;
 
         //Calendarios 
         echo $calendario;

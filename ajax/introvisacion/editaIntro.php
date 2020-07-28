@@ -10,9 +10,11 @@
 		$nombre_intro = $_POST['nombre_intro'];
 		$evaluacion_intro = $_POST['evaluacion_intro'];
 		$fecha_intro = $_POST['fecha_intro'];
-		// $estado_intro = $_POST['estado_intro'];
+		$estado_intro = $_POST['estado_intro'];
 		$text_intro = $_POST['text_intro'];
 		$observ_edu_intro = $_POST['observ_edu_intro'];
+		$observ_tera_intro = $_POST['observ_tera_intro'];
+		$observ_psico_intro = $_POST['observ_psico_intro'];
 
 
 		$query = "UPDATE introvisacion
@@ -21,8 +23,11 @@
 				nombre_intro  =  '$nombre_intro',
 				evaluacion_intro  =  '$evaluacion_intro',
 				fecha_intro  =  '$fecha_intro',
+				estado_intro = '$estado_intro',
 				text_intro  =  '$text_intro',
-				observ_edu_intro  =  '$observ_edu_intro'
+				observ_edu_intro  =  '$observ_edu_intro',
+				observ_tera_intro = '$observ_tera_intro',
+				observ_psico_intro = '$observ_psico_intro'
 		WHERE id_intro = '$id_intro' AND id_residente = '$id_residente' ";
 
 		

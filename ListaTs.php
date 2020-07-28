@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Sensei (Deportiva)</title>
+   <title>FUNVID | Terapia Sensei</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -24,7 +24,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapias Sensei (Deportivas)
+        Terapias Sensei
         <small></small>
       </h1>
       <ol class="breadcrumb">

@@ -56,7 +56,7 @@
      <!--  <div class="row"> -->
         <div class="col-xs-12">
          
-        <table id="introvisacion" class="table table-bordered table-striped dt-responsive nowrap">
+        <table id="" class="display table table-bordered table-striped dt-responsive nowrap">
           <thead>
             <th>ID</th>
             <th>Nombre</th>
@@ -69,7 +69,7 @@
           <tbody>
             <?php
               include('ajax/db_connection.php');
-              $sql = "SELECT r.nombre, r.apellido, i.* FROM residentes r INNER JOIN introvisacion i ON i.id_residente = r.id_residente WHERE i.estado_intro = '1' ORDER BY i.id_intro DESC";
+              $sql = "SELECT r.nombre, r.apellido, i.* FROM residentes r INNER JOIN introvisacion i ON i.id_residente = r.id_residente WHERE estado_intro = '0' ORDER BY i.fecha_intro DESC";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
@@ -97,13 +97,17 @@
                 
                 echo "  
                   
-                  <td align='center'>
+                  <td align='center'>";
       
-                    
-                    <a title='Editar' href='editarIntro.php?id=".$row['id_intro']."' class='btn btn-warning'><i class='glyphicon glyphicon-pencil'></i></a>
-                
-                    <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_intro'].")'><i class='glyphicon glyphicon-trash'></i></a>                     
-                    
+                    if($_SESSION['rol'] == 'Admin'){
+                      echo "<a title='Editar' href='editarIntro.php?id=".$row['id_intro']."' class='btn btn-warning'><i class='glyphicon glyphicon-pencil'></i></a>
+
+                    <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_intro'].")'><i class='glyphicon glyphicon-trash'></i></a>
+                    <a title='Ver' href='editarIntro.php?id=".$row['id_intro']."&view=1' class='btn btn-success'><i class='glyphicon glyphicon-eye-open'></i></a>";
+                    }else{
+                      echo "<a title='Ver' href='editarIntro.php?id=".$row['id_intro']."&view=1' class='btn btn-success'><i class='glyphicon glyphicon-eye-open'></i></a>";
+                  }                     
+                    echo "
                   </td>
                 </tr>";
                 

@@ -70,6 +70,24 @@ $(document).ready(function(){
     
 });
 </script>
+
+<script>
+$(document).ready(function(){
+  //inialize datatable
+    $('#introvisacion').DataTable({
+      "language": 
+            {
+              "emptyTable": "<h4>¡Aún no hay ningun registro!.</h4>",  
+              "searchPlaceholder":  "Buscar",   
+              "zeroRecords": "<h4>¡No se han encontrado coincidencias!.</h4>", 
+            }
+
+    });
+     
+    
+});
+</script>
+
 <script>
 $(document).ready(function(){
   //inialize datatable

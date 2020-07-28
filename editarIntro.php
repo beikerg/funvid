@@ -9,6 +9,12 @@ include("ajax/db_connection.php");
       header("Location: ListaIntro.php");
      
     }
+    if(empty($_GET['view'])){
+      $view = '0';
+    }else{
+      $view = $_GET['view'];
+    }
+    
     $id = $_GET['id'];
 
     $q = "SELECT r.nombre, r.apellido, i.* FROM residentes r INNER JOIN introvisacion i ON r.id_residente = i.id_residente WHERE i.id_intro = '$id' ";
@@ -27,11 +33,14 @@ include("ajax/db_connection.php");
           $nombre = $data['nombre'];
           $apellido = $data['apellido'];
           $etapa_intro = $data['etapa_intro'];
+          $estado_intro = $data['estado_intro'];
           $fecha_intro = $data['fecha_intro'];
           $nombre_intro = $data['nombre_intro'];
           $evaluacion_intro = $data['evaluacion_intro'];
           $text_intro = $data['text_intro'];
           $observ_edu_intro = $data['observ_edu_intro'];
+          $observ_tera_intro = $data['observ_tera_intro'];
+          $observ_psico_intro = $data['observ_psico_intro'];
         }
       }
 
@@ -68,8 +77,8 @@ include("ajax/db_connection.php");
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Introvisación</a></li>
-    
       </ol>
+     
     </section>
 
     <!-- Main content -->
@@ -77,14 +86,27 @@ include("ajax/db_connection.php");
 
       <!--------------------------
         | Your Page Content Here |
-        -------------------------->
-  <br>                   
+        -------------------------->                  
        
          <form action="ajax/introvisacion/editaIntro.php" method="POST">   
           <!-- // INICIO BOX // -->
             <!-- input almacena el id del terapia -->
             <input type="hidden" name="id_intro" value="<?php echo $id_intro; ?>" >
             <input type="hidden" name="id_residente" value="<?php echo $id_residente; ?>" >   
+
+      <div class="container">
+        <div class="pull-right" <?php if($_SESSION['rol'] == 'Psicologo'){ echo 'style="display: block;"'; }elseif($_SESSION['rol'] == 'Admin'){ echo 'style="display: block;"';}elseif($_SESSION['rol'] == 'Terapeutas'){ echo 'style="display: block;"';}elseif($_SESSION['rol'] == 'Super_Administrador'){ echo 'style="display: block;"';}else{echo 'style="display: none;"';} ?>>
+          <div class="form-gruop">
+          <label>Estado de la introvisación:</label>
+          <select name="estado_intro" class="form-control" <?php echo ($view == '1') ? "readonly" : ""; ?>>
+            <option value="1" <?php echo ($estado_intro == '1') ? "selected" : ""; ?>>Abierto</option>
+            <option value="2" <?php echo ($estado_intro == '2') ? "selected" : ""; ?>>Transferir</option>
+            <option value="0" <?php echo ($estado_intro == '0') ? "selected" : ""; ?>>Cerrado</option>
+          </select>
+          <br>
+          </div>
+        </div>
+        </div>
      
            
                   <!-- // INICIO BOX 2 // -->
@@ -115,7 +137,7 @@ include("ajax/db_connection.php");
                       </div>                                        
                       <div class="form-group col-md-6">
                           <label>¿Quién evalua?</label><br>
-                          <input class="form-control" type="text" name="nombre_intro" value="<?php echo $nombre_intro; ?>">
+                          <input class="form-control" type="text" name="nombre_intro" value="<?php echo $nombre_intro; ?>" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>>
                       </div>                    
                       </div> <!-- / fin del row -->                     
                     <div class="row">                      
@@ -125,13 +147,13 @@ include("ajax/db_connection.php");
                             <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="date" value="<?php echo $fecha_intro; ?>" name="fecha_intro" class="form-control pull-right" >
+                        <input type="date" value="<?php echo $fecha_intro; ?>" name="fecha_intro" class="form-control pull-right" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>>
                       </div>
                       <!-- /.input group -->
                     </div>                     
                       <div class="form-group col-md-4">
                           <label>Etapa:</label><br>
-                          <select class="form-control" name="etapa_intro">
+                          <select class="form-control" name="etapa_intro" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>>
                               <option value="<?php echo $etapa_intro; ?>"><?php echo strtr($etapa_intro, "-", " ");?></option>
                               <option value="INTEGRACION">INTEGRACIÓN</option>
                               <option value="CONFIANZA">CONFIANZA</option>
@@ -148,19 +170,10 @@ include("ajax/db_connection.php");
                       
                       <div class="form-group col-md-4">
                           <label>Evaluación:</label><br>
-                          <select class="form-control" name="evaluacion_intro">
-                            <?php 
-                            if($evaluacion_intro == '1'){
-                              echo "<option value='1'>Buen Estado</option>";
-                            }elseif($evaluacion_intro == '2'){
-                              echo "<option value='2'>Ayuda preventiva</option>";
-                            }elseif($evaluacion_intro == '3'){
-                              echo "<option value='3'>Estado crítico</option>";
-                            }
-                            ?>
-                            <option value="1">Buen Estado</option>
-                            <option value="2">Ayuda preventiva</option>
-                            <option value="3">Estado crítico</option>
+                          <select class="form-control" name="evaluacion_intro" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>>
+                            <option value="1" <?php echo ($evaluacion_intro == '1') ? "selected" : ""; ?>>Buen Estado</option>
+                            <option value="2" <?php echo ($evaluacion_intro == '2') ? "selected" : ""; ?>>Ayuda preventiva</option>
+                            <option value="3" <?php echo ($evaluacion_intro == '3') ? "selected" : ""; ?>>Estado crítico</option>
                           </select>
                       </div>
                       </div> <!--// FIN DEL FORN-INLINE//-->              
@@ -199,7 +212,7 @@ include("ajax/db_connection.php");
                 
                  <div class="form-group">
                   
-                  <textarea class="form-control" rows="3" name="text_intro" placeholder="Escriba aquí la introvisación"><?php echo $text_intro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="text_intro" placeholder="Escriba aquí la introvisación" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $text_intro; ?></textarea>
                 </div>            
                       </div> <!--// FIN DEL FORN-INLINE//-->
 
@@ -237,7 +250,17 @@ include("ajax/db_connection.php");
                 
                       <div class="form-group col-md-12">
                   <label>Observaciones del educador:</label>
-                  <textarea class="form-control" rows="3" name="observ_edu_intro" placeholder="Observaciones de evaluación del educador ..."><?php echo $observ_edu_intro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="observ_edu_intro" placeholder="Observaciones de evaluación del educador ..." <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'readonly';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $observ_edu_intro; ?></textarea>
+                </div>
+
+                <div class="form-group col-md-12" <?php if($_SESSION['rol'] == 'Terapeutas'){ echo 'style="display: block;"'; }elseif($_SESSION['rol'] == 'Psicologo'){ echo 'style="display: block;"';}elseif($_SESSION['rol'] == 'Admin'){ echo 'style="display: block;"';}else{echo 'style="display: none;"';} ?>>
+                  <label>Observaciones del Terapeuta:</label>
+                  <textarea class="form-control" rows="3" name="observ_tera_intro" placeholder="Observaciones de evaluación del terapeuta ..." <?php if($_SESSION['rol'] == 'Terapeutas'){ echo '';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $observ_tera_intro; ?></textarea>
+                </div>
+
+                <div class="form-group col-md-12" <?php if($_SESSION['rol'] == 'Psicologo'){ echo 'style="display: block;"'; }elseif($_SESSION['rol'] == 'Admin'){ echo 'style="display: block;"';}else{echo 'style="display: none;"';} ?>>
+                  <label>Observaciones del Psicologo:</label>
+                  <textarea class="form-control" rows="3" name="observ_psico_intro" placeholder="Observaciones de evaluación del psicologo ..." <?php if($_SESSION['rol'] == 'Terapeutas'){ echo '';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $observ_psico_intro; ?></textarea>
                 </div>
                                    
               </div> <!--// FIN DEL FORN-INLINE//-->
@@ -249,10 +272,16 @@ include("ajax/db_connection.php");
           <!-- /.box -->
         </div>
         <!-- /.col -->
-           
-        <div class="form-group">
-          <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
-        </div>
+        
+        
+          <?php
+            if(!$view == '1'){
+              echo  '<div class="form-group">
+              <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
+            </div>';
+            }
+          ?>
+        
 
         </div>     
 

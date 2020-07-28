@@ -13,7 +13,12 @@
 		$evaluacion_intro = $_POST['evaluacion_intro'];
 		$text_intro = $_POST['text_intro'];
 		$observ_edu_intro = $_POST['observ_edu_intro'];
-		$estado_intro = '1';
+		if($evaluacion_intro == '1'){
+			$estado_intro = '0';
+		}else{
+			$estado_intro = '1';
+		}
+		
 		
 
 

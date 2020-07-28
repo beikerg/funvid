@@ -119,7 +119,19 @@ if(!empty($_GET['id'])){
                     </div>                     
                       <div class="form-group col-md-4">
                           <label>Etapa</label><br>
-                          <input class="form-control" type="text" name="etapa_intro" value="<?php echo $etapa_resi; ?>">
+                          <select class="form-control" name="etapa_intro">
+                              <option>Seleccionar ...</option>
+                              <option value="INTEGRACION" <?php echo ($etapa_resi == 'INTEGRACION') ? "selected" : ""; ?>>INTEGRACIÓN</option>
+                              <option value="CONFIANZA" <?php echo ($etapa_resi == 'CONFIANZA') ? "selected" : ""; ?>>CONFIANZA</option>
+                              <option value="INICIATIVA" <?php echo ($etapa_resi == 'INICIATIVA') ? "selected" : ""; ?>>INICIATIVA</option>
+                              <option value="IDENTIDAD" <?php echo ($etapa_resi == 'IDENTIDAD') ? "selected" : ""; ?>>IDENTIDAD</option>
+                              <option value="TRASCENDENCIA" <?php echo ($etapa_resi == 'TRASCENDENCIA') ? "selected" : ""; ?>>TRASCENDENCIA</option>
+                              <option value="EDUCADOR-1" <?php echo ($etapa_resi == 'EDUCADOR-1') ? "selected" : ""; ?>>EDUCADOR 1</option>
+                              <option value="EDUCADOR-2" <?php echo ($etapa_resi == 'EDUCADOR-2') ? "selected" : ""; ?>>EDUCADOR 2</option>
+                              <option value="EDUCADOR-3" <?php echo ($etapa_resi == 'EDUCADOR-3') ? "selected" : ""; ?>>EDUCADOR 3</option>
+                              <option value="EDUCADOR-4" <?php echo ($etapa_resi == 'EDUCADOR-4') ? "selected" : ""; ?>>EDUDADOR 4</option>
+                              <option value="REDUCADO" <?php echo ($etapa_resi == 'REDUCADO') ? "selected" : ""; ?>>REDUCADO</option>
+                          </select>
                       </div>
                       
                       <div class="form-group col-md-4">
