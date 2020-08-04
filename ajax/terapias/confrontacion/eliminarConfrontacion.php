@@ -13,7 +13,13 @@ if(isset($_GET['id']) && isset($_GET['id']) != "")
     if (!$result = $mysql->query($query)) {
         echo (mysqli_errno());
     }else{
-    	header("Location: ../../../ListaTConf.php");
+        $query_asis = "DELETE FROM asistencia WHERE id_t_conf = '$id_t_conf' ";
+			    if(!$asis_query = $mysql->query($query_asis)){
+					echo ("Error al liminiar asistencia".$msyql->error);
+				}else{
+					header("Location: ../../../ListaTConf.php");
+				}
+    	
     }
 }
 
