@@ -43,19 +43,23 @@
 		}else{
 			if($_POST['botones'] == 'save'){
 
-				if($_POST['c_sql'] == 0){
-					// INSERTAR ASISTENCIA SIN GENERAR
-					include("../../db_connection.php");
-					$resi_q = $mysql->query("SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO'");
-						while($r = $resi_q->fetch_assoc()){
-							$residente = $r['id_residente'];
+				include('../../db_connection.php');
+				$asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_t_conf = '$id_t_conf'");
+				$c_sql = mysqli_num_rows($asis_sql);
 
-							$data = "INSERT INTO asistencia (id_t_conf, id_residente, status_asis) 
-											VALUE ('$id_t_conf', '$residente', '0')";
-							$resi_add_asis = $mysql->query($data);
-						}
-					$mysql->close();
-					// --- FIN LISTA DE RESIDENTES - INSERT - SIN GENERAR
+				if($c_sql == 0){
+				// INSERTAR ASISTENCIA SIN GENERAR
+				include("../../db_connection.php");
+				$resi_q = $mysql->query("SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO'");
+					while($r = $resi_q->fetch_assoc()){
+						$residente = $r['id_residente'];
+
+						$data = "INSERT INTO asistencia (id_t_conf, id_residente, status_asis) 
+										VALUE ('$id_t_conf', '$residente', '0')";
+						$resi_add_asis = $mysql->query($data);
+					}
+				$mysql->close();
+				// --- FIN LISTA DE RESIDENTES - INSERT - SIN GENERAR
 				}
 
 				// UPDATE RESIDENTES PARA INICIO DE ASISTENCIA

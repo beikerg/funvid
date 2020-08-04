@@ -102,12 +102,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-    
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>
   
 
        <form action="ajax/terapias/especial/editarEspecial.php?id=<?php echo $id_residente; ?>&tera=<?php echo $id_especial; ?>" method="POST">
       
-            
+       <?php include("ajax/terapias/especial/tableTResidenteEdit.php"); ?>  
           
           <!-- // INICIO BOX // -->
             
