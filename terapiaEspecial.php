@@ -341,7 +341,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <!-- BOTON PARA GUARDAR CAMBIOS -->
-        <center> <input type="submit" class="btn btn-primary btn-lg" value="Guardar"></center>
+        <center> <input type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar"></center>
         
             
             
