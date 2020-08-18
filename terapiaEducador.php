@@ -91,7 +91,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         | Your Page Content Here |
         -------------------------->
 
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>
+
        <form action="ajax/terapias/reunion-educadores/addEducador.php?id=<?php echo $id_residente; ?>" method="POST">
+
+       <?php include("ajax/terapias/reunion-educadores/tableTResidente.php"); ?>
       
             
           
@@ -337,7 +344,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
         <!-- BOTON PARA GUARDAR CAMBIOS -->
-        <center> <input type="submit" class="btn btn-primary btn-lg" value="Guardar"></center>
+        <center> <button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar">Guardar</button></center>
         
             
             

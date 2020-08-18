@@ -9,7 +9,7 @@
     }
 
 
-    $id_residente = $_GET['id'];
+    $id_residente = $_GET['id']; 
     $id_redu = $_GET['tera'];
 
     $q = "SELECT r.nombre, r.apellido, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN reunion_educadores t ON t.id_residente = r.id_residente WHERE t.id_residente = '$id_residente' AND t.id_redu = '$id_redu' ";
@@ -102,12 +102,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-    
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>
   
 
        <form action="ajax/terapias/reunion-educadores/editarEducador.php?id=<?php echo $id_residente; ?>&tera=<?php echo $id_redu; ?>" method="POST">
       
-            
+       <?php include("ajax/terapias/reunion-educadores/tableTResidenteEdit.php"); ?>      
           
           <!-- // INICIO BOX // -->
             
@@ -361,7 +364,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
             <!-- // FIN DEL BOX  4// -->
               
-             <center> <input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios"></center>
+             <center> <button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar">Guardar Cambios</button></center>
         </div>
             
             
