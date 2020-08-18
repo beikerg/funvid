@@ -102,12 +102,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-    
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>
   
 
        <form action="ajax/terapias/grupo-atras/editarGa.php?id=<?php echo $id_residente; ?>&tera=<?php echo $id_ga; ?>" method="POST">
       
-            
+       <?php include("ajax/terapias/grupo-atras/tableTResidenteEdit.php"); ?>      
           
           <!-- // INICIO BOX // -->
             
@@ -361,7 +364,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
             <!-- // FIN DEL BOX  4// -->
               
-             <center> <input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios"></center>
+             <center> <button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar">Guardar Cambios</button></center>
         </div>
             
             
