@@ -10,6 +10,7 @@ include("ajax/db_connection.php");
      
     }
     $id = $_GET['id'];
+    $id_t_pase = $_GET['id'];
 
     $q = "SELECT r.id_residente, r.nombre, r.apellido, r.sexo, r.fecha, t.* FROM residentes r INNER JOIN tera_pase t ON t.id_residente = r.id_residente  WHERE id_t_pase = '$id' ";
     $sql = $mysql->query($q);
@@ -89,9 +90,14 @@ include("ajax/db_connection.php");
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-  <br>                   
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>
        
-         <form action="ajax/terapias/RelatoPase/editaRelatoPase.php" method="POST">   
+         <form action="ajax/terapias/RelatoPase/editaRelatoPase.php" method="POST">  
+
+         <?php include("ajax/terapias/RelatoPase/tableTResidenteEdit.php"); ?>   
           <!-- // INICIO BOX // -->
             <!-- Este input almacena el id del residente seleccionado -->
             <input type="hidden" name="id_residente" value="<?php echo $id_residente; ?>" >
@@ -301,7 +307,7 @@ include("ajax/db_connection.php");
         <!-- /.col -->
            
         <div class="form-group">
-          <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
+          <center><button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar" >Guardar Cambios</button></center>
         </div>
 
         </div>     
