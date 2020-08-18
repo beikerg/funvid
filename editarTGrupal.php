@@ -94,9 +94,14 @@ include("ajax/db_connection.php");
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-  <br>                   
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>                  
        
-         <form action="ajax/terapias/grupal/editarGrupal.php" method="POST">   
+         <form action="ajax/terapias/grupal/editarGrupal.php" method="POST">
+
+         <?php include("ajax/terapias/grupal/tableTResidenteEdit.php"); ?>    
           <!-- // INICIO BOX // -->
             <!-- Este input almacena el id del residente seleccionado -->
             <input type="hidden" name="id_residente" value="<?php echo $id_residente; ?>" >
@@ -347,7 +352,7 @@ include("ajax/db_connection.php");
         <!-- /.col -->
            
         <div class="form-group">
-          <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambos" ></center>
+          <center><button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar" >Guardar Cambios</button></center>
         </div>
 
         </div>     

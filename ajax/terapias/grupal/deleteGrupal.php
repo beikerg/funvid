@@ -13,7 +13,13 @@
 				die($msyql->error);
 
 			}else{
-				header("Location: ../../../ListaTGrupal.php");
+				$query_asis = "DELETE FROM asistencia WHERE id_tg = '$id_tg' ";
+			    if(!$asis_query = $mysql->query($query_asis)){
+					echo ("Error al liminiar asistencia".$msyql->error);
+				}else{
+					header("Location: ../../../ListaTGrupal.php");
+				}
+				// header("Location: ../../../ListaTGrupal.php");
 
 			}
 
