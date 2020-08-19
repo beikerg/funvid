@@ -46,9 +46,14 @@ date_default_timezone_set("America/Santiago");
       <!--------------------------
         | Your Page Content Here |
         -------------------------->
-  <br>                   
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>                
        
          <form action="ajax/terapias/informativa/addInformativa.php" method="POST">   
+
+         <?php include("ajax/terapias/informativa/tableTResidente.php"); ?>
           
          
                   <!-- // INICIO BOX 2 // -->
@@ -205,7 +210,7 @@ date_default_timezone_set("America/Santiago");
         <!-- /.col -->
            
         <div class="form-group">
-          <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar" ></center>
+          <center><button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar" >Guardar</button></center>
         </div>
 
         </div>     
