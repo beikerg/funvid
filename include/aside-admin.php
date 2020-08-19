@@ -63,6 +63,10 @@
                 <li><a href="ListaTGa.php"><i class="fa fa-circle-o"></i>Grupo Atrás</a></li>
                 <li><a href="ListaTs.php"><i class="fa fa-circle-o"></i>Sensei</a></li>
                 <li><a href="ListaTedu.php"><i class="fa fa-circle-o"></i>Educativa</a></li>
+                <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Neuroplasticidad</a></li>
+                <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Mayeutica</a></li>
+                <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Manejo emocional</a></li>
+                
 
               </ul>
             </li>';
