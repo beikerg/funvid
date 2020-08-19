@@ -15,6 +15,8 @@
               </ul>
             </li>'; 
 
+  $residentes_redu = '<li class=""><a href="LReducado.php"><i class="fa fa-circle-o"></i><span> Reducados</span></a></li>'; 
+
   // $introvisacion = '<li class=""><a href="ListaIntro.php"><i class="fa fa-circle-o"></i><span>Introvisación</span></a></li>';
 
   $introvisacion = '<li class="treeview">
@@ -114,6 +116,7 @@
 
        //Lista de terapias 
         echo $listaTerapias; 
+        
       
         // Lista de introvisaciones
         echo $introvisacion;
@@ -284,11 +287,21 @@
         break;
 
         case 'Reducados':
-        //Llamada Reducados 
-        echo $llamadaReducado; 
+
+        //Reducados
+        echo $residentes_redu;
 
         //Calendarios 
         echo $calendario;
+
+        //Llamada Reducados 
+        echo $llamadaReducado; 
+
+        //Velamientos
+        echo $velamiento;
+
+        // APIS
+        echo $APIS;
 
           break;
 
