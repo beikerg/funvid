@@ -78,10 +78,16 @@ include("ajax/db_connection.php");
 
       <!--------------------------
         | Your Page Content Here |
-        -------------------------->
-  <br>                   
+        --------------------------> 
+
+        <div class="form-group pull-right">
+          <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#asistencia-modal" >Asistencia</button>
+        </div>
+         <br>                
        
          <form action="ajax/terapias/t-edu/editaTedu.php" method="POST">   
+
+         <?php include("ajax/terapias/t-edu/tableTResidenteEdit.php"); ?>  
           <!-- // INICIO BOX // -->
             <!-- input almacena el id del terapia -->
             <input type="hidden" name="id_tedu" value="<?php echo $id_tedu; ?>" >
@@ -233,7 +239,7 @@ include("ajax/db_connection.php");
         <!-- /.col -->
            
         <div class="form-group">
-          <center><input type="submit" class="btn btn-primary btn-lg" value="Guardar Cambios" ></center>
+          <center><button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar" >Guardar Cambios</button></center>
         </div>
 
         </div>     
