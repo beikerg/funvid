@@ -48,7 +48,7 @@
                                 include('ajax/db_connection.php');
                                 
                                 if($c_sql == 0){
-                                  $sql = "SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO' ";
+                                  $sql = "SELECT * FROM residentes WHERE etapa_resi = 'EDUCADOR-1' || etapa_resi = 'EDUCADOR-2' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-4' || etapa_resi = 'TRASCENDENCIA' || etapa_resi = 'IDENTIDAD' ";
                                 }else{
                                   $sql = "SELECT r.nombre, r.apellido, r.rut, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_especial = '$id_especial'";
                                 }

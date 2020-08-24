@@ -10,12 +10,12 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="residente.php"><i class="fa fa-circle-o"></i> Residentes</a></li>
-                <li><a href="LReducado.php"><i class="fa fa-circle-o"></i> Reducados</a></li>
+                <li><a href="LReducado.php"><i class="fa fa-circle-o"></i> Reeducados</a></li>
                 <li><a href="abandono.php"><i class="fa fa-circle-o"></i> Abandono</a></li>
               </ul>
             </li>'; 
 
-  $residentes_redu = '<li class=""><a href="LReducado.php"><i class="fa fa-circle-o"></i><span> Reducados</span></a></li>'; 
+  $residentes_redu = '<li class=""><a href="LReducado.php"><i class="fa fa-circle-o"></i><span> Reeducados</span></a></li>'; 
 
   // $introvisacion = '<li class=""><a href="ListaIntro.php"><i class="fa fa-circle-o"></i><span>Introvisación</span></a></li>';
 
@@ -64,7 +64,7 @@
                 <li><a href="ListaTs.php"><i class="fa fa-circle-o"></i>Sensei</a></li>
                 <li><a href="ListaTedu.php"><i class="fa fa-circle-o"></i>Educativa</a></li>
                 <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Neuroplasticidad</a></li>
-                <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Mayeutica</a></li>
+                <li><a href="ListaTmayeutica.php"><i class="fa fa-circle-o"></i>Mayéutica</a></li>
                 <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Manejo emocional</a></li>
                 
 

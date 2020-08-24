@@ -36,7 +36,7 @@
 
                                 include('ajax/db_connection.php');
                                 
-                                  $sql = "SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO' ";
+                                  $sql = "SELECT * FROM residentes WHERE etapa_resi = 'EDUCADOR-1' || etapa_resi = 'EDUCADOR-2' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-4' ";
                             
                                 
                                 //use for MySQLi-OOP
