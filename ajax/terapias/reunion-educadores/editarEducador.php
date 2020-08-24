@@ -53,7 +53,7 @@
 				if($c_sql == 0){
 					// INSERTAR ASISTENCIA SIN GENERAR
 					include("../../db_connection.php");
-					$resi_q = $mysql->query("SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO'");
+					$resi_q = $mysql->query("SELECT * FROM residentes WHERE etapa_resi = 'EDUCADOR-1' || etapa_resi = 'EDUCADOR-2' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-3' || etapa_resi = 'EDUCADOR-4' ");
 						while($r = $resi_q->fetch_assoc()){
 							$residente = $r['id_residente'];
 
