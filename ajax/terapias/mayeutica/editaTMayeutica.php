@@ -4,39 +4,39 @@
 		
 		require_once("../../db_connection.php");
 
-		$id_neuro = $_POST['id_neuro'];
-    	$lider_neuro = $_POST['lider_neuro'];
-        $fecha_neuro = $_POST['fecha_neuro'];
-        $h_inicio_neuro = $_POST['h_inicio_neuro'];
-        $h_fin_neuro = $_POST['h_fin_neuro'];
-        $tematica_neuro = $_POST['tematica_neuro'];
-    	$objetivosg_neuro = $_POST['objetivosg_neuro'];
-        $objetivosp_neuro = $_POST['objetivosp_neuro'];
-        $actitud_neuro = $_POST['actitud_neuro'];
+		$id_mayeutica = $_POST['id_mayeutica'];
+    	$lider_mayeutica = $_POST['lider_mayeutica'];
+        $fecha_mayeutica = $_POST['fecha_mayeutica'];
+        $h_inicio_mayeutica = $_POST['h_inicio_mayeutica'];
+        $h_fin_mayeutica = $_POST['h_fin_mayeutica'];
+        $tematica_mayeutica = $_POST['tematica_mayeutica'];
+    	$objetivosg_mayeutica = $_POST['objetivosg_mayeutica'];
+        $objetivosp_mayeutica = $_POST['objetivosp_mayeutica'];
+        $actitud_mayeutica = $_POST['actitud_mayeutica'];
 
 
 
-		$query = "UPDATE neuroplasticidad
+		$query = "UPDATE mayeutica
 			SET 
-				lider_neuro  =  '$lider_neuro',
-				fecha_neuro =  '$fecha_neuro',	
-				h_inicio_neuro  =  '$h_inicio_neuro',
-				h_fin_neuro  =  '$h_fin_neuro',	
-				tematica_neuro  =  '$tematica_neuro',	
-				objetivosg_neuro  =  '$objetivosg_neuro',	
-				objetivosp_neuro  =  '$objetivosp_neuro',
-				actitud_neuro  =  '$actitud_neuro'
-		WHERE id_neuro = '$id_neuro' ";
+				lider_mayeutica  =  '$lider_mayeutica',
+				fecha_mayeutica =  '$fecha_mayeutica',	
+				h_inicio_mayeutica  =  '$h_inicio_mayeutica',
+				h_fin_mayeutica  =  '$h_fin_mayeutica',	
+				tematica_mayeutica  =  '$tematica_mayeutica',	
+				objetivosg_mayeutica  =  '$objetivosg_mayeutica',	
+				objetivosp_mayeutica  =  '$objetivosp_mayeutica',
+				actitud_mayeutica  =  '$actitud_mayeutica'
+		WHERE id_mayeutica = '$id_mayeutica' ";
 
 		
 
 		if(!$result = $mysql->query($query)){
-			echo  "Error al actualizar terapia neuroplasticidad".$mysql->error;
+			echo  "Error al actualizar terapia mayéutica".$mysql->error;
 		}else{
 			if($_POST['botones'] == 'save'){
 
 				include('../../db_connection.php');
-				$asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_neuro = '$id_neuro'");
+				$asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_mayeutica = '$id_mayeutica'");
 				$c_sql = mysqli_num_rows($asis_sql);
 
 				if($c_sql == 0){
@@ -46,8 +46,8 @@
 						while($r = $resi_q->fetch_assoc()){
 							$residente = $r['id_residente'];
 
-							$data = "INSERT INTO asistencia (id_neuro, id_residente, status_asis) 
-											VALUE ('$id_neuro', '$residente', '0')";
+							$data = "INSERT INTO asistencia (id_mayeutica, id_residente, status_asis) 
+											VALUE ('$id_mayeutica', '$residente', '0')";
 							$resi_add_asis = $mysql->query($data);
 						}
 					$mysql->close();
@@ -56,11 +56,11 @@
 
 				// UPDATE RESIDENTES PARA INICIO DE ASISTENCIA
 				include("../../db_connection.php");
-				$resi_q = $mysql->query("SELECT * FROM asistencia WHERE id_neuro = '$id_neuro' ");
+				$resi_q = $mysql->query("SELECT * FROM asistencia WHERE id_mayeutica = '$id_mayeutica' ");
 					while($r = $resi_q->fetch_assoc()){
 						$residente = $r['id_residente'];
 
-						$data = "UPDATE asistencia SET status_asis = '0' WHERE id_neuro = '$id_neuro' ";
+						$data = "UPDATE asistencia SET status_asis = '0' WHERE id_mayeutica = '$id_mayeutica' ";
 						$resi_add_asis = $mysql->query($data);
 					}
 				$mysql->close();
@@ -73,7 +73,7 @@
 				while($i < $resi_num){
 					$id_data = $_POST['resi'][$i];
 
-					$data_resi = "UPDATE asistencia SET status_asis = '1' WHERE id_residente = '$id_data' AND id_neuro = '$id_neuro' ";
+					$data_resi = "UPDATE asistencia SET status_asis = '1' WHERE id_residente = '$id_data' AND id_mayeutica = '$id_mayeutica' ";
 
 					$resultado = $mysql->query($data_resi);
 					$i++;
@@ -82,7 +82,7 @@
 				// FIN ASISTENCIA - ADD
 
 				if(!$resi_add_asis && !$resultado){
-					echo "Error al editar asistenecia terapia educativa ".$mysql->error;
+					echo "Error al editar asistenecia terapia mayeutica ".$mysql->error;
 				}else{
 					//POST DEL ARRAY - INASISTENCIA
 					if(!empty($_POST['item'])){
@@ -106,14 +106,14 @@
 					
 					
 					// header("Location: ../../../editarTs.php?id=".$id_ts);
-					header("Location: ../../../editarTNeuro.php?id=".$id_neuro);
+					header("Location: ../../../editarTMayeutica.php?id=".$id_mayeutica);
 				}
 		}
 
 		if($_POST['botones'] == 'Guardar'){
-			header("location: ../../../ListaTNeuro.php");
+			header("location: ../../../ListaTMayeutica.php");
 		 }elseif($_POST['botones'] == 'save'){
-			header("Location: ../../../editarTNeuro.php?id=".$id_neuro);
+			header("Location: ../../../editarTMayeutica.php?id=".$id_mayeutica);
 		 }
 			// header("location: ../../../ListaTNeuro.php");
 

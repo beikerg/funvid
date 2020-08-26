@@ -6,18 +6,18 @@ if(isset($_GET['id']) && isset($_GET['id']) != "")
     require_once("../../db_connection.php");
 
     // get user id
-    $id_neuro = $_GET['id'];
+    $id_mayeutica = $_GET['id'];
 
     // delete User
-    $query = "DELETE FROM neuroplasticidad WHERE id_neuro = '$id_neuro' ";
+    $query = "DELETE FROM mayeutica WHERE id_mayeutica = '$id_mayeutica' ";
     if (!$result = $mysql->query($query)) {
         echo (mysqli_errno());
     }else{
-        $query_asis = "DELETE FROM asistencia WHERE id_neuro = '$id_neuro' ";
+        $query_asis = "DELETE FROM asistencia WHERE id_mayeutica = '$id_mayeutica' ";
 			    if(!$asis_query = $mysql->query($query_asis)){
 					echo ("Error al liminiar asistencia".$msyql->error);
 				}else{
-					header("Location: ../../../ListaTNeuro.php");
+					header("Location: ../../../ListaTMayeutica.php");
 				}
     //     header("location: ../../../ListaTNeuro.php");
      }

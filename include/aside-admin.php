@@ -64,8 +64,8 @@
                 <li><a href="ListaTs.php"><i class="fa fa-circle-o"></i>Sensei</a></li>
                 <li><a href="ListaTedu.php"><i class="fa fa-circle-o"></i>Educativa</a></li>
                 <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Neuroplasticidad</a></li>
-                <li><a href="ListaTmayeutica.php"><i class="fa fa-circle-o"></i>Mayéutica</a></li>
-                <li><a href="ListaTNeuro.php"><i class="fa fa-circle-o"></i>Manejo emocional</a></li>
+                <li><a href="ListaTMayeutica.php"><i class="fa fa-circle-o"></i>Mayéutica</a></li>
+                <li><a href="ListaTEmocional.php"><i class="fa fa-circle-o"></i>Manejo emocional</a></li>
                 
 
               </ul>

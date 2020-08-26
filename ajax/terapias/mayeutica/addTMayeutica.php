@@ -6,29 +6,29 @@
 		require_once("../../db_connection.php");
 
 		
-		$lider_neuro = $_POST['lider_neuro'];
-		$fecha_neuro = $_POST['fecha_neuro'];
-		$h_inicio_neuro = $_POST['h_inicio_neuro'];
-		$h_fin_neuro = $_POST['h_fin_neuro'];
-		$tematica_neuro = $_POST['tematica_neuro'];
-		$objetivosg_neuro = $_POST['objetivosg_neuro'];
-		$objetivosp_neuro = $_POST['objetivosp_neuro'];
-		$actitud_neuro = $_POST['actitud_neuro'];
+		$lider_mayeutica = $_POST['lider_mayeutica'];
+		$fecha_mayeutica = $_POST['fecha_mayeutica'];
+		$h_inicio_mayeutica = $_POST['h_inicio_mayeutica'];
+		$h_fin_mayeutica = $_POST['h_fin_mayeutica'];
+		$tematica_mayeutica = $_POST['tematica_mayeutica'];
+		$objetivosg_mayeutica = $_POST['objetivosg_mayeutica'];
+		$objetivosp_mayeutica = $_POST['objetivosp_mayeutica'];
+		$actitud_mayeutica = $_POST['actitud_mayeutica'];
 
 
-		$query ="INSERT INTO  neuroplasticidad (lider_neuro, fecha_neuro, h_inicio_neuro, h_fin_neuro, tematica_neuro, objetivosg_neuro, objetivosp_neuro, actitud_neuro) 
-						VALUES ('$lider_neuro', '$fecha_neuro', '$h_inicio_neuro', '$h_fin_neuro', '$tematica_neuro', '$objetivosg_neuro', '$objetivosp_neuro', '$actitud_neuro')";
+		$query ="INSERT INTO  mayeutica (lider_mayeutica, fecha_mayeutica, h_inicio_mayeutica, h_fin_mayeutica, tematica_mayeutica, objetivosg_mayeutica, objetivosp_mayeutica, actitud_mayeutica) 
+						VALUES ('$lider_mayeutica', '$fecha_mayeutica', '$h_inicio_mayeutica', '$h_fin_mayeutica', '$tematica_mayeutica', '$objetivosg_mayeutica', '$objetivosp_mayeutica', '$actitud_mayeutica')";
 
 		if(!$result = $mysql->query($query)){
-			echo  "Error al agregar terapia neuroplasticidad".$mysql->error;
+			echo  "Error al agregar terapia mayeutica ".$mysql->error;
 		}else{
 			if($_POST['botones'] == 'save'){
 				$mysql->close();
 				include("../../db_connection.php");
 				// BUSCAR EL REGISTRO ANTERIOR DE TERAPIA DE CONFRONTACION
-				$q = $mysql->query("SELECT * FROM neuroplasticidad ORDER BY id_neuro DESC LIMIT 1");
+				$q = $mysql->query("SELECT * FROM mayeutica ORDER BY id_mayeutica DESC LIMIT 1");
 				$row = $q->fetch_assoc();
-				$id_neuro = $row['id_neuro'];
+				$id_mayeutica = $row['id_mayeutica'];
 				$mysql->close();
 
 				// INSERTAR RESIDENTES PARA INICIO DE ASISTENCIA
@@ -37,8 +37,8 @@
 					while($r = $resi_q->fetch_assoc()){
 						$residente = $r['id_residente'];
 
-						$data = "INSERT INTO asistencia (id_neuro, id_residente, status_asis) 
-										VALUE ('$id_neuro', '$residente', '0')";
+						$data = "INSERT INTO asistencia (id_mayeutica, id_residente, status_asis) 
+										VALUE ('$id_mayeutica', '$residente', '0')";
 						$resi_add_asis = $mysql->query($data);
 					}
 				$mysql->close();
@@ -51,7 +51,7 @@
 				while($i < $resi_num){
 					$id_data = $_POST['resi'][$i];
 
-					$data_resi = "UPDATE asistencia SET status_asis = '1' WHERE id_residente = '$id_data' AND id_neuro = '$id_neuro' ";
+					$data_resi = "UPDATE asistencia SET status_asis = '1' WHERE id_residente = '$id_data' AND id_mayeutica = '$id_mayeutica' ";
 
 					$resultado = $mysql->query($data_resi);
 					$i++;
@@ -62,14 +62,14 @@
 				if(!$resi_add_asis && !$resultado){
 					echo "Error al agregar asistenecia terapia educativa ".$mysql->error;
 				}else{
-					header("Location: ../../../editarTNeuro.php?id=".$id_neuro);
+					header("Location: ../../../editarTMayeutica.php?id=".$id_mayeutica);
 				}
 		}elseif(empty($_POST['resi'])){
 			include("../../db_connection.php");
 				// BUSCAR EL REGISTRO ANTERIOR DE TERAPIA DE CONFRONTACION
-				$q = $mysql->query("SELECT * FROM neuroplasticidad ORDER BY id_neuro DESC LIMIT 1");
+				$q = $mysql->query("SELECT * FROM mayeutica ORDER BY id_mayeutica DESC LIMIT 1");
 				$row = $q->fetch_assoc();
-				$id_neuro = $row['id_neuro'];
+				$id_mayeutica = $row['id_mayeutica'];
 				$mysql->close();
 				
 			// INSERTAR ASISTENCIA SIN GENERAR
@@ -78,8 +78,8 @@
 				while($r = $resi_q->fetch_assoc()){
 					$residente = $r['id_residente'];
 
-					$data = "INSERT INTO asistencia (id_neuro, id_residente, status_asis) 
-									VALUE ('$id_neuro', '$residente', '0')";
+					$data = "INSERT INTO asistencia (id_mayeutica, id_residente, status_asis) 
+									VALUE ('$id_mayeutica', '$residente', '0')";
 					$resi_add_asis = $mysql->query($data);
 				}
 			$mysql->close();
@@ -87,9 +87,9 @@
 		}
 
 		if($_POST['botones'] == 'Guardar'){
-			header("location: ../../../ListaTNeuro.php");
+			header("location: ../../../ListaTMayeutica.php");
 		 }elseif($_POST['botones'] == 'save'){
-			header("Location: ../../../editarTNeuro.php?id=".$id_neuro);
+			header("Location: ../../../editarTMayeutica.php?id=".$id_mayeutica);
 		 }
 			// header("location: ../../../ListaTNeuro.php");
 		}

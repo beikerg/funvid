@@ -9,7 +9,7 @@ include("include/rol.php");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Neuroplasticidad</title>
+   <title>FUNVID | Terapia Mayéutica</title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -26,11 +26,11 @@ include("include/rol.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Lista Terapias Neuroplasticidad
+        Lista Terapias Mayéutica
         <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Terapia Neuroplasticidad</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Terapia Mayéutica</a></li>
        
       </ol>
     </section>
@@ -43,7 +43,7 @@ include("include/rol.php");
         -------------------------->
     <div class="row">
     <div class="col-md-12 pull-right">
-    <a href="terapiaNeuro.php" class="btn btn-success"><i class="fa fa-plus"> </i> Nueva Terapia</a>
+    <a href="terapiaMayeutica.php" class="btn btn-success"><i class="fa fa-plus"> </i> Nueva Terapia</a>
   </div>
 </div>
 <br>
@@ -70,26 +70,26 @@ include("include/rol.php");
           <tbody>
             <?php
               include('ajax/db_connection.php');
-              $sql = "SELECT * FROM neuroplasticidad ORDER BY fecha_neuro DESC";
+              $sql = "SELECT * FROM mayeutica ORDER BY fecha_mayeutica DESC";
 
               //use for MySQLi-OOP
               $query = $mysql->query($sql);
               while($row = $query->fetch_assoc()){
                 echo 
                 "<tr>
-                  <td>".$row['id_neuro']."</td>
-                  <td>".$row['tematica_neuro']."</td>
-                  <td>".$row['lider_neuro']."</td>
-                  <td>".date('d-m-Y', strtotime($row['fecha_neuro']))."</td>
+                  <td>".$row['id_mayeutica']."</td>
+                  <td>".$row['tematica_mayeutica']."</td>
+                  <td>".$row['lider_mayeutica']."</td>
+                  <td>".date('d-m-Y', strtotime($row['fecha_mayeutica']))."</td>
                   
                   
                   <td align='center'>
 
-                    <a class='btn btn-warning' title='Editar' href='editarTNeuro.php?id=".$row['id_neuro']."'><i class='glyphicon glyphicon-pencil'></i></a>
+                    <a class='btn btn-warning' title='Editar' href='editarTMayeutica.php?id=".$row['id_mayeutica']."'><i class='glyphicon glyphicon-pencil'></i></a>
                   
-                  <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_neuro'].")'><i class='glyphicon glyphicon-trash'></i></a>
+                  <a class='btn btn-danger' title='Eliminar' href='#' onclick='preguntar(".$row['id_mayeutica'].")'><i class='glyphicon glyphicon-trash'></i></a>
                   
-                  <a href='genera_pdf/TPase.php?tera=".$row['id_neuro']."' target='_blank' class='btn btn-info'><i class='fa fa-file-pdf-o'></i> <strong>PDF <strong></a>  
+                  <a href='genera_pdf/TPase.php?tera=".$row['id_mayeutica']."' target='_blank' class='btn btn-info'><i class='fa fa-file-pdf-o'></i> <strong>PDF <strong></a>  
 
                   </td>
                 </tr>";
@@ -135,7 +135,7 @@ include("include/rol.php");
 <script type="text/javascript">
   function preguntar (id){
     if(confirm('¿Esta seguro que desa eliminar esta terapia?')){
-      window.location.href = "ajax/terapias/neuroplasticidad/eliminarTNeuro.php?id=" + id;
+      window.location.href = "ajax/terapias/mayeutica/eliminarTMayeutica.php?id=" + id;
         }
    }
 </script>

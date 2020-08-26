@@ -1,6 +1,6 @@
 <?php
   include('ajax/db_connection.php');
-  $asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_neuro = '$id_neuro'");
+  $asis_sql = $mysql->query("SELECT * FROM asistencia WHERE id_mayeutica = '$id_mayeutica'");
   $c_sql = mysqli_num_rows($asis_sql);
 
   // if($c_sql == 0){
@@ -50,7 +50,7 @@
                                 if($c_sql == 0){
                                   $sql = "SELECT * FROM residentes WHERE etapa_resi <> 'REDUCADO' AND etapa_resi <> 'ABANDONO' ";
                                 }else{
-                                  $sql = "SELECT r.nombre, r.apellido, r.rut, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_neuro = '$id_neuro'";
+                                  $sql = "SELECT r.nombre, r.apellido, r.rut, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_mayeutica = '$id_mayeutica'";
                                 }
                                 
                                 //use for MySQLi-OOP
@@ -83,7 +83,7 @@
         <div class="tab-pane" id="tab_2">
         <?php 
           include('ajax/db_connection.php');
-            $q = $mysql->query("SELECT r.nombre, r.apellido, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_neuro = '$id_neuro' AND a.status_asis = '0'");
+            $q = $mysql->query("SELECT r.nombre, r.apellido, a.* FROM residentes r INNER JOIN asistencia a ON r.id_residente = a.id_residente WHERE a.id_mayeutica = '$id_mayeutica' AND a.status_asis = '0'");
 
             while($a = $q->fetch_assoc()){
 
@@ -167,7 +167,7 @@
                 
                 </div>
                   <div class="modal-footer">
-                    <input type="hidden" name="id_neuro" value="<?php echo $id_neuro;?>">
+                    <input type="hidden" name="id_mayeutica" value="<?php echo $id_mayeutica;?>">
                     <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
                     <button type="submit" name="botones" value="save" class="btn btn-primary">Guardar</button>
                   </div>
