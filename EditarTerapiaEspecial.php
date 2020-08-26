@@ -364,7 +364,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             
             <!-- // FIN DEL BOX  4// -->
               
-             <center> <input type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar Cambios"></center>
+             <center> <button type="submit" class="btn btn-primary btn-lg" name="botones" value="Guardar">Guardar Cambios<buttton></center>
         </div>
             
             
