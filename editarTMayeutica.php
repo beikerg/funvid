@@ -6,31 +6,31 @@ include("ajax/db_connection.php");
 
     if(empty($_GET['id']))
     {
-      header("Location: ListaTNeuro.php");
+      header("Location: ListaTMayeutica.php");
      
     }
-    $id_neuro = $_GET['id'];
+    $id_mayeutica = $_GET['id'];
 
-    $q = "SELECT * FROM neuroplasticidad WHERE id_neuro = '$id_neuro' ";
+    $q = "SELECT * FROM mayeutica WHERE id_mayeutica = '$id_mayeutica' ";
     $sql = $mysql->query($q);
     mysqli_close($mysql);
     $result = mysqli_num_rows($sql);
 
       if($result == 0 )
       {
-        header('Location: ListaTNeuro.php');
+        header('Location: ListaTMayeutica.php');
       }else{
 
         while ($data = mysqli_fetch_array($sql)){
-          $id_neuro = $data['id_neuro'];
-          $lider_neuro = $data['lider_neuro'];
-          $fecha_neuro = $data['fecha_neuro'];
-          $h_inicio_neuro = $data['h_inicio_neuro'];
-          $h_fin_neuro = $data['h_fin_neuro'];
-          $tematica_neuro = $data['tematica_neuro'];
-          $objetivosg_neuro = $data['objetivosg_neuro'];
-          $objetivosp_neuro = $data['objetivosp_neuro'];
-          $actitud_neuro = $data['actitud_neuro'];
+          $id_mayeutica = $data['id_mayeutica'];
+          $lider_mayeutica = $data['lider_mayeutica'];
+          $fecha_mayeutica = $data['fecha_mayeutica'];
+          $h_inicio_mayeutica = $data['h_inicio_mayeutica'];
+          $h_fin_mayeutica = $data['h_fin_mayeutica'];
+          $tematica_mayeutica = $data['tematica_mayeutica'];
+          $objetivosg_mayeutica = $data['objetivosg_mayeutica'];
+          $objetivosp_mayeutica = $data['objetivosp_mayeutica'];
+          $actitud_mayeutica = $data['actitud_mayeutica'];
 
         }
       }
@@ -46,7 +46,7 @@ include("ajax/db_connection.php");
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <title>FUNVID | Terapia Neuroplasticidad</title>
+   <title>FUNVID | Terapia Mayéutica </title>
   <?php  include("include/head.php"); ?>
 </head>
 
@@ -63,11 +63,11 @@ include("ajax/db_connection.php");
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Terapia Neuroplasticidad
+        Terapia Mayéutica
         <small></small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Neuroplasticidad</a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Mayéutica </a></li>
     
       </ol>
     </section>
@@ -84,12 +84,12 @@ include("ajax/db_connection.php");
         </div>
          <br>                
        
-         <form action="ajax/terapias/neuroplasticidad/editaTNeuro.php" method="POST">   
+         <form action="ajax/terapias/mayeutica/editaTMayeutica.php" method="POST">   
 
-         <?php include("ajax/terapias/neuroplasticidad/tableTResidenteEdit.php"); ?>  
+         <?php include("ajax/terapias/mayeutica/tableTResidenteEdit.php"); ?>  
           <!-- // INICIO BOX // -->
             <!-- input almacena el id del terapia -->
-            <input type="hidden" name="id_neuro" value="<?php echo $id_neuro; ?>" >
+            <input type="hidden" name="id_mayeutica" value="<?php echo $id_mayeutica; ?>" >
                 
      
            
@@ -113,11 +113,11 @@ include("ajax/db_connection.php");
                      <div class="row">
                       <div class="form-group col-md-4">
                          <label>Nombre Lider:</label><br>
-                          <input class="form-control" type="text" name="lider_neuro"  value="<?php echo $lider_neuro; ?>">
+                          <input class="form-control" type="text" name="lider_mayeutica"  value="<?php echo $lider_mayeutica; ?>">
                       </div>                                                         
                       <div class="form-group col-md-8">
                           <label>Temática: </label><br>
-                          <input class="form-control" type="text" name="tematica_neuro" value="<?php echo $tematica_neuro; ?>">
+                          <input class="form-control" type="text" name="tematica_mayeutica" value="<?php echo $tematica_mayeutica; ?>">
                       </div>                    
                       </div> <!-- / fin del row -->                     
                     <div class="row">                      
@@ -127,18 +127,18 @@ include("ajax/db_connection.php");
                             <div class="input-group-addon">
                           <i class="fa fa-calendar"></i>
                         </div>
-                        <input type="date" value="<?php echo $fecha_neuro; ?>" name="fecha_neuro" class="form-control pull-right" >
+                        <input type="date" value="<?php echo $fecha_mayeutica; ?>" name="fecha_mayeutica" class="form-control pull-right" >
                       </div>
                       <!-- /.input group -->
                     </div>                     
                       <div class="form-group col-md-4">
                           <label>Hora inicio:</label><br>
-                          <input class="form-control" type="time" name="h_inicio_neuro" value="<?php echo $h_inicio_neuro; ?>">
+                          <input class="form-control" type="time" name="h_inicio_mayeutica" value="<?php echo $h_inicio_mayeutica; ?>">
                       </div>
                       
                       <div class="form-group col-md-4">
                           <label>Hora termino:</label><br>
-                          <input class="form-control" type="time" name="h_fin_neuro" value="<?php echo $h_fin_neuro; ?>">
+                          <input class="form-control" type="time" name="h_fin_mayeutica" value="<?php echo $h_fin_mayeutica; ?>">
                       </div>
                       </div> <!--// FIN DEL FORN-INLINE//-->              
               <!-- // FIN DEL BODY DEÑL BOX // -->
@@ -176,12 +176,12 @@ include("ajax/db_connection.php");
                 
                  <div class="form-group">
                   <label>Objetivos generales:</label>
-                  <textarea class="form-control" rows="3" name="objetivosg_neuro" placeholder="Objetivos generales que se trabajaron durante la terpaia ..."><?php echo $objetivosg_neuro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="objetivosg_mayeutica" placeholder="Objetivos generales que se trabajaron durante la terpaia ..."><?php echo $objetivosg_mayeutica; ?></textarea>
                 </div> 
 
                 <div class="form-group">
                   <label>Objetivos particulares:</label>
-                  <textarea class="form-control" rows="3" name="objetivosp_neuro" placeholder="Objetivos particulares que se trabajaron durante la terpaia ..."><?php echo $objetivosp_neuro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="objetivosp_mayeutica" placeholder="Objetivos particulares que se trabajaron durante la terpaia ..."><?php echo $objetivosp_mayeutica; ?></textarea>
                 </div>   
 
 
@@ -222,7 +222,7 @@ include("ajax/db_connection.php");
                     
                     <div class="form-group col-md-12">
                   <label>Actitud asumida del grupo</label>
-                  <textarea class="form-control" rows="3" name="actitud_neuro" placeholder="Actitud asumida por el grupo ..."><?php echo $actitud_neuro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="actitud_mayeutica" placeholder="Actitud asumida por el grupo ..."><?php echo $actitud_mayeutica; ?></textarea>
                 </div>
                      
                                    
