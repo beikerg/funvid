@@ -259,7 +259,7 @@ $resi_caja = $mysql->query("SELECT * FROM residentes WHERE id_residente = '$resi
                   
                  $ta.=" <td align='center'>";
 
-                  if($_SESSION['rol'] == 'Admin' || $_SESSION['rol'] == 'Administracion'){
+                  if($_SESSION['rol'] == 'Admin'){
                     $ta .= "<a href='#' onclick='preguntar(".$row['id_caja'].','.$row['id_residente'].")' title='Eliminar' class='btn btn-danger btn-sm' data-toggle='modal'><span class='glyphicon glyphicon-trash'></span> </a>";
                   }
                     
