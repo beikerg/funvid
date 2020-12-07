@@ -102,6 +102,20 @@ $admin_root ='<li class="treeview menu-open" style="height: auto;">
     </ul>
   </li>
 
+  <li class="treeview" style="height: auto;">
+    <a href="ListaPTI.php"><i class="fa fa-circle-o"></i> PTI 
+   <!-- QUITAR ESTA LINEA --> <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
+      
+      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+    </ul>
+  </li>
+
   <!-- <li class="treeview" style="height: auto;">
     <a href="#"><i class="fa fa-circle-o"></i> Pases <small class="label pull-right bg-blue"> Pronto </small>
       <span class="pull-right-container">
@@ -275,6 +289,20 @@ $super_admin ='<li class="treeview menu-open" style="height: auto;">
     </ul>
   </li>
 
+  <li class="treeview" style="height: auto;">
+    <a href="ListaPTI.php"><i class="fa fa-circle-o"></i> PTI 
+   <!-- QUITAR ESTA LINEA --> <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
+      
+      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+    </ul>
+  </li>
+
   <!-- <li class="treeview" style="height: auto;">
     <a href="#"><i class="fa fa-circle-o"></i> Pases <small class="label pull-right bg-blue"> Pronto </small>
       <span class="pull-right-container">
@@ -357,6 +385,109 @@ $super_admin ='<li class="treeview menu-open" style="height: auto;">
 </li>
 
 ';
+$psicologo ='<li class="treeview menu-open" style="height: auto;">
+<a href="#">
+  <i class="fa fa-share"></i> <span> Residentes</span>
+  <span class="pull-right-container">
+    <i class="fa fa-angle-left pull-right"></i>
+  </span>
+</a>
+<ul class="treeview-menu" style="display: block;">
+
+<li class="treeview" style="height: auto;">
+<a href="#"><i class="fa fa-circle-o"></i> Ficha <span class="pull-right-container">
+    <i class="fa fa-angle-left pull-right"></i>
+  </span>
+</a>
+<ul class="treeview-menu" style="display: none;">
+  <li><a href="residente.php"><i class="fa fa-circle-o"></i> Residentes </a></li>
+  <li><a href="abandono.php"><i class="fa fa-circle-o"></i> Abandono </a></li>
+</ul>
+</li>
+  
+  <li class="treeview" style="height: auto;">
+    <a href="#"><i class="fa fa-circle-o"></i> Psicologo
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="consultaPsicologia.php"><i class="fa fa-circle-o"></i> Consultas</a></li>
+     <!-- <li><a href="#"><i class="fa fa-circle-o"></i> PTI</a></li> -->
+    <!--  <li><a href="#"><i class="fa fa-circle-o"></i> Epicrisis</a></li>  --> 
+    </ul>
+  </li>
+
+  <li class="treeview" style="height: auto;">
+    <a href="#"><i class="fa fa-circle-o"></i> Introvisación
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <!-- <li><a href="ListaIntro.php"><i class="fa fa-circle-o"></i> Activos</a></li> -->
+      <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Históricos</a></li>
+      <li><a href="ListaIntroAct.php"><i class="fa fa-circle-o"></i> Psicólogo</a></li>     
+    </ul>
+  </li>
+
+  <li class="treeview" style="height: auto;">
+    <a href="ListaPTI.php"><i class="fa fa-circle-o"></i> PTI 
+   <!-- QUITAR ESTA LINEA --> <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
+      
+      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+    </ul>
+  </li>
+
+  <!-- <li class="treeview" style="height: auto;">
+    <a href="#"><i class="fa fa-circle-o"></i> Pases <small class="label pull-right bg-blue"> Pronto </small>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="#"><i class="fa fa-circle-o"></i> Entrega de Pases 
+      <span class="pull-right-container"><small class="label pull-right bg-blue"> Pronto </small></span></a></li>
+      <li><a href="#"><i class="fa fa-circle-o"></i> Historial 
+      <span class="pull-right-container"><small class="label pull-right bg-blue"> Pronto </small></span></a></li>  
+    </ul>
+  </li> -->
+
+  <li><a href="#" data-toggle="modal" data-target="#selec_resi" ><i class="fa fa-circle-o"></i> API</a></li>
+  <li><a href="ayudas.php"><i class="fa fa-circle-o"></i> Ayudas</a></li>
+  <li><a href="#" data-toggle="modal" data-target="#controlSalida" ><i class="fa fa-circle-o"></i> Control de salidas</a></li>
+ <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Delegaciones 
+  <span class="pull-right-container"><small class="label pull-right bg-blue"> Pronto </small></span>
+  </a></li> -->
+  <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Medicamentos</a></li> -->
+</ul>
+</li>
+
+<!--  Administración  -->
+
+<li class="treeview menu-open" style="height: auto;">
+<a href="#">
+  <i class="fa fa-share"></i> <span> Administración</span>
+  <span class="pull-right-container">
+    <i class="fa fa-angle-left pull-right"></i>
+  </span>
+</a>
+<ul class="treeview-menu" style="display: block;">
+
+  <li><a href="calendario.php"><i class="fa fa-circle-o"></i> Agenda</a></li>
+  <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Delegaciones </a></li> -->
+
+</ul>
+</li>
+
+  
+';
 
 $admin ='<li class="treeview menu-open" style="height: auto;">
 <a href="#">
@@ -430,6 +561,20 @@ $admin ='<li class="treeview menu-open" style="height: auto;">
         </ul>
       </li>
 
+    </ul>
+  </li>
+  
+  <li class="treeview" style="height: auto;">
+    <a href="ListaPTI.php"><i class="fa fa-circle-o"></i> PTI 
+   <!-- QUITAR ESTA LINEA --> <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
+      
+      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
     </ul>
   </li>
 
@@ -565,7 +710,21 @@ $terapeuta ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaIntro.php"><i class="fa fa-circle-o"></i> Activos</a></li>
       <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Históricos</a></li>
-      <li><a href="ListaIntroAct.php"><i class="fa fa-circle-o"></i> Psicólogo</a></li>     
+         
+    </ul>
+  </li>
+
+  <li class="treeview" style="height: auto;">
+    <a href="ListaPTI.php"><i class="fa fa-circle-o"></i> PTI 
+   <!-- QUITAR ESTA LINEA --> <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu" style="display: none;">
+      <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
+      
+      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
     </ul>
   </li>
 
@@ -791,6 +950,10 @@ $reeducados ='
 
         echo $reeducados;
 
+      break;
+
+      case 'Psicologo':
+        echo $psicologo;
       break;
 
     default:

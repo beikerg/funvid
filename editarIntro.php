@@ -260,7 +260,7 @@ include("ajax/db_connection.php");
 
                 <div class="form-group col-md-12" <?php if($_SESSION['rol'] == 'Psicologo'){ echo 'style="display: block;"'; }elseif($_SESSION['rol'] == 'Admin'){ echo 'style="display: block;"';}else{echo 'style="display: none;"';} ?>>
                   <label>Observaciones del Psicologo:</label>
-                  <textarea class="form-control" rows="3" name="observ_psico_intro" placeholder="Observaciones de evaluación del psicologo ..." <?php if($_SESSION['rol'] == 'Terapeutas'){ echo '';}elseif($_SESSION['rol'] == 'Psicologo'){ echo 'readonly';}else{ echo '';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $observ_psico_intro; ?></textarea>
+                  <textarea class="form-control" rows="3" name="observ_psico_intro" placeholder="Observaciones de evaluación del psicologo ..." <?php if($_SESSION['rol'] == 'Terapeutas'){ echo '';}elseif($_SESSION['rol'] == 'Psicologo'){ echo '';}else{ echo 'readonly';} ?> <?php echo ($view == '1') ? "readonly" : ""; ?>><?php echo $observ_psico_intro; ?></textarea>
                 </div>
                                    
               </div> <!--// FIN DEL FORN-INLINE//-->
