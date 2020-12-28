@@ -112,7 +112,7 @@ $admin_root ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
       
-      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+      <li><a href="ListaSegPTI.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li> 
     </ul>
   </li>
 
@@ -160,7 +160,7 @@ $admin_root ='<li class="treeview menu-open" style="height: auto;">
       <li><a href="usuarios.php"><i class="fa fa-circle-o"></i> Usuarios Sistema</a></li>
     </ul>
   </li>
-
+  <li><a href="terapeuta.php"><i class="fa fa-circle-o"></i> Terapeutas <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span></a></li>
   <li><a href="ListaCaja.php"><i class="fa fa-circle-o"></i> Caja Residentes</a></li>
   <li><a href="LisPagoU.php"><i class="fa fa-circle-o"></i> Pagos</a></li>
   <li><a href="calendario.php"><i class="fa fa-circle-o"></i> Agenda</a></li>
@@ -299,7 +299,7 @@ $super_admin ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
       
-      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+      <li><a href="ListaSegPTI.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li> 
     </ul>
   </li>
 
@@ -347,7 +347,7 @@ $super_admin ='<li class="treeview menu-open" style="height: auto;">
       <li><a href="usuarios.php"><i class="fa fa-circle-o"></i> Usuarios Sistema</a></li>
     </ul>
   </li>
-
+  <li><a href="terapeuta.php"><i class="fa fa-circle-o"></i> Terapeutas <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span></a></li>
   <li><a href="ListaCaja.php"><i class="fa fa-circle-o"></i> Caja Residentes</a></li>
   <!-- <li><a href="LisPagoU.php"><i class="fa fa-circle-o"></i> Pagos</a></li> -->
   <li><a href="calendario.php"><i class="fa fa-circle-o"></i> Agenda</a></li>
@@ -441,7 +441,7 @@ $psicologo ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
       
-      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+      <li><a href="ListaSegPTI.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>  
     </ul>
   </li>
 
@@ -574,7 +574,7 @@ $admin ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
       
-      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+      <li><a href="ListaSegPTI.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li> 
     </ul>
   </li>
 
@@ -615,7 +615,7 @@ $admin ='<li class="treeview menu-open" style="height: auto;">
 <ul class="treeview-menu" style="display: block;">
   
 
-
+<li><a href="terapeuta.php"><i class="fa fa-circle-o"></i> Terapeutas <span class="pull-right-container"><small class="label pull-right bg-green"> new </small></span></a></li>
   <li><a href="ListaCaja.php"><i class="fa fa-circle-o"></i> Caja Residentes</a></li>
   <li><a href="calendario.php"><i class="fa fa-circle-o"></i> Agenda</a></li>
   <!-- <li><a href="#"><i class="fa fa-circle-o"></i> Delegaciones </a></li> -->
@@ -724,7 +724,7 @@ $terapeuta ='<li class="treeview menu-open" style="height: auto;">
     <ul class="treeview-menu" style="display: none;">
       <li><a href="ListaPTI.php"><i class="fa fa-circle-o"></i> Plan de tratamiento</a></li>
       
-      <!-- <li><a href="ListaIntroH.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li>   --> 
+      <li><a href="ListaSegPTI.php"><i class="fa fa-circle-o"></i> Seguimiento</a></li> 
     </ul>
   </li>
 

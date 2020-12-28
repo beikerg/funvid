@@ -45,6 +45,7 @@ if(empty($_POST['id']) ||
         ?> <script type="text/javascript">  
                 setTimeout(function(){
                     $("#update_Terapeutas_modal").modal("hide");
+                    location.reload();
                 }, 1000);       
             
         </script>

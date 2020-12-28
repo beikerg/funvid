@@ -52,7 +52,8 @@
 
 	    ?> <script type="text/javascript">	
 	    	 	setTimeout(function(){
-	    	 		$("#add_nuevo_Terapeutas_modal").modal("hide");
+					 $("#add_nuevo_Terapeutas_modal").modal("hide");
+					 location.reload();
 	    	 	}, 1000);    	
 	    	
 	    </script>

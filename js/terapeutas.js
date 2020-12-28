@@ -28,6 +28,7 @@ function addTerapeutas() {
          $("#addt").html(data);
 
         // read records again
+        
         readTerapeutas();
 
         // clear fields from the popup

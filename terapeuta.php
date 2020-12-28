@@ -164,6 +164,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       <div class="modal-body">
 
+      <div id="addt"></div>
+
         <div class="form-group">
            <label for="nombre" >Nombre completo:</label>
            <input type="text" class="form-control" id="nombre" placeholder="Nombre Completo" >
@@ -218,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <input type="email" class="form-control" id="correo" placeholder="Provincia" required>
         </div>
 
-        <div id="addt"></div>
+        
 
       </div>
       <div class="modal-footer">
@@ -249,6 +251,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <h4 class="modal-title" id="myModalLabel">Nuevo Terapeuta</h4>
       </div>
       <div class="modal-body">
+      <div id="updatet"></div>
 
         <div class="form-group">
            <label for="update_nombre" >Nombre completo:</label>
@@ -303,7 +306,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <label for="update_correo">Correo</label>
             <input type="email" class="form-control" id="update_correo" placeholder="Provincia" required>
         </div>
-        <div id="updatet"></div>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
