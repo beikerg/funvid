@@ -220,6 +220,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <input type="email" class="form-control" id="correo" placeholder="Provincia" required>
         </div>
 
+        <div class="form-group">
+            <label for="cargo_tera">Cargo que desempeñará</label>
+            <input type="text" class="form-control" id="cargo_tera" placeholder="Cargo que desempeñará el terapeuta" required>
+        </div>
+
         
 
       </div>
@@ -304,8 +309,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
         
         <div class="form-group">
             <label for="update_correo">Correo</label>
-            <input type="email" class="form-control" id="update_correo" placeholder="Provincia" required>
+            <input type="email" class="form-control" id="update_correo" placeholder="Correo electronico" required>
+        
+        </div><div class="form-group">
+            <label for="update_cargo_tera">Cargo que desempeñará</label>
+            <input type="text" class="form-control" id="update_cargo_tera" placeholder="Cargo que desempeñará" required>
         </div>
+
+
         
       </div>
       <div class="modal-footer">

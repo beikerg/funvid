@@ -10,6 +10,7 @@ function addTerapeutas() {
     var localidad = $("#localidad").val();
     var provincia = $("#provincia").val();
     var correo = $("#correo").val();
+    var cargo_tera = $("#cargo_tera").val();
 
     // Add record
     $.post("ajax/terapeutas/addTerapeutas.php", {
@@ -21,7 +22,8 @@ function addTerapeutas() {
         direccion: direccion,
         localidad: localidad,
         provincia: provincia,
-        correo: correo
+        correo: correo,
+        cargo_tera: cargo_tera
     }, function (data, status) {
         // close the popup
         /*$("#add_nuevo_Terapeutas_modal").modal("hide");*/
@@ -41,6 +43,7 @@ function addTerapeutas() {
         $("#localidad").val("");
         $("#provincia").val("");
         $("#correo").val("");
+        $("#cargo_tera").val("");
     });
 }
 
@@ -85,6 +88,7 @@ function GetTerapeutasDetails(id) {
             $("#update_localidad").val(terapeuta.localidad);
             $("#update_provincia").val(terapeuta.provincia);
             $("#update_correo").val(terapeuta.correo);
+            $("#update_cargo_tera").val(terapeuta.cargo_tera);
         }
     );
     // Open modal popup
@@ -102,6 +106,7 @@ function UpdateTerapeutasDetails() {
     var localidad = $("#update_localidad").val();
     var provincia = $("#update_provincia").val();
     var correo = $("#update_correo").val();
+    var cargo_tera = $("#update_cargo_tera").val();
 
     // get hidden field value
     var id = $("#hidden_Terapeutas_id").val();
@@ -117,7 +122,8 @@ function UpdateTerapeutasDetails() {
             direccion: direccion,
             localidad: localidad,
             provincia: provincia,
-            correo: correo
+            correo: correo,
+            cargo_tera: cargo_tera
         },
         function (data, status) {
             // hide modal popup
@@ -129,16 +135,16 @@ function UpdateTerapeutasDetails() {
     );
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     // READ recods on page load
     readTerapeutas(); // calling function
 });
 
+// $(document).ready(handler);
+
 // .-- Fin terapeutas -- //
 
 //  Inicio de busqueda //
-
-
 
 // .-- Fin de Buscador //
 

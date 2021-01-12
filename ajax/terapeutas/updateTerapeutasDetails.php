@@ -34,9 +34,10 @@ if(empty($_POST['id']) ||
     $localidad = $_POST['localidad'];
     $provincia = $_POST['provincia'];
     $correo = $_POST['correo'];
+    $cargo_tera = $_POST['cargo_tera'];
 
     // Updaste User details
-    $query = "UPDATE terapeutas SET nombre = '$nombre', apellido = '$apellido', rut = '$rut', telefono = '$telefono', fecha = '$fecha', direccion = '$direccion', localidad = '$localidad', provincia = '$provincia', correo = '$correo' WHERE id = '$id'";
+    $query = "UPDATE terapeutas SET nombre = '$nombre', apellido = '$apellido', rut = '$rut', telefono = '$telefono', fecha = '$fecha', direccion = '$direccion', localidad = '$localidad', provincia = '$provincia', correo = '$correo', cargo_tera = '$cargo_tera' WHERE id = '$id'";
     if (!$result = $mysql->query($query)) {
         exit(mysqli_error());
     }

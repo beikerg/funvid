@@ -12,6 +12,13 @@ if(isset($_POST['id']) && isset($_POST['id']) != "")
     $query = "DELETE FROM terapeutas WHERE id = '$terapeuta_id'";
     if (!$result = $mysql->query($query)) {
         exit(mysql_error());
-    }
+    }else{ ?>
+        <script type="text/javascript">	
+	    	 	setTimeout(function(){
+					 location.reload();
+	    	 	}, 1000);    	
+	    	
+	    </script>
+    <?php }
 }
 ?>

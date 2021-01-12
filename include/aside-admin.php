@@ -760,6 +760,7 @@ $terapeuta ='<li class="treeview menu-open" style="height: auto;">
 </a>
 <ul class="treeview-menu" style="display: block;">
   
+  
   <li><a href="calendario.php"><i class="fa fa-circle-o"></i> Agenda</a></li>
  
 
